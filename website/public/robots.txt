@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://balakarsparklers.com/sitemap.xml
