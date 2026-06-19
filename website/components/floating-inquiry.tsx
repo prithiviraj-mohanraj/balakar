@@ -65,7 +65,7 @@ export default function FloatingInquiry() {
               <div className="flex flex-col gap-2 pt-1">
                 <button
                   onClick={() => setIsOpen(true)}
-                  className="flex w-full items-center justify-between rounded-xl bg-gradient-to-r from-[#FF6B00] to-[#F5B700] px-4 py-2.5 text-xs font-bold text-white shadow-md hover:shadow-[0_0_12px_rgba(255,107,0,0.3)] transition-all cursor-pointer hover:scale-[1.01]"
+                  className="flex w-full items-center justify-between rounded-xl bg-gradient-to-r from-[#2563EB] to-[#7C3AED] px-4 py-2.5 text-xs font-bold text-white shadow-md hover:shadow-[0_0_12px_rgba(37,99,235,0.3)] transition-all cursor-pointer hover:scale-[1.01]"
                 >
                   <span>Request Factory Price List</span>
                   <ChevronRight className="h-3.5 w-3.5" />

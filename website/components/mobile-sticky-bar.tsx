@@ -30,7 +30,7 @@ export default function MobileStickyBar() {
 
         <button
           onClick={() => setIsInquiryOpen(true)}
-          className="flex flex-1.2 items-center justify-center gap-1.5 rounded-xl bg-gradient-to-r from-[#FF6B00] to-[#F5B700] py-2.5 text-xs font-bold text-white shadow-md hover:shadow-[0_0_10px_rgba(255,107,0,0.3)] transition-all cursor-pointer"
+          className="flex flex-1.2 items-center justify-center gap-1.5 rounded-xl bg-gradient-to-r from-[#2563EB] to-[#7C3AED] py-2.5 text-xs font-bold text-white shadow-md hover:shadow-[0_0_10px_rgba(37,99,235,0.25)] transition-all cursor-pointer"
         >
           <Tag className="h-4 w-4" />
           <span>Get Pricing</span>

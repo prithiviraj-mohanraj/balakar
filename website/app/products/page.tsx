@@ -17,24 +17,24 @@ export default function ProductsPage() {
 
   const getBadgeStyle = (size: string) => {
     switch (size) {
-      case "7 CM": return "bg-orange-50 border-orange-200 text-[#FF6B00] font-bold";
-      case "10 CM": return "bg-purple-50 border-purple-200 text-[#7C3AED] font-bold";
-      case "12 CM": return "bg-blue-50 border-blue-200 text-[#2563EB] font-bold";
-      case "15 CM": return "bg-emerald-50 border-emerald-200 text-[#16A34A] font-bold";
-      case "30 CM": return "bg-yellow-50 border-yellow-300 text-[#EAB308] font-bold";
-      case "50 CM": return "bg-orange-50 border-orange-200 text-[#FF6B00] font-bold";
+      case "7 CM": return "bg-slate-50 border-slate-200 text-[#0F172A] font-bold";
+      case "10 CM": return "bg-blue-50 border-blue-200 text-[#2563EB] font-bold";
+      case "12 CM": return "bg-purple-50 border-purple-200 text-[#7C3AED] font-bold";
+      case "15 CM": return "bg-teal-50 border-teal-200 text-[#14B8A6] font-bold";
+      case "30 CM": return "bg-amber-50 border-amber-300 text-[#D4AF37] font-bold";
+      case "50 CM": return "bg-slate-50 border-slate-200 text-[#0F172A] font-bold";
       default: return "bg-zinc-100 text-zinc-850 font-bold";
     }
   };
 
   const getCardStyle = (size: string) => {
     switch (size) {
-      case "7 CM": return "hover:border-orange-250 hover:shadow-[0_20px_45px_rgba(255,107,0,0.12)] hover:bg-gradient-to-b hover:from-orange-50/10 hover:to-white hover:scale-[1.015]";
-      case "10 CM": return "hover:border-purple-250 hover:shadow-[0_20px_45px_rgba(124,58,237,0.12)] hover:bg-gradient-to-b hover:from-purple-50/10 hover:to-white hover:scale-[1.015]";
-      case "12 CM": return "hover:border-blue-250 hover:shadow-[0_20px_45px_rgba(37,99,235,0.12)] hover:bg-gradient-to-b hover:from-blue-50/10 hover:to-white hover:scale-[1.015]";
-      case "15 CM": return "hover:border-green-250 hover:shadow-[0_20px_45px_rgba(22,163,74,0.12)] hover:bg-gradient-to-b hover:from-emerald-50/10 hover:to-white hover:scale-[1.015]";
-      case "30 CM": return "hover:border-yellow-350 hover:shadow-[0_20px_45px_rgba(245,183,0,0.12)] hover:bg-gradient-to-b hover:from-yellow-50/10 hover:to-white hover:scale-[1.015]";
-      case "50 CM": return "hover:border-orange-250 hover:shadow-[0_20px_45px_rgba(255,107,0,0.12)] hover:bg-gradient-to-b hover:from-orange-50/10 hover:to-white hover:scale-[1.015]";
+      case "7 CM": return "hover:border-slate-300 hover:shadow-[0_20px_45px_rgba(15,23,42,0.06)] hover:bg-gradient-to-b hover:from-slate-50/10 hover:to-white hover:scale-[1.015]";
+      case "10 CM": return "hover:border-blue-250 hover:shadow-[0_20px_45px_rgba(37,99,235,0.06)] hover:bg-gradient-to-b hover:from-blue-50/10 hover:to-white hover:scale-[1.015]";
+      case "12 CM": return "hover:border-purple-250 hover:shadow-[0_20px_45px_rgba(124,58,237,0.06)] hover:bg-gradient-to-b hover:from-purple-50/10 hover:to-white hover:scale-[1.015]";
+      case "15 CM": return "hover:border-teal-250 hover:shadow-[0_20px_45px_rgba(20,184,166,0.06)] hover:bg-gradient-to-b hover:from-teal-50/10 hover:to-white hover:scale-[1.015]";
+      case "30 CM": return "hover:border-amber-350 hover:shadow-[0_20px_45px_rgba(212,175,55,0.06)] hover:bg-gradient-to-b hover:from-amber-50/10 hover:to-white hover:scale-[1.015]";
+      case "50 CM": return "hover:border-slate-300 hover:shadow-[0_20px_45px_rgba(15,23,42,0.06)] hover:bg-gradient-to-b hover:from-slate-50/10 hover:to-white hover:scale-[1.015]";
       default: return "hover:border-zinc-350 hover:shadow-lg hover:scale-[1.015]";
     }
   };
@@ -129,7 +129,7 @@ export default function ProductsPage() {
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <button
               onClick={() => setIsInquiryOpen(true)}
-              className="flex items-center gap-1.5 rounded-full bg-gradient-to-r from-[#FF6B00] to-[#F5B700] px-6 py-3 text-sm font-bold text-white shadow-md hover:shadow-[0_0_15px_rgba(255,107,0,0.4)] transition-all cursor-pointer hover:scale-[1.02]"
+              className="flex items-center gap-1.5 rounded-full bg-gradient-to-r from-[#2563EB] to-[#7C3AED] px-6 py-3 text-sm font-bold text-white shadow-md hover:shadow-[0_0_15px_rgba(37,99,235,0.35)] transition-all cursor-pointer hover:scale-[1.02]"
             >
               <Sparkles className="h-4 w-4 text-white fill-white" />
               <span>Get Wholesale Price List</span>
@@ -202,7 +202,7 @@ export default function ProductsPage() {
                   <div className="border-t border-zinc-100 pt-4 flex items-center justify-between gap-2">
                     <Link
                       href={`/${p.slug}`}
-                      className="inline-flex items-center gap-1 text-xs font-bold text-zinc-700 hover:text-[#FF6B00] transition-colors"
+                      className="inline-flex items-center gap-1 text-xs font-bold text-zinc-700 hover:text-[#2563EB] transition-colors"
                     >
                       <span>Explore details</span>
                       <ArrowRight className="h-3 w-3" />
@@ -213,7 +213,7 @@ export default function ProductsPage() {
                         setSelectedProduct(p.title);
                         setIsInquiryOpen(true);
                       }}
-                      className="rounded-xl bg-gradient-to-r from-[#FF6B00] to-[#F5B700] px-4 py-2 text-xs font-bold text-white hover:scale-[1.02] hover:shadow-[0_0_10px_rgba(255,107,0,0.3)] transition-all cursor-pointer"
+                      className="rounded-xl bg-gradient-to-r from-[#2563EB] to-[#7C3AED] px-4 py-2 text-xs font-bold text-white hover:scale-[1.02] hover:shadow-[0_0_10px_rgba(37,99,235,0.25)] transition-all cursor-pointer"
                     >
                       Inquire
                     </button>
@@ -227,7 +227,7 @@ export default function ProductsPage() {
           <div className="mt-20 rounded-3xl border border-zinc-150 p-8 sm:p-10 bg-gradient-to-r from-amber-50/10 via-white to-zinc-50/30 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
              <div className="flex-1">
               <div className="flex items-center gap-2 text-amber-900 text-xs font-bold uppercase tracking-wider">
-                <ShieldCheck className="h-4.5 w-4.5 text-[#FF6B00]" />
+                <ShieldCheck className="h-4.5 w-4.5 text-[#14B8A6]" />
                 <span>CSIR-NEERI Certified Partner</span>
               </div>
               <h3 className="text-xl font-bold text-zinc-900 mt-2">Interested in Custom Packaging or Logo Printing?</h3>
@@ -238,7 +238,7 @@ export default function ProductsPage() {
             <div className="flex flex-col sm:flex-row gap-3 shrink-0">
               <button
                 onClick={() => setIsInquiryOpen(true)}
-                className="flex items-center justify-center gap-1.5 rounded-xl bg-gradient-to-r from-[#FF6B00] to-[#F5B700] px-5 py-3 text-xs font-bold text-white hover:bg-zinc-800 hover:shadow-[0_0_12px_rgba(255,107,0,0.3)] transition-all cursor-pointer hover:scale-[1.02]"
+                className="flex items-center justify-center gap-1.5 rounded-xl bg-gradient-to-r from-[#2563EB] to-[#7C3AED] px-5 py-3 text-xs font-bold text-white hover:shadow-[0_0_12px_rgba(37,99,235,0.25)] transition-all cursor-pointer hover:scale-[1.02]"
               >
                 Request Custom Quotation
               </button>

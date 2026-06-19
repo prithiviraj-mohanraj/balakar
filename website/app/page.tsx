@@ -226,7 +226,7 @@ export default function Home() {
       <Header />
  
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-amber-50/20 via-white to-white py-24 sm:py-32">
+      <section className="relative overflow-hidden bg-gradient-to-b from-amber-50/10 via-white to-white py-20 sm:py-24">
         <SparkEffect />
         {/* Ambient festive firework glow */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-gradient-to-r from-amber-200/15 via-orange-300/10 to-transparent rounded-full blur-3xl pointer-events-none -z-10 animate-pulse duration-5000" />
@@ -340,20 +340,24 @@ export default function Home() {
             </div>
             {/* Right Certificate Graphic */}
             <div className="lg:col-span-5 flex justify-center">
-              <div className="relative overflow-hidden rounded-3xl border border-zinc-100 bg-white p-6 shadow-xl max-w-sm w-full transition-all duration-300 hover:scale-[1.02] hover:border-emerald-300 hover:shadow-[0_20px_40px_rgba(16,185,129,0.12)]">
-                <div className="relative h-60 w-full flex items-center justify-center rounded-2xl overflow-hidden p-2">
+              <div className="relative overflow-hidden rounded-3xl border border-zinc-150 bg-white p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] max-w-sm w-full transition-all duration-300 hover:scale-[1.01] hover:border-emerald-500/30 hover:shadow-[0_20px_50px_rgba(16,185,129,0.08)]">
+                <div className="relative aspect-square w-48 mx-auto flex items-center justify-center rounded-full bg-zinc-50/50 p-3 border border-zinc-100">
                   <Image
                     src="/images/certifications/green-fireworks-license.png.jpg"
                     alt="Green Fireworks Certification CSIR-NEERI"
                     fill
-                    sizes="(max-w-768px) 100vw, 384px"
-                    className="object-contain"
+                    sizes="(max-w-768px) 100vw, 200px"
+                    className="object-contain p-2"
                     quality={98}
                   />
                 </div>
-                <div className="mt-6 pt-4 border-t border-zinc-100 text-center">
-                  <span className="text-xs font-bold text-emerald-800 uppercase tracking-widest block bg-emerald-50 py-1 rounded-full">Official Certificate</span>
-                  <span className="text-sm font-semibold text-zinc-900 block mt-3">CSIR-NEERI License: NE/TN/201-01/2019</span>
+                <div className="mt-6 text-center">
+                  <div className="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 border border-emerald-100 px-3 py-1 text-xs font-bold text-emerald-800">
+                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                    Official Certificate
+                  </div>
+                  <span className="text-base font-bold text-zinc-950 block mt-4">CSIR-NEERI License</span>
+                  <span className="text-xs font-semibold text-zinc-500 block mt-1 tracking-wider">NO: NE/TN/201-01/2019</span>
                 </div>
               </div>
             </div>          </div>
@@ -821,7 +825,7 @@ export default function Home() {
                   />
                   <button
                     type="submit"
-                    className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#FF6B00] to-[#F5B700] py-3.5 text-sm font-bold text-white shadow-md hover:shadow-[0_0_15px_rgba(255,107,0,0.4)] transition-all cursor-pointer hover:scale-[1.01]"
+                    className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#2563EB] to-[#7C3AED] py-3.5 text-sm font-bold text-white shadow-md hover:shadow-[0_0_15px_rgba(37,99,235,0.35)] transition-all cursor-pointer hover:scale-[1.01]"
                   >
                     <span>Request Wholesale Catalog</span>
                     <ArrowRight className="h-4 w-4 text-white" />

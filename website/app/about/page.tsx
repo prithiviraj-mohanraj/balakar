@@ -90,13 +90,13 @@ export default function AboutPage() {
 
             {/* Right Images / Graphic */}
             <div className="lg:col-span-5 flex flex-col gap-6">
-              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-zinc-150 shadow-md bg-zinc-50">
+              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-zinc-150 shadow-md bg-white flex items-center justify-center p-4">
                 <Image
                   src="/images/branding/Screenshot 2026-06-19 112211.png"
                   alt="Balakar Sparklers Brand Header"
                   fill
                   sizes="(max-w-768px) 100vw, 400px"
-                  className="object-cover"
+                  className="object-contain p-4"
                   quality={95}
                 />
               </div>
@@ -126,20 +126,24 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:items-center">
             {/* Left License Graphic */}
             <div className="lg:col-span-5 order-last lg:order-first flex justify-center">
-              <div className="relative overflow-hidden rounded-2xl border border-emerald-100 bg-white p-6 shadow-[0_15px_40px_rgba(16,185,129,0.06)] max-w-sm w-full transition-all duration-300 hover:scale-[1.03] hover:border-emerald-300 hover:shadow-[0_20px_50px_rgba(16,185,129,0.2)]">
-                <div className="relative h-72 w-full bg-zinc-50 flex items-center justify-center rounded-xl overflow-hidden border border-zinc-100">
+              <div className="relative overflow-hidden rounded-3xl border border-zinc-150 bg-white p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] max-w-sm w-full transition-all duration-300 hover:scale-[1.01] hover:border-emerald-500/30 hover:shadow-[0_20px_50px_rgba(16,185,129,0.08)]">
+                <div className="relative aspect-square w-48 mx-auto flex items-center justify-center rounded-full bg-zinc-50/50 p-3 border border-zinc-100">
                   <Image
                     src="/images/certifications/green-fireworks-license.png.jpg"
                     alt="Green Fireworks License Copy CSIR NEERI"
                     fill
-                    sizes="(max-w-768px) 100vw, 380px"
+                    sizes="(max-w-768px) 100vw, 200px"
                     className="object-contain p-2"
                     quality={95}
                   />
                 </div>
-                <div className="mt-4 text-center">
-                  <span className="text-xs font-bold text-emerald-800 uppercase tracking-widest block bg-emerald-50 py-1 rounded-md">Official Certificate</span>
-                  <span className="text-sm font-bold text-zinc-900 block mt-2">CSIR-NEERI License: NE/TN/201-01/2019</span>
+                <div className="mt-6 text-center">
+                  <div className="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 border border-emerald-100 px-3 py-1 text-xs font-bold text-emerald-800">
+                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                    Official Certificate
+                  </div>
+                  <span className="text-base font-bold text-zinc-950 block mt-4">CSIR-NEERI License</span>
+                  <span className="text-xs font-semibold text-zinc-500 block mt-1 tracking-wider">NO: NE/TN/201-01/2019</span>
                 </div>
               </div>
             </div>
@@ -179,7 +183,7 @@ export default function AboutPage() {
               <div className="pt-2">
                 <button
                   onClick={() => setIsInquiryOpen(true)}
-                  className="flex items-center gap-2 rounded-xl bg-gradient-to-r from-[#FF6B00] to-[#F5B700] px-6 py-3.5 text-sm font-bold text-white shadow-md hover:shadow-[0_0_15px_rgba(255,107,0,0.4)] transition-all cursor-pointer hover:scale-[1.02]"
+                  className="flex items-center gap-2 rounded-xl bg-gradient-to-r from-[#2563EB] to-[#7C3AED] px-6 py-3.5 text-sm font-bold text-white shadow-md hover:shadow-[0_0_15px_rgba(37,99,235,0.35)] transition-all cursor-pointer hover:scale-[1.02]"
                 >
                   <span>Request Wholesale Catalog</span>
                   <ArrowRight className="h-4 w-4 text-white" />

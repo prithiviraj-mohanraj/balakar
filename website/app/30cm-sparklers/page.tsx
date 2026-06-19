@@ -95,7 +95,7 @@ export default function ThirtyCmPage() {
               <div className="flex flex-wrap gap-3 mt-2">
                 <button
                   onClick={() => setIsInquiryOpen(true)}
-                  className="flex items-center gap-1.5 rounded-full bg-gradient-to-r from-[#FF6B00] to-[#F5B700] px-6 py-3 text-xs font-bold text-white shadow-md hover:shadow-[0_0_15px_rgba(255,107,0,0.4)] transition-all cursor-pointer hover:scale-[1.02]"
+                  className="flex items-center gap-1.5 rounded-full bg-gradient-to-r from-[#2563EB] to-[#7C3AED] px-6 py-3 text-xs font-bold text-white shadow-md hover:shadow-[0_0_15px_rgba(37,99,235,0.35)] transition-all cursor-pointer hover:scale-[1.02]"
                 >
                   <Sparkles className="h-4 w-4 text-white fill-white" />
                   <span>Request Wholesale Pricing</span>
