@@ -39,14 +39,16 @@ export default function SparkEffect() {
       "rgba(245, 158, 11, ",  // amber-500
       "rgba(217, 119, 6, ",   // amber-600
       "rgba(253, 224, 71, ",  // yellow-300
+      "rgba(255, 244, 219, ",  // warm white electric
+      "rgba(254, 240, 138, ",  // yellow-200 bright
     ];
 
     const createParticle = (x: number, y: number) => {
-      const size = Math.random() * 2 + 0.8;
-      const speedX = (Math.random() - 0.5) * 1.5;
-      const speedY = -(Math.random() * 1.8 + 0.6);
-      const alpha = Math.random() * 0.8 + 0.2;
-      const decay = Math.random() * 0.006 + 0.003;
+      const size = Math.random() * 1.5 + 0.6;
+      const speedX = (Math.random() - 0.5) * 0.5;
+      const speedY = -(Math.random() * 0.5 + 0.2);
+      const alpha = Math.random() * 0.5 + 0.15;
+      const decay = Math.random() * 0.003 + 0.0015;
       const color = colors[Math.floor(Math.random() * colors.length)];
       const history: Array<{ x: number; y: number }> = [];
 

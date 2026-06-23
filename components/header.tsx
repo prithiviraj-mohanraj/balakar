@@ -69,7 +69,7 @@ export default function Header() {
                       className={`flex items-center gap-1 text-sm font-semibold transition-colors ${
                         isActive("/products") || categories.some((c) => pathname === c.href)
                           ? "text-[#2563EB]"
-                          : "text-zinc-650 hover:text-[#2563EB]"
+                          : "text-zinc-600 hover:text-[#2563EB]"
                       }`}
                     >
                       Products
@@ -110,7 +110,7 @@ export default function Header() {
                   className={`text-sm font-semibold transition-colors ${
                     isActive(item.href)
                       ? "text-[#2563EB]"
-                      : "text-zinc-655 hover:text-[#2563EB]"
+                      : "text-zinc-600 hover:text-[#2563EB]"
                   }`}
                 >
                   {item.name}
@@ -130,7 +130,7 @@ export default function Header() {
             </a>
             <button
               onClick={() => setIsInquiryOpen(true)}
-              className="flex items-center gap-1.5 rounded-full bg-gradient-to-r from-[#2563EB] to-[#7C3AED] px-5 py-2.5 text-sm font-bold text-white shadow-md hover:shadow-[0_0_15px_rgba(37,99,235,0.35)] transition-all duration-200 cursor-pointer hover:scale-[1.02]"
+              className="flex items-center gap-1.5 rounded-full bg-[#2563EB] px-5 py-2.5 text-sm font-bold text-white shadow-md hover:bg-[#1d4ed8] hover:shadow-[0_4px_12px_rgba(37,99,235,0.2)] transition-all duration-200 cursor-pointer hover:scale-[1.02]"
             >
               <Sparkles className="h-4 w-4 text-white fill-white" />
               <span>Get Wholesale Pricing</span>
@@ -206,10 +206,10 @@ export default function Header() {
                     setMobileMenuOpen(false);
                     setIsInquiryOpen(true);
                   }}
-                  className="flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#2563EB] to-[#7C3AED] py-3 text-sm font-bold text-white shadow-md hover:shadow-[0_0_15px_rgba(37,99,235,0.35)] transition-all duration-200 cursor-pointer"
+                  className="flex items-center justify-center gap-2 rounded-xl bg-[#2563EB] py-3 text-sm font-bold text-white shadow-md hover:bg-[#1d4ed8] hover:shadow-[0_4px_12px_rgba(37,99,235,0.2)] transition-all duration-200 cursor-pointer"
                 >
                   <Sparkles className="h-4 w-4 text-white fill-white" />
-                  Get Wholesale Pricing
+                  <span>Get Wholesale Pricing</span>
                 </button>
               </div>
             </nav>

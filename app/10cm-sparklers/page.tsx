@@ -78,31 +78,32 @@ export default function TenCmPage() {
       <Header />
 
       {/* Hero Banner */}
-      <section className="bg-gradient-to-b from-amber-50/15 via-white to-white py-16 sm:py-20 border-b border-zinc-100">
+      <section className="bg-[#FAF9F6] py-16 sm:py-20 border-b border-zinc-200/60">
         <div className="mx-auto max-w-7xl px-6">
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:items-center">
-            <div className="lg:col-span-7 flex flex-col gap-5">
-              <span className="text-xs font-bold text-amber-700 uppercase tracking-widest block">
+            {/* Text Column - order-last on mobile, order-first on desktop */}
+            <div className="lg:col-span-7 flex flex-col gap-5 order-last lg:order-first">
+              <span className="text-xs font-bold text-[#D4AF37] uppercase tracking-widest block">
                 Wholesale Distribution Center
               </span>
-              <h1 className="text-3xl font-extrabold tracking-tight text-zinc-950 sm:text-5xl">
+              <h1 className="text-2.5xl font-extrabold tracking-tight text-[#0F172A] sm:text-4xl">
                 10 CM Sparklers Wholesale Sivakasi
               </h1>
-              <p className="text-base text-zinc-600 leading-relaxed">
+              <p className="text-xs sm:text-sm md:text-base text-slate-650 leading-relaxed">
                 Order 10 CM premium sparklers in bulk directly from our Sivakasi manufacturing plant. Designed under the Phoenix Brand, these sparklers offer five variant options and long-lasting sparkles, making them a top choice for distributors.
               </p>
               
-              <div className="flex flex-wrap gap-3 mt-2">
+              <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto mt-2">
                 <button
                   onClick={() => setIsInquiryOpen(true)}
-                  className="flex items-center gap-1.5 rounded-full bg-gradient-to-r from-[#2563EB] to-[#7C3AED] px-6 py-3 text-xs font-bold text-white shadow-md hover:shadow-[0_0_15px_rgba(37,99,235,0.35)] transition-all cursor-pointer hover:scale-[1.02]"
+                  className="flex items-center justify-center gap-1.5 rounded-full bg-[#2563EB] px-6 py-3.5 text-xs font-bold text-white shadow-md hover:bg-[#1d4ed8] hover:shadow-[0_4px_12px_rgba(37,99,235,0.2)] transition-all cursor-pointer hover:scale-[1.02] w-full sm:w-auto"
                 >
                   <Sparkles className="h-4 w-4 text-white fill-white" />
                   <span>Request Wholesale Pricing</span>
                 </button>
                 <a
                   href="tel:+919443868706"
-                  className="flex items-center gap-1.5 rounded-full border border-zinc-200 bg-white px-6 py-3 text-xs font-bold text-zinc-700 hover:bg-zinc-50 hover:scale-[1.02] hover:border-zinc-350 transition-all"
+                  className="flex items-center justify-center gap-1.5 rounded-full border border-zinc-300 bg-white px-6 py-3.5 text-xs font-bold text-zinc-700 hover:border-[#2563EB] hover:bg-[#2563EB]/5 hover:text-[#2563EB] hover:scale-[1.02] transition-all cursor-pointer w-full sm:w-auto"
                 >
                   <Phone className="h-4 w-4 text-[#2563EB]" />
                   <span>Call Sales Office</span>
@@ -110,8 +111,9 @@ export default function TenCmPage() {
               </div>
             </div>
             
-            <div className="lg:col-span-5 flex justify-center w-full">
-              <div className="relative aspect-[1599/1132] w-full max-w-lg rounded-2xl overflow-hidden border-2 border-zinc-150 shadow-md bg-zinc-50 p-1 transition-transform duration-300 hover:scale-[1.01]">
+            {/* Image Column - order-first on mobile, order-last on desktop */}
+            <div className="lg:col-span-5 flex justify-center w-full order-first lg:order-last">
+              <div className="relative aspect-[1599/1132] w-full max-w-lg rounded-2xl overflow-hidden border border-zinc-200/60 shadow-md bg-white p-1 transition-transform duration-300 hover:scale-[1.01]">
                 <Image
                   src="/products/10cm-products.jpg"
                   alt="10 CM Sparklers Pack Mockups Catalog Sheet"

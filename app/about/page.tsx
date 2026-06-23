@@ -29,36 +29,36 @@ export default function AboutPage() {
       <Header />
 
       {/* Header Info */}
-      <section className="bg-gradient-to-b from-zinc-50 to-white py-16 sm:py-20 border-b border-zinc-100">
+      <section className="bg-[#FAF9F6] py-16 sm:py-20 border-b border-zinc-200/60">
         <div className="mx-auto max-w-7xl px-6 text-center">
-          <span className="text-xs font-bold text-zinc-400 uppercase tracking-widest block">Our Heritage</span>
-          <h1 className="text-3xl font-extrabold tracking-tight text-zinc-950 sm:text-5xl mt-2">
+          <span className="text-xs font-bold text-[#D4AF37] uppercase tracking-widest block">Our Heritage</span>
+          <h1 className="text-2.5xl font-extrabold tracking-tight text-[#0F172A] sm:text-4xl mt-2">
             About Balakar Sparklers Factory
           </h1>
-          <p className="mt-4 text-base text-zinc-600 max-w-2xl mx-auto leading-relaxed">
-            A trusted and certified manufacturer specializing in premium quality, eco-friendly green sparklers based in Sivakasi, Tamil Nadu.
+          <p className="mt-4 text-xs sm:text-sm md:text-base text-slate-650 max-w-2xl mx-auto leading-relaxed">
+            A trusted Sivakasi manufacturer specializing in premium quality, certified eco-friendly green sparklers, crafted to light up family celebrations nationwide.
           </p>
         </div>
       </section>
 
       {/* Corporate Info */}
-      <section className="py-20">
+      <section className="py-20 bg-white">
         <div className="mx-auto max-w-7xl px-6">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:items-center">
             {/* Left Content */}
             <div className="lg:col-span-7 flex flex-col gap-6">
               <div>
-                <span className="text-xs font-bold text-amber-700 uppercase tracking-widest block">Established Manufacturer</span>
-                <h2 className="text-2xl font-bold tracking-tight text-zinc-950 sm:text-3xl mt-1">
+                <span className="text-xs font-bold text-[#D4AF37] uppercase tracking-widest block">Established Manufacturer</span>
+                <h2 className="text-2xl font-bold tracking-tight text-[#0F172A] sm:text-3xl mt-1.5">
                   Sivakasi Sparklers Direct Factory Supplier
                 </h2>
               </div>
               
-              <p className="text-sm leading-relaxed text-zinc-600">
+              <p className="text-xs sm:text-sm leading-relaxed text-slate-600">
                 Balakar Sparklers Factory is a premium manufacturing enterprise headquartered in **Alamarathupatti, Sivakasi**, the fireworks capital of India. We design and produce high-performance, sparkling firework products distributed nationwide to wholesale markets, commercial shops, and festival distributors.
               </p>
 
-              <p className="text-sm leading-relaxed text-zinc-600">
+              <p className="text-xs sm:text-sm leading-relaxed text-slate-600">
                 By focusing solely on sparklers, we maintain tight control over chemical compositions, wire structural integrity, packaging durability, and burning consistency. Our trademark **Phoenix Brand** is widely acclaimed for its safety, ease of lighting, and bright emission paths.
               </p>
 
@@ -67,22 +67,22 @@ export default function AboutPage() {
               {/* Focus grid */}
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <div className="flex gap-3">
-                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-amber-50 text-amber-600">
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-blue-50 text-[#2563EB] border border-blue-100/50 shadow-sm">
                     <Building className="h-5 w-5" />
                   </span>
                   <div>
-                    <span className="text-sm font-bold text-zinc-900">Alamarathupatti Plant</span>
-                    <p className="text-xs text-zinc-500 mt-0.5">High-capacity production facility meeting all strict regulations.</p>
+                    <span className="text-xs sm:text-sm font-bold text-[#0F172A]">Alamarathupatti Plant</span>
+                    <p className="text-[11px] text-slate-500 mt-0.5 leading-normal">High-capacity production facility meeting all strict safety regulations.</p>
                   </div>
                 </div>
                 
                 <div className="flex gap-3">
-                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-emerald-50 text-emerald-600">
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-emerald-50 text-emerald-600 border border-emerald-100/50 shadow-sm">
                     <ShieldCheck className="h-5 w-5" />
                   </span>
                   <div>
-                    <span className="text-sm font-bold text-zinc-900">Green Certified Formulas</span>
-                    <p className="text-xs text-zinc-500 mt-0.5">Licensed by CSIR-NEERI for low environmental impact emissions.</p>
+                    <span className="text-xs sm:text-sm font-bold text-[#0F172A]">Green Certified Formulas</span>
+                    <p className="text-[11px] text-slate-500 mt-0.5 leading-normal">Licensed by CSIR-NEERI for low environmental impact emissions.</p>
                   </div>
                 </div>
               </div>
@@ -90,20 +90,20 @@ export default function AboutPage() {
 
             {/* Right Images / Graphic */}
             <div className="lg:col-span-5 flex flex-col gap-6">
-              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-zinc-150 shadow-md bg-white flex items-center justify-center p-4">
+              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-zinc-200/80 shadow-md bg-zinc-50 flex items-center justify-center p-4">
                 <Image
                   src="/branding/phoenix-trademark.png"
                   alt="Balakar Sparklers Brand Header"
                   fill
                   sizes="(max-w-768px) 100vw, 400px"
-                  className="object-contain p-4"
+                  className="object-contain p-4 animate-in fade-in zoom-in duration-500"
                   quality={95}
                 />
               </div>
-              <div className="rounded-2xl border border-zinc-150 p-5 bg-zinc-50/50 flex items-center justify-between gap-4">
+              <div className="rounded-2xl border border-zinc-200/60 p-5 bg-[#FAF9F6] flex items-center justify-between gap-4 shadow-sm">
                 <div>
-                  <span className="text-xs font-bold text-zinc-400 uppercase tracking-widest block">Trademark Registration</span>
-                  <span className="text-sm font-bold text-zinc-900 block mt-1">Phoenix Brand Sparklers</span>
+                  <span className="text-[10px] font-bold text-slate-450 uppercase tracking-widest block">Trademark Registration</span>
+                  <span className="text-xs sm:text-sm font-bold text-[#0F172A] block mt-1">Phoenix Brand Sparklers</span>
                 </div>
                 <div className="h-8 w-28 relative shrink-0">
                   <Image
@@ -121,13 +121,16 @@ export default function AboutPage() {
       </section>
 
       {/* CSIR-NEERI License Validation */}
-      <section className="py-20 bg-zinc-50/40 border-y border-zinc-100">
-        <div className="mx-auto max-w-7xl px-6">
+      <section className="py-20 bg-[#0F172A] border-y border-slate-950 text-white relative overflow-hidden">
+        {/* Soft glowing ambient radial gradients */}
+        <div className="absolute top-1/4 right-1/4 w-[250px] h-[250px] bg-emerald-500/5 rounded-full blur-3xl pointer-events-none -z-10 animate-pulse duration-5000" />
+        
+        <div className="mx-auto max-w-7xl px-6 relative z-10">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:items-center">
             {/* Left License Graphic */}
             <div className="lg:col-span-5 order-last lg:order-first flex justify-center">
-              <div className="relative overflow-hidden rounded-3xl border border-zinc-150 bg-white p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] max-w-sm w-full transition-all duration-300 hover:scale-[1.01] hover:border-emerald-500/30 hover:shadow-[0_20px_50px_rgba(16,185,129,0.08)]">
-                <div className="relative aspect-square w-48 mx-auto flex items-center justify-center rounded-full bg-zinc-50/50 p-3 border border-zinc-100">
+              <div className="relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-900/60 p-8 shadow-xl max-w-sm w-full transition-all duration-300 hover:scale-[1.01] hover:border-emerald-500/40">
+                <div className="relative aspect-square w-48 mx-auto flex items-center justify-center rounded-full bg-slate-950 p-3 border border-slate-800">
                   <Image
                     src="/certifications/green-fireworks-license.png"
                     alt="Green Fireworks License Copy CSIR NEERI"
@@ -138,12 +141,12 @@ export default function AboutPage() {
                   />
                 </div>
                 <div className="mt-6 text-center">
-                  <div className="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 border border-emerald-100 px-3 py-1 text-xs font-bold text-emerald-800">
-                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                  <div className="inline-flex items-center gap-1.5 rounded-full bg-emerald-950/80 border border-emerald-900 px-3 py-1 text-xs font-bold text-emerald-400">
+                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
                     Official Certificate
                   </div>
-                  <span className="text-base font-bold text-zinc-950 block mt-4">CSIR-NEERI License</span>
-                  <span className="text-xs font-semibold text-zinc-500 block mt-1 tracking-wider">NO: NE/TN/201-01/2019</span>
+                  <span className="text-base font-bold text-white block mt-4">CSIR-NEERI License</span>
+                  <span className="text-xs font-semibold text-slate-400 block mt-1 tracking-wider">NO: NE/TN/201-01/2019</span>
                 </div>
               </div>
             </div>
@@ -151,29 +154,29 @@ export default function AboutPage() {
             {/* Right content */}
             <div className="lg:col-span-7 flex flex-col gap-6">
               <div>
-                <div className="inline-flex items-center gap-2 rounded-full bg-emerald-50 border border-emerald-100 px-3 py-1 text-xs font-semibold text-emerald-800 mb-4">
-                  <Award className="h-3.5 w-3.5 text-emerald-600" />
+                <div className="inline-flex items-center gap-2 rounded-full bg-emerald-950/80 border border-emerald-900 px-3 py-1 text-xs font-semibold text-emerald-400 mb-4">
+                  <Award className="h-3.5 w-3.5 text-emerald-400" />
                   <span>Licensed Green Fireworks</span>
                 </div>
-                <h2 className="text-2xl font-bold tracking-tight text-zinc-950 sm:text-3xl">
+                <h2 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">
                   Eco-Friendly Production Standards
                 </h2>
               </div>
               
-              <p className="text-sm leading-relaxed text-zinc-650">
+              <p className="text-xs sm:text-sm leading-relaxed text-slate-300">
                 Balakar Sparklers is dedicated to producing certified eco-friendly fireworks. In accordance with Supreme Court directives and government rules, our formulas have been fully validated by the **Council of Scientific and Industrial Research - National Environmental Engineering Research Institute (CSIR-NEERI)**.
               </p>
 
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                <div className="rounded-xl border border-zinc-150 bg-white p-4">
-                  <span className="text-sm font-bold text-zinc-900">Particulate Reduction</span>
-                  <p className="text-xs text-zinc-500 mt-1 leading-relaxed">
+                <div className="rounded-xl border border-slate-800 bg-slate-900/40 p-4">
+                  <span className="text-sm font-bold text-white block">Particulate Reduction</span>
+                  <p className="text-xs text-slate-400 mt-1 leading-relaxed">
                     Formulations are engineered to reduce particulate matter (PM10 and PM2.5) by up to 30% compared to traditional sparklers.
                   </p>
                 </div>
-                <div className="rounded-xl border border-zinc-150 bg-white p-4">
-                  <span className="text-sm font-bold text-zinc-900">Sulphur-Free Profiles</span>
-                  <p className="text-xs text-zinc-500 mt-1 leading-relaxed">
+                <div className="rounded-xl border border-slate-800 bg-slate-900/40 p-4">
+                  <span className="text-sm font-bold text-white block">Sulphur-Free Profiles</span>
+                  <p className="text-xs text-slate-400 mt-1 leading-relaxed">
                     Minimizes chemical smoke odors, making our sparklers safer for family events and close-proximity lighting.
                   </p>
                 </div>
@@ -183,7 +186,7 @@ export default function AboutPage() {
               <div className="pt-2">
                 <button
                   onClick={() => setIsInquiryOpen(true)}
-                  className="flex items-center gap-2 rounded-xl bg-gradient-to-r from-[#2563EB] to-[#7C3AED] px-6 py-3.5 text-sm font-bold text-white shadow-md hover:shadow-[0_0_15px_rgba(37,99,235,0.35)] transition-all cursor-pointer hover:scale-[1.02]"
+                  className="flex items-center gap-2 rounded-full bg-[#2563EB] px-6 py-3.5 text-sm font-bold text-white shadow-md hover:bg-[#1d4ed8] hover:shadow-[0_4px_12px_rgba(37,99,235,0.3)] transition-all cursor-pointer hover:scale-[1.02]"
                 >
                   <span>Request Wholesale Catalog</span>
                   <ArrowRight className="h-4 w-4 text-white" />
@@ -195,52 +198,52 @@ export default function AboutPage() {
       </section>
 
       {/* Guarantees */}
-      <section className="py-20 bg-zinc-50">
+      <section className="py-20 bg-[#FAF9F6] border-t border-zinc-200/60">
         <div className="mx-auto max-w-7xl px-6">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-xs font-bold text-zinc-400 uppercase tracking-widest">Our Guarantees</span>
-            <h2 className="text-2xl font-bold tracking-tight text-zinc-950 sm:text-3xl">
+            <span className="text-xs font-bold text-[#D4AF37] uppercase tracking-widest block">Our Guarantees</span>
+            <h2 className="text-2xl font-bold tracking-tight text-[#0F172A] sm:text-3xl mt-1">
               Factory Direct Purchase Benefits
             </h2>
           </div>
 
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
             <div className="flex flex-col gap-3">
-              <span className="text-sm font-bold text-zinc-950">1. Direct Factory Margins</span>
-              <p className="text-xs text-zinc-500 leading-relaxed">
+              <span className="text-sm font-bold text-[#0F172A]">1. Direct Factory Margins</span>
+              <p className="text-xs text-slate-500 leading-relaxed">
                 By purchasing sparklers direct from our Sivakasi manufacturing plant, you receive wholesale pricing without distributor commission layers.
               </p>
             </div>
             <div className="flex flex-col gap-3">
-              <span className="text-sm font-bold text-zinc-950">2. Consistent Supply Volume</span>
-              <p className="text-xs text-zinc-500 leading-relaxed">
+              <span className="text-sm font-bold text-[#0F172A]">2. Consistent Supply Volume</span>
+              <p className="text-xs text-slate-500 leading-relaxed">
                 Our high production capability in Alamarathupatti guarantees that we can ship high-volume bulk orders even during high-demand festival periods.
               </p>
             </div>
             <div className="flex flex-col gap-3">
-              <span className="text-sm font-bold text-zinc-950">3. Safe Transport Support</span>
-              <p className="text-xs text-zinc-500 leading-relaxed">
+              <span className="text-sm font-bold text-[#0F172A]">3. Safe Transport Support</span>
+              <p className="text-xs text-slate-500 leading-relaxed">
                 We coordinate with established container transport services in Sivakasi to deliver bulk consignments safely to your godowns across India.
               </p>
             </div>
           </div>
           
           <div className="mt-16 text-center">
-            <p className="text-xs text-zinc-500">
+            <p className="text-xs text-slate-500">
               Ready to collaborate with a certified Sivakasi manufacturer?
             </p>
-            <div className="mt-4 flex flex-wrap justify-center gap-3">
+            <div className="mt-4 flex flex-wrap justify-center gap-3 w-full max-w-md sm:max-w-none mx-auto px-4">
               <button
                 onClick={() => setIsInquiryOpen(true)}
-                className="rounded-xl bg-zinc-950 px-6 py-3 text-xs font-bold text-white hover:bg-zinc-800 transition-colors cursor-pointer"
+                className="rounded-full bg-[#0F172A] px-6 py-3 text-xs font-bold text-white hover:bg-slate-800 transition-all cursor-pointer w-full sm:w-auto hover:scale-[1.01]"
               >
                 Inquire wholesale price list
               </button>
               <a
                 href="tel:+919443868706"
-                className="flex items-center gap-1.5 rounded-xl border border-zinc-200 bg-white px-6 py-3 text-xs font-bold text-zinc-700 hover:bg-zinc-50 transition-colors"
+                className="flex items-center justify-center gap-1.5 rounded-full border border-zinc-300 bg-white px-6 py-3 text-xs font-bold text-zinc-700 hover:border-[#2563EB] hover:bg-[#2563EB]/5 hover:text-[#2563EB] transition-all cursor-pointer w-full sm:w-auto hover:scale-[1.01]"
               >
-                <Phone className="h-4 w-4" /> Call Representative
+                <Phone className="h-4 w-4 text-[#2563EB]" /> <span>Call Representative</span>
               </a>
             </div>
           </div>
