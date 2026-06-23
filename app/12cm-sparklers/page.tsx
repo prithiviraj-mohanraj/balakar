@@ -96,14 +96,14 @@ export default function TwelveCmPage() {
               <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto mt-2">
                 <button
                   onClick={() => setIsInquiryOpen(true)}
-                  className="flex items-center justify-center gap-1.5 rounded-full bg-[#2563EB] px-6 py-3.5 text-xs font-bold text-white shadow-md hover:bg-[#1d4ed8] hover:shadow-[0_4px_12px_rgba(37,99,235,0.2)] transition-all cursor-pointer hover:scale-[1.02] w-full sm:w-auto"
+                  className="relative overflow-hidden flex items-center justify-center gap-1.5 rounded-full bg-[#2563EB] px-6 py-3.5 text-xs font-bold text-white shadow-md hover:bg-[#1d4ed8] hover:shadow-[0_0_20px_rgba(37,99,235,0.45)] transition-all duration-300 cursor-pointer hover:scale-[1.02] w-full sm:w-auto before:absolute before:inset-0 before:-translate-x-full hover:before:translate-x-full before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent before:transition-transform before:duration-700 before:ease-out"
                 >
                   <Sparkles className="h-4 w-4 text-white fill-white" />
                   <span>Request Price List</span>
                 </button>
                 <a
                   href="tel:+919443868706"
-                  className="flex items-center justify-center gap-1.5 rounded-full border border-zinc-300 bg-white px-6 py-3.5 text-xs font-bold text-zinc-700 hover:border-[#2563EB] hover:bg-[#2563EB]/5 hover:text-[#2563EB] hover:scale-[1.02] transition-all cursor-pointer w-full sm:w-auto"
+                  className="relative overflow-hidden flex items-center justify-center gap-1.5 rounded-full border border-zinc-300 bg-white px-6 py-3.5 text-xs font-bold text-zinc-700 hover:border-[#2563EB] hover:bg-[#2563EB]/5 hover:text-[#2563EB] hover:scale-[1.02] transition-all duration-300 cursor-pointer w-full sm:w-auto before:absolute before:inset-0 before:-translate-x-full hover:before:translate-x-full before:bg-gradient-to-r before:from-transparent before:via-[#2563EB]/10 before:to-transparent before:transition-transform before:duration-700 before:ease-out"
                 >
                   <Phone className="h-4 w-4 text-[#2563EB]" />
                   <span>Call Direct Sales</span>

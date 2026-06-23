@@ -56,7 +56,7 @@ const getScheme = (size: string) => {
       text: "text-[#0F172A]", 
       bg: "bg-slate-50/50", 
       border: "border-slate-100", 
-      btn: "bg-[#0F172A] hover:bg-slate-800 hover:shadow-[0_4px_12px_rgba(15,23,42,0.15)]",
+      btn: "bg-[#0F172A] hover:bg-slate-800 hover:shadow-[0_0_20px_rgba(15,23,42,0.35)]",
       borderHover: "hover:border-[#0F172A]/30",
       shadowHover: "hover:shadow-[0_20px_50px_rgba(15,23,42,0.08)]"
     };
@@ -64,7 +64,7 @@ const getScheme = (size: string) => {
       text: "text-[#2563EB]", 
       bg: "bg-blue-50/50", 
       border: "border-blue-100", 
-      btn: "bg-[#2563EB] hover:bg-[#1d4ed8] hover:shadow-[0_4px_12px_rgba(37,99,235,0.3)]",
+      btn: "bg-[#2563EB] hover:bg-[#1d4ed8] hover:shadow-[0_0_20px_rgba(37,99,235,0.45)]",
       borderHover: "hover:border-[#2563EB]/30",
       shadowHover: "hover:shadow-[0_20px_50px_rgba(37,99,235,0.08)]"
     };
@@ -72,7 +72,7 @@ const getScheme = (size: string) => {
       text: "text-[#0F172A]", 
       bg: "bg-slate-50/50", 
       border: "border-slate-100", 
-      btn: "bg-[#0F172A] hover:bg-slate-800 hover:shadow-[0_4px_12px_rgba(15,23,42,0.15)]",
+      btn: "bg-[#0F172A] hover:bg-slate-800 hover:shadow-[0_0_20px_rgba(15,23,42,0.35)]",
       borderHover: "hover:border-[#0F172A]/30",
       shadowHover: "hover:shadow-[0_20px_50px_rgba(15,23,42,0.08)]"
     };
@@ -80,7 +80,7 @@ const getScheme = (size: string) => {
       text: "text-[#2563EB]", 
       bg: "bg-blue-50/50", 
       border: "border-blue-100", 
-      btn: "bg-[#2563EB] hover:bg-[#1d4ed8] hover:shadow-[0_4px_12px_rgba(37,99,235,0.3)]",
+      btn: "bg-[#2563EB] hover:bg-[#1d4ed8] hover:shadow-[0_0_20px_rgba(37,99,235,0.45)]",
       borderHover: "hover:border-[#2563EB]/30",
       shadowHover: "hover:shadow-[0_20px_50px_rgba(37,99,235,0.08)]"
     };
@@ -88,7 +88,7 @@ const getScheme = (size: string) => {
       text: "text-[#D4AF37]", 
       bg: "bg-amber-50/50", 
       border: "border-amber-100", 
-      btn: "bg-[#D4AF37] hover:bg-[#b5922f] hover:shadow-[0_4px_12px_rgba(212,175,55,0.3)]",
+      btn: "bg-[#D4AF37] hover:bg-[#b5922f] hover:shadow-[0_0_20px_rgba(212,175,55,0.45)]",
       borderHover: "hover:border-[#D4AF37]/30",
       shadowHover: "hover:shadow-[0_20px_50px_rgba(212,175,55,0.08)]"
     };
@@ -96,7 +96,7 @@ const getScheme = (size: string) => {
       text: "text-[#0F172A]", 
       bg: "bg-slate-50/50", 
       border: "border-slate-100", 
-      btn: "bg-[#0F172A] hover:bg-slate-800 hover:shadow-[0_4px_12px_rgba(15,23,42,0.15)]",
+      btn: "bg-[#0F172A] hover:bg-slate-800 hover:shadow-[0_0_20px_rgba(15,23,42,0.35)]",
       borderHover: "hover:border-[#0F172A]/30",
       shadowHover: "hover:shadow-[0_20px_50px_rgba(15,23,42,0.08)]"
     };
@@ -244,12 +244,17 @@ export default function Home() {
       <Header />
  
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-[#FAF9F6] py-16 sm:py-20">
-        <SparkEffect />
-        {/* Soft Ambient glowing background elements (Amber & Warm Gold only) */}
-        <div className="absolute top-1/4 left-1/4 w-[300px] h-[300px] bg-amber-200/10 rounded-full blur-3xl pointer-events-none -z-10 animate-pulse duration-5000" />
-        <div className="absolute bottom-1/4 right-1/4 w-[350px] h-[350px] bg-amber-100/10 rounded-full blur-3xl pointer-events-none -z-10" />
+      <section className="relative overflow-hidden bg-[#FAF9F6] py-16 sm:py-20 border-b border-zinc-200/60">
+        <SparkEffect type="trails" density={35} opacity={0.4} colorScheme="gold" />
         
+        {/* Soft Ambient glowing background elements (Amber & Warm Gold at 10% opacity) */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[radial-gradient(circle,rgba(212,175,55,0.1)_0%,transparent_70%)] pointer-events-none -z-10 animate-pulse-slow" />
+        <div className="absolute top-1/3 left-1/4 w-[300px] h-[300px] bg-amber-500/10 rounded-full blur-3xl pointer-events-none -z-10 animate-pulse duration-5000" />
+        <div className="absolute bottom-1/3 right-1/4 w-[350px] h-[350px] bg-amber-600/10 rounded-full blur-3xl pointer-events-none -z-10" />
+        
+        {/* Elegant Light Rays backdrop */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] pointer-events-none -z-20 opacity-10 animate-rotate-slow bg-[conic-gradient(from_0deg,transparent_0deg,rgba(212,175,55,0.25)_20deg,transparent_40deg,rgba(212,175,55,0.25)_60deg,transparent_80deg,rgba(212,175,55,0.25)_100deg,transparent_120deg,rgba(212,175,55,0.25)_140deg,transparent_160deg,rgba(212,175,55,0.25)_180deg,transparent_200deg,rgba(212,175,55,0.25)_220deg,transparent_240deg,rgba(212,175,55,0.25)_260deg,transparent_280deg,rgba(212,175,55,0.25)_300deg,transparent_320deg,rgba(212,175,55,0.25)_340deg,transparent_360deg)]" />
+
         <div className="mx-auto max-w-7xl px-6 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
             <motion.div
@@ -291,7 +296,7 @@ export default function Home() {
             >
               <button
                 onClick={() => setIsInquiryOpen(true)}
-                className="flex items-center justify-center gap-2 rounded-full bg-[#2563EB] px-8 py-3.5 text-sm font-bold text-white shadow-md hover:bg-[#1d4ed8] hover:shadow-[0_4px_12px_rgba(37,99,235,0.2)] hover:scale-[1.01] transition-all duration-250 cursor-pointer w-full sm:w-auto"
+                className="relative overflow-hidden flex items-center justify-center gap-2 rounded-full bg-[#2563EB] px-8 py-3.5 text-sm font-bold text-white shadow-md hover:bg-[#1d4ed8] hover:shadow-[0_0_20px_rgba(37,99,235,0.45)] hover:scale-[1.01] transition-all duration-300 cursor-pointer w-full sm:w-auto before:absolute before:inset-0 before:-translate-x-full hover:before:translate-x-full before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent before:transition-transform before:duration-700 before:ease-out"
               >
                 <Sparkles className="h-4 w-4 text-white fill-white" />
                 <span>Get Wholesale Pricing</span>
@@ -299,7 +304,7 @@ export default function Home() {
               
               <Link
                 href="/catalog"
-                className="flex items-center justify-center gap-2 rounded-full bg-[#0F172A] px-8 py-3.5 text-sm font-bold text-white shadow-md hover:bg-slate-800 hover:scale-[1.01] transition-all duration-250 w-full sm:w-auto"
+                className="relative overflow-hidden flex items-center justify-center gap-2 rounded-full bg-[#0F172A] px-8 py-3.5 text-sm font-bold text-white shadow-md hover:bg-slate-800 hover:shadow-[0_0_20px_rgba(15,23,42,0.3)] hover:scale-[1.01] transition-all duration-300 w-full sm:w-auto before:absolute before:inset-0 before:-translate-x-full hover:before:translate-x-full before:bg-gradient-to-r before:from-transparent before:via-white/15 before:to-transparent before:transition-transform before:duration-700 before:ease-out"
               >
                 <FileText className="h-4 w-4 text-white" />
                 <span>Download Product Catalog</span>
@@ -307,7 +312,7 @@ export default function Home() {
 
               <a
                 href="tel:+919443868706"
-                className="flex items-center justify-center gap-2 rounded-full border border-zinc-300 bg-white px-8 py-3.5 text-sm font-bold text-zinc-700 hover:border-[#2563EB] hover:bg-[#2563EB]/5 hover:text-[#2563EB] hover:scale-[1.01] transition-all duration-250 w-full sm:w-auto"
+                className="relative overflow-hidden flex items-center justify-center gap-2 rounded-full border border-zinc-300 bg-white px-8 py-3.5 text-sm font-bold text-zinc-700 hover:border-[#2563EB] hover:bg-[#2563EB]/5 hover:text-[#2563EB] hover:scale-[1.01] transition-all duration-300 w-full sm:w-auto before:absolute before:inset-0 before:-translate-x-full hover:before:translate-x-full before:bg-gradient-to-r before:from-transparent before:via-[#2563EB]/10 before:to-transparent before:transition-transform before:duration-700 before:ease-out"
               >
                 <Phone className="h-4 w-4 text-[#2563EB]" />
                 <span>Call Now</span>
@@ -355,9 +360,12 @@ export default function Home() {
       </section>
 
       {/* Trust & Credentials Showcase */}
-      <section className="py-20 sm:py-24 border-y border-zinc-150 bg-[#FAF9F6] relative overflow-hidden">
-        <div className="absolute -right-24 top-1/4 w-96 h-96 bg-amber-100/10 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute -left-24 bottom-1/4 w-96 h-96 bg-amber-150/10 rounded-full blur-3xl pointer-events-none" />
+      <section className="py-20 sm:py-24 border-y border-zinc-200/60 bg-[#FAF9F6] relative overflow-hidden">
+        <SparkEffect type="orbs" density={12} opacity={0.3} colorScheme="amber" />
+        
+        {/* Soft glowing ambient radial gradients (10% opacity) */}
+        <div className="absolute -right-24 top-1/4 w-[400px] h-[400px] bg-[radial-gradient(circle,rgba(212,175,55,0.1)_0%,transparent_70%)] pointer-events-none -z-10" />
+        <div className="absolute -left-24 bottom-1/4 w-[400px] h-[400px] bg-[radial-gradient(circle,rgba(245,158,11,0.08)_0%,transparent_70%)] pointer-events-none -z-10" />
 
         <div className="mx-auto max-w-7xl px-6 relative z-10">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:items-center">
@@ -375,7 +383,7 @@ export default function Home() {
 
               {/* Grid of Credentials */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2">
-                <div className="bg-white rounded-2xl border border-zinc-200/60 p-5 shadow-sm transition-all hover:border-[#D4AF37]/40 hover:scale-[1.01] duration-300">
+                <div className="bg-white rounded-2xl border border-zinc-200/60 p-5 shadow-sm transition-all duration-300 hover:border-[#D4AF37] hover:shadow-[0_0_20px_rgba(212,175,55,0.12)] hover:-translate-y-1">
                   <div className="flex items-center gap-2 mb-2 text-[#D4AF37]">
                     <Award className="h-4.5 w-4.5" />
                     <span className="text-xs font-bold uppercase tracking-wider text-zinc-900">Phoenix Brand</span>
@@ -383,7 +391,7 @@ export default function Home() {
                   <p className="text-xs text-slate-500 leading-normal">Our official, trademarked sparkler series recognized across India for ignition reliability, brilliant golden sparks, and consistent burning.</p>
                 </div>
 
-                <div className="bg-white rounded-2xl border border-zinc-200/60 p-5 shadow-sm transition-all hover:border-[#D4AF37]/40 hover:scale-[1.01] duration-300">
+                <div className="bg-white rounded-2xl border border-zinc-200/60 p-5 shadow-sm transition-all duration-300 hover:border-[#D4AF37] hover:shadow-[0_0_20px_rgba(212,175,55,0.12)] hover:-translate-y-1">
                   <div className="flex items-center gap-2 mb-2 text-emerald-600">
                     <ShieldCheck className="h-4.5 w-4.5" />
                     <span className="text-xs font-bold uppercase tracking-wider text-zinc-900">Green Certified License</span>
@@ -391,7 +399,7 @@ export default function Home() {
                   <p className="text-xs text-slate-500 leading-normal">CSIR-NEERI certified formulation (License NO: NE/TN/201-01/2019) engineered to reduce chemical smoke emissions by 30%.</p>
                 </div>
 
-                <div className="bg-white rounded-2xl border border-zinc-200/60 p-5 shadow-sm transition-all hover:border-[#D4AF37]/40 hover:scale-[1.01] duration-300">
+                <div className="bg-white rounded-2xl border border-zinc-200/60 p-5 shadow-sm transition-all duration-300 hover:border-[#D4AF37] hover:shadow-[0_0_20px_rgba(212,175,55,0.12)] hover:-translate-y-1">
                   <div className="flex items-center gap-2 mb-2 text-[#2563EB]">
                     <Building className="h-4.5 w-4.5" />
                     <span className="text-xs font-bold uppercase tracking-wider text-zinc-900">Factory Manufacturer</span>
@@ -399,7 +407,7 @@ export default function Home() {
                   <p className="text-xs text-slate-500 leading-normal">Straight from our Alamarathupatti factory. Eliminates intermediary distributor margins, passing full savings to wholesale buyers.</p>
                 </div>
 
-                <div className="bg-white rounded-2xl border border-zinc-200/60 p-5 shadow-sm transition-all hover:border-[#D4AF37]/40 hover:scale-[1.01] duration-300">
+                <div className="bg-white rounded-2xl border border-zinc-200/60 p-5 shadow-sm transition-all duration-300 hover:border-[#D4AF37] hover:shadow-[0_0_20px_rgba(212,175,55,0.12)] hover:-translate-y-1">
                   <div className="flex items-center gap-2 mb-2 text-slate-700">
                     <Truck className="h-4.5 w-4.5" />
                     <span className="text-xs font-bold uppercase tracking-wider text-zinc-900">Wholesale & Logistics</span>
@@ -407,7 +415,7 @@ export default function Home() {
                   <p className="text-xs text-slate-500 leading-normal">We coordinate directly with established Sivakasi transport services to deliver bulk container orders safely across all Indian states.</p>
                 </div>
 
-                <div className="bg-white rounded-2xl border border-zinc-200/60 p-5 shadow-sm transition-all hover:border-[#D4AF37]/40 hover:scale-[1.01] duration-300 sm:col-span-2">
+                <div className="bg-white rounded-2xl border border-zinc-200/60 p-5 shadow-sm transition-all duration-300 hover:border-[#D4AF37] hover:shadow-[0_0_20px_rgba(212,175,55,0.12)] hover:-translate-y-1 sm:col-span-2">
                   <div className="flex items-center gap-2 mb-2 text-[#D4AF37]">
                     <Sparkles className="h-4.5 w-4.5 fill-[#D4AF37]" />
                     <span className="text-xs font-bold uppercase tracking-wider text-zinc-900">Premium Quality Standards</span>
@@ -429,7 +437,7 @@ export default function Home() {
 
             {/* Right Certificate Graphic */}
             <div className="lg:col-span-5 flex justify-center">
-              <div className="relative overflow-hidden rounded-3xl border border-zinc-150 bg-white p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] max-w-sm w-full transition-all duration-300 hover:scale-[1.01] hover:border-emerald-500/30 hover:shadow-[0_20px_50px_rgba(16,185,129,0.08)]">
+              <div className="relative overflow-hidden rounded-3xl border border-zinc-200 bg-white p-8 shadow-sm max-w-sm w-full transition-all duration-300 hover:-translate-y-1 hover:border-[#D4AF37] hover:shadow-[0_0_30px_rgba(212,175,55,0.15)]">
                 <div className="relative aspect-square w-48 mx-auto flex items-center justify-center rounded-full bg-zinc-50/50 p-3 border border-zinc-100">
                   <Image
                     src="/certifications/green-fireworks-license.png"
@@ -455,17 +463,18 @@ export default function Home() {
       </section>
 
       {/* About Company Section (Heritage & Storytelling) */}
-      <section className="relative overflow-hidden bg-[#0F172A] py-24 border-y border-slate-950">
-        <SparkEffect />
+      <section className="relative overflow-hidden bg-white py-24 border-b border-zinc-200/60">
+        <SparkEffect type="sparkle" density={25} opacity={0.35} colorScheme="gold" />
+        
         {/* Soft glowing ambient radial gradients */}
-        <div className="absolute top-1/4 left-1/4 w-[300px] h-[300px] bg-amber-500/5 rounded-full blur-3xl pointer-events-none -z-10 animate-pulse duration-5000" />
-        <div className="absolute bottom-1/4 right-1/4 w-[350px] h-[350px] bg-[#2563EB]/5 rounded-full blur-3xl pointer-events-none -z-10" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-[radial-gradient(circle_at_top,rgba(212,175,55,0.1),transparent_70%)] pointer-events-none -z-10 animate-pulse-slow" />
+        <div className="absolute bottom-1/4 right-1/4 w-[350px] h-[350px] bg-amber-500/5 rounded-full blur-3xl pointer-events-none -z-10" />
 
         <div className="mx-auto max-w-7xl px-6 relative z-10">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center">
             {/* Left Image grid (Aesthetic cards representing branding) */}
             <div className="relative">
-              <div className="aspect-video relative rounded-2xl overflow-hidden border border-slate-800 shadow-xl bg-slate-900/60 p-4">
+              <div className="aspect-video relative rounded-2xl overflow-hidden border border-zinc-200/60 shadow-md bg-zinc-50 p-4 transition-transform duration-300 hover:scale-[1.01]">
                 <Image
                   src="/branding/phoenix-trademark.png"
                   alt="Balakar Sparklers Factory and Logo Branding"
@@ -475,13 +484,13 @@ export default function Home() {
                   quality={95}
                 />
               </div>
-              <div className="absolute -bottom-6 -right-6 hidden sm:flex items-center gap-3 rounded-2xl border border-slate-800 bg-slate-950/95 p-4 shadow-2xl max-w-xs">
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-slate-900 text-amber-500">
+              <div className="absolute -bottom-6 -right-6 hidden sm:flex items-center gap-3 rounded-2xl border border-zinc-200/60 bg-white p-4 shadow-lg max-w-xs transition-all hover:border-[#D4AF37]/40 hover:scale-[1.02] duration-300">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-amber-50 text-[#D4AF37] border border-amber-100 shadow-sm">
                   <Building className="h-5 w-5" />
                 </span>
                 <div>
-                  <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest block leading-none">Located in</span>
-                  <span className="text-sm font-bold text-white block mt-1 leading-tight">Alamarathupatti, Sivakasi</span>
+                  <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest block leading-none">Located in</span>
+                  <span className="text-sm font-bold text-[#0F172A] block mt-1 leading-tight">Alamarathupatti, Sivakasi</span>
                 </div>
               </div>
             </div>
@@ -490,26 +499,26 @@ export default function Home() {
             <div className="flex flex-col gap-6">
               <div>
                 <span className="text-xs font-bold text-[#D4AF37] uppercase tracking-widest block">Trusted Sivakasi Manufacturer</span>
-                <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl mt-1.5">
+                <h2 className="text-3xl font-bold tracking-tight text-[#0F172A] sm:text-4xl mt-1.5 leading-tight">
                   Bringing Light & Happiness to Family Celebrations
                 </h2>
               </div>
-              <p className="text-sm sm:text-base leading-relaxed text-slate-300">
+              <p className="text-sm sm:text-base leading-relaxed text-slate-600">
                 At Balakar Sparklers Factory, we believe that fireworks are more than just sulfur and steel wire—they are the spark of happiness that brings families together. From the excitement of Diwali night to the elegance of wedding exits and private events, our sparklers are crafted to make those special moments unforgettable.
               </p>
-              <p className="text-sm sm:text-base leading-relaxed text-slate-350">
+              <p className="text-sm sm:text-base leading-relaxed text-slate-500">
                 Operating from the manufacturing hub of Alamarathupatti, Sivakasi, we are dedicated to safety and environmental standards. Our CSIR-NEERI Green certified formulations ensure 30% lower smoke, so you can focus on making memories with peace of mind.
               </p>
 
               {/* Micro benefits grid */}
               <div className="grid grid-cols-2 gap-4">
-                <div className="rounded-xl border border-slate-800 bg-slate-900/40 p-4">
-                  <span className="text-sm font-bold text-white block">Direct Factory Value</span>
-                  <p className="text-[11px] text-slate-450 mt-1 leading-normal">Eliminates middleman commissions, offering direct bulk values straight from the plant.</p>
+                <div className="rounded-xl border border-zinc-200/60 bg-white p-4 shadow-sm transition-all hover:border-[#D4AF37]/40 hover:scale-[1.01] duration-300">
+                  <span className="text-sm font-bold text-[#0F172A] block">Direct Factory Value</span>
+                  <p className="text-[11px] text-slate-500 mt-1 leading-normal">Eliminates middleman commissions, offering direct bulk values straight from the plant.</p>
                 </div>
-                <div className="rounded-xl border border-slate-800 bg-slate-900/40 p-4">
+                <div className="rounded-xl border border-zinc-200/60 bg-white p-4 shadow-sm transition-all hover:border-[#D4AF37]/40 hover:scale-[1.01] duration-300">
                   <span className="text-sm font-bold text-[#D4AF37] block">Phoenix Trademark</span>
-                  <p className="text-[11px] text-slate-450 mt-1 leading-normal">Acclaimed across India for clean ignition, stable burning paths, and double-dipped quality.</p>
+                  <p className="text-[11px] text-slate-500 mt-1 leading-normal">Acclaimed across India for clean ignition, stable burning paths, and double-dipped quality.</p>
                 </div>
               </div>
 
@@ -517,16 +526,16 @@ export default function Home() {
               <div className="flex items-center gap-4 pt-2">
                 <button
                   onClick={() => setIsInquiryOpen(true)}
-                  className="flex items-center gap-2 rounded-full bg-[#2563EB] px-6 py-3.5 text-sm font-bold text-white shadow-md hover:bg-[#1d4ed8] hover:shadow-[0_4px_12px_rgba(37,99,235,0.3)] transition-all cursor-pointer hover:scale-[1.02]"
+                  className="relative overflow-hidden flex items-center gap-2 rounded-full bg-[#2563EB] px-6 py-3.5 text-sm font-bold text-white shadow-md hover:bg-[#1d4ed8] hover:shadow-[0_0_20px_rgba(37,99,235,0.4)] transition-all duration-300 cursor-pointer hover:scale-[1.02] before:absolute before:inset-0 before:-translate-x-full hover:before:translate-x-full before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent before:transition-transform before:duration-700 before:ease-out"
                 >
                   <span>Connect with Factory</span>
                   <ArrowRight className="h-4 w-4 text-white" />
                 </button>
                 <a
                   href="tel:+919443868706"
-                  className="flex items-center gap-2 rounded-full border border-slate-800 bg-slate-950 px-6 py-3.5 text-sm font-bold text-slate-300 hover:bg-slate-900 hover:text-white hover:scale-[1.02] transition-all cursor-pointer"
+                  className="relative overflow-hidden flex items-center gap-2 rounded-full border border-zinc-300 bg-white px-6 py-3.5 text-sm font-bold text-zinc-700 hover:border-[#2563EB] hover:bg-[#2563EB]/5 hover:text-[#2563EB] hover:scale-[1.02] transition-all duration-300 cursor-pointer before:absolute before:inset-0 before:-translate-x-full hover:before:translate-x-full before:bg-gradient-to-r before:from-transparent before:via-[#2563EB]/10 before:to-transparent before:transition-transform before:duration-700 before:ease-out"
                 >
-                  <Phone className="h-4 w-4 text-[#D4AF37]" /> <span>Call Sales</span>
+                  <Phone className="h-4 w-4 text-[#2563EB]" /> <span>Call Sales</span>
                 </a>
               </div>
             </div>
@@ -535,11 +544,13 @@ export default function Home() {
       </section>
 
       {/* Product Categories Section (Tabs Showcase) */}
-      <section className="py-24 border-t border-zinc-100 bg-zinc-50/20">
-        <div className="mx-auto max-w-7xl px-6">
+      <section className="relative overflow-hidden py-24 border-t border-zinc-200/60 bg-white">
+        <SparkEffect type="drift" density={15} opacity={0.2} colorScheme="gold" />
+        
+        <div className="mx-auto max-w-7xl px-6 relative z-10">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-xs font-bold text-zinc-400 uppercase tracking-widest">Our Catalog</span>
-            <h2 className="text-3xl font-bold tracking-tight text-zinc-950 sm:text-4xl mt-1">
+            <span className="text-xs font-bold text-[#D4AF37] uppercase tracking-widest block">Our Catalog</span>
+            <h2 className="text-3xl font-bold tracking-tight text-[#0F172A] sm:text-4xl mt-1.5">
               Premium Sparkler Categories
             </h2>
             <p className="text-sm text-zinc-600 mt-3">
@@ -560,14 +571,21 @@ export default function Home() {
             ))}
           </div>
 
-          {/* Active Product display card */}
+          {/* Active Product display card with smooth Framer Motion reveal */}
           {(() => {
             const scheme = getScheme(currentCategory.size);
             return (
-              <div className={`bg-[#FAF9F6] rounded-3xl border border-zinc-200/80 p-6 sm:p-10 shadow-md transition-all duration-300 ${scheme.borderHover} ${scheme.shadowHover}`}>
+              <motion.div
+                key={selectedCategory}
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.4 }}
+                className={`bg-[#FAF9F6] rounded-3xl border border-zinc-200/80 p-6 sm:p-10 shadow-md transition-all duration-300 ${scheme.borderHover} ${scheme.shadowHover}`}
+              >
                 <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:items-center">
                   
-                  {/* Product graphic column (Landscape catalog layout - col-span-7) */}
+                  {/* Product graphic column */}
                   <div className="lg:col-span-7 flex justify-center w-full">
                     <div className="relative w-full max-w-2xl aspect-[1599/1132] rounded-2xl overflow-hidden border border-zinc-200 bg-white shadow-sm p-2 transition-transform duration-300 hover:scale-[1.01]">
                       <Image
@@ -582,7 +600,7 @@ export default function Home() {
                     </div>
                   </div>
 
-                  {/* Product specifications column (col-span-5) */}
+                  {/* Product specifications column */}
                   <div className="lg:col-span-5 flex flex-col gap-6 justify-center">
                     <div>
                       <span className={`text-[10px] font-bold uppercase tracking-widest block ${scheme.text}`}>
@@ -653,11 +671,11 @@ export default function Home() {
                       </div>
                     </div>
 
-                    {/* CTAs */}
+                    {/* CTAs with micro-interaction shimmers */}
                     <div className="flex flex-col sm:flex-row items-center gap-3 pt-2">
                       <button
                         onClick={() => setIsInquiryOpen(true)}
-                        className={`flex items-center justify-center gap-2 rounded-full px-6 py-3.5 text-sm font-bold text-white shadow-md transition-all cursor-pointer hover:scale-[1.02] w-full sm:w-auto ${scheme.btn}`}
+                        className={`relative overflow-hidden flex items-center justify-center gap-2 rounded-full px-6 py-3.5 text-sm font-bold text-white shadow-md transition-all duration-300 cursor-pointer hover:scale-[1.02] w-full sm:w-auto before:absolute before:inset-0 before:-translate-x-full hover:before:translate-x-full before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent before:transition-transform before:duration-700 before:ease-out ${scheme.btn}`}
                       >
                         <span>Request Wholesale Quotation</span>
                         <ArrowRight className="h-4 w-4 text-white" />
@@ -673,7 +691,7 @@ export default function Home() {
                   </div>
 
                 </div>
-              </div>
+              </motion.div>
             );
           })()}
         </div>
@@ -823,8 +841,10 @@ export default function Home() {
       </section>
 
       {/* Contact Section & Lead Capture */}
-      <section className="py-24 border-t border-zinc-200/60 bg-[#FAF9F6]" id="contact-form">
-        <div className="mx-auto max-w-7xl px-6">
+      <section className="relative overflow-hidden py-24 border-t border-zinc-200/60 bg-[#FAF9F6]" id="contact-form">
+        <SparkEffect type="sparkle" density={15} opacity={0.2} colorScheme="gold" />
+        
+        <div className="mx-auto max-w-7xl px-6 relative z-10">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
             {/* Contact Details Column */}
             <div className="lg:col-span-5 flex flex-col gap-8">
@@ -947,7 +967,7 @@ export default function Home() {
                   />
                   <button
                     type="submit"
-                    className="flex w-full items-center justify-center gap-2 rounded-xl bg-[#2563EB] py-3.5 text-sm font-bold text-white shadow-md hover:bg-[#1d4ed8] hover:shadow-[0_4px_12px_rgba(37,99,235,0.2)] transition-all cursor-pointer hover:scale-[1.01]"
+                    className="relative overflow-hidden flex w-full items-center justify-center gap-2 rounded-xl bg-[#2563EB] py-3.5 text-sm font-bold text-white shadow-md hover:bg-[#1d4ed8] hover:shadow-[0_0_20px_rgba(37,99,235,0.4)] transition-all duration-300 cursor-pointer hover:scale-[1.01] before:absolute before:inset-0 before:-translate-x-full hover:before:translate-x-full before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent before:transition-transform before:duration-700 before:ease-out"
                   >
                     <span>Request Wholesale Catalog</span>
                     <ArrowRight className="h-4 w-4 text-white" />

@@ -66,9 +66,9 @@ export default function Header() {
                   >
                     <Link
                       href="/products"
-                      className={`flex items-center gap-1 text-sm font-semibold transition-colors ${
+                      className={`flex items-center gap-1 text-sm font-semibold transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:scale-x-0 after:origin-left after:bg-[#D4AF37] after:transition-transform after:duration-300 hover:after:scale-x-100 ${
                         isActive("/products") || categories.some((c) => pathname === c.href)
-                          ? "text-[#2563EB]"
+                          ? "text-[#2563EB] after:scale-x-100"
                           : "text-zinc-600 hover:text-[#2563EB]"
                       }`}
                     >
@@ -107,9 +107,9 @@ export default function Header() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className={`text-sm font-semibold transition-colors ${
+                  className={`text-sm font-semibold transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:scale-x-0 after:origin-left after:bg-[#D4AF37] after:transition-transform after:duration-300 hover:after:scale-x-100 ${
                     isActive(item.href)
-                      ? "text-[#2563EB]"
+                      ? "text-[#2563EB] after:scale-x-100"
                       : "text-zinc-600 hover:text-[#2563EB]"
                   }`}
                 >
@@ -130,7 +130,7 @@ export default function Header() {
             </a>
             <button
               onClick={() => setIsInquiryOpen(true)}
-              className="flex items-center gap-1.5 rounded-full bg-[#2563EB] px-5 py-2.5 text-sm font-bold text-white shadow-md hover:bg-[#1d4ed8] hover:shadow-[0_4px_12px_rgba(37,99,235,0.2)] transition-all duration-200 cursor-pointer hover:scale-[1.02]"
+              className="relative overflow-hidden flex items-center gap-1.5 rounded-full bg-[#2563EB] px-5 py-2.5 text-sm font-bold text-white shadow-md hover:bg-[#1d4ed8] hover:shadow-[0_0_20px_rgba(37,99,235,0.45)] transition-all duration-300 cursor-pointer hover:scale-[1.02] before:absolute before:inset-0 before:-translate-x-full hover:before:translate-x-full before:bg-gradient-to-r before:from-transparent before:via-white/25 before:to-transparent before:transition-transform before:duration-700 before:ease-out"
             >
               <Sparkles className="h-4 w-4 text-white fill-white" />
               <span>Get Wholesale Pricing</span>

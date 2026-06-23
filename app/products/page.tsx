@@ -9,6 +9,7 @@ import Footer from "../../components/footer";
 import MobileStickyBar from "../../components/mobile-sticky-bar";
 import FloatingInquiry from "../../components/floating-inquiry";
 import InquiryModal from "../../components/inquiry-modal";
+import SparkEffect from "../../components/spark-effect";
 import { getBreadcrumbSchema } from "../../lib/seo.config";
 
 export default function ProductsPage() {
@@ -29,13 +30,13 @@ export default function ProductsPage() {
 
   const getCardStyle = (size: string) => {
     switch (size) {
-      case "7 CM": return "hover:border-slate-300 hover:shadow-[0_20px_45px_rgba(15,23,42,0.06)] hover:bg-gradient-to-b hover:from-slate-50/10 hover:to-white hover:scale-[1.015]";
-      case "10 CM": return "hover:border-blue-250 hover:shadow-[0_20px_45px_rgba(37,99,235,0.06)] hover:bg-gradient-to-b hover:from-blue-50/10 hover:to-white hover:scale-[1.015]";
-      case "12 CM": return "hover:border-purple-250 hover:shadow-[0_20px_45px_rgba(124,58,237,0.06)] hover:bg-gradient-to-b hover:from-purple-50/10 hover:to-white hover:scale-[1.015]";
-      case "15 CM": return "hover:border-teal-250 hover:shadow-[0_20px_45px_rgba(20,184,166,0.06)] hover:bg-gradient-to-b hover:from-teal-50/10 hover:to-white hover:scale-[1.015]";
-      case "30 CM": return "hover:border-amber-350 hover:shadow-[0_20px_45px_rgba(212,175,55,0.06)] hover:bg-gradient-to-b hover:from-amber-50/10 hover:to-white hover:scale-[1.015]";
-      case "50 CM": return "hover:border-slate-300 hover:shadow-[0_20px_45px_rgba(15,23,42,0.06)] hover:bg-gradient-to-b hover:from-slate-50/10 hover:to-white hover:scale-[1.015]";
-      default: return "hover:border-zinc-350 hover:shadow-lg hover:scale-[1.015]";
+      case "7 CM": return "hover:border-[#0F172A] hover:shadow-[0_0_20px_rgba(15,23,42,0.12)] hover:-translate-y-1.5";
+      case "10 CM": return "hover:border-[#2563EB] hover:shadow-[0_0_20px_rgba(37,99,235,0.15)] hover:-translate-y-1.5";
+      case "12 CM": return "hover:border-[#0F172A] hover:shadow-[0_0_20px_rgba(15,23,42,0.12)] hover:-translate-y-1.5";
+      case "15 CM": return "hover:border-[#2563EB] hover:shadow-[0_0_20px_rgba(37,99,235,0.15)] hover:-translate-y-1.5";
+      case "30 CM": return "hover:border-[#D4AF37] hover:shadow-[0_0_20px_rgba(212,175,55,0.18)] hover:-translate-y-1.5";
+      case "50 CM": return "hover:border-[#0F172A] hover:shadow-[0_0_20px_rgba(15,23,42,0.12)] hover:-translate-y-1.5";
+      default: return "hover:border-zinc-350 hover:shadow-lg hover:-translate-y-1.5";
     }
   };
 
@@ -129,14 +130,14 @@ export default function ProductsPage() {
           <div className="mt-8 flex flex-col sm:flex-row justify-center gap-3 w-full max-w-md sm:max-w-none mx-auto px-4">
             <button
               onClick={() => setIsInquiryOpen(true)}
-              className="flex items-center justify-center gap-1.5 rounded-full bg-[#2563EB] px-6 py-3 text-sm font-bold text-white shadow-md hover:bg-[#1d4ed8] hover:shadow-[0_4px_12px_rgba(37,99,235,0.2)] transition-all cursor-pointer hover:scale-[1.01] w-full sm:w-auto"
+              className="relative overflow-hidden flex items-center justify-center gap-1.5 rounded-full bg-[#2563EB] px-6 py-3 text-sm font-bold text-white shadow-md hover:bg-[#1d4ed8] hover:shadow-[0_0_20px_rgba(37,99,235,0.4)] transition-all duration-300 cursor-pointer hover:scale-[1.01] w-full sm:w-auto before:absolute before:inset-0 before:-translate-x-full hover:before:translate-x-full before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent before:transition-transform before:duration-700 before:ease-out"
             >
               <Sparkles className="h-4 w-4 text-white fill-white" />
               <span>Get Wholesale Price List</span>
             </button>
             <Link
               href="/catalog"
-              className="flex items-center justify-center gap-1.5 rounded-full bg-[#0F172A] px-6 py-3 text-sm font-bold text-white shadow-md hover:bg-slate-800 transition-all hover:scale-[1.01] w-full sm:w-auto"
+              className="relative overflow-hidden flex items-center justify-center gap-1.5 rounded-full bg-[#0F172A] px-6 py-3 text-sm font-bold text-white shadow-md hover:bg-slate-800 hover:shadow-[0_0_20px_rgba(15,23,42,0.25)] transition-all hover:scale-[1.01] w-full sm:w-auto before:absolute before:inset-0 before:-translate-x-full hover:before:translate-x-full before:bg-gradient-to-r before:from-transparent before:via-white/15 before:to-transparent before:transition-transform before:duration-700 before:ease-out"
             >
               <Download className="h-4 w-4 text-white" />
               <span>Download PDF Catalog</span>
@@ -146,8 +147,9 @@ export default function ProductsPage() {
       </section>
 
       {/* Products Grid */}
-      <section className="py-20 bg-white">
-        <div className="mx-auto max-w-7xl px-6">
+      <section className="relative overflow-hidden py-20 bg-white border-t border-zinc-200/60">
+        <SparkEffect type="drift" density={15} opacity={0.18} colorScheme="gold" />
+        <div className="mx-auto max-w-7xl px-6 relative z-10">
           <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
             {products.map((p) => (
               <div
@@ -213,7 +215,7 @@ export default function ProductsPage() {
                         setSelectedProduct(p.title);
                         setIsInquiryOpen(true);
                       }}
-                      className="rounded-full bg-[#2563EB] px-5 py-2.5 text-xs font-bold text-white hover:bg-[#1d4ed8] hover:shadow-[0_4px_10px_rgba(37,99,235,0.15)] transition-all cursor-pointer hover:scale-[1.02]"
+                      className="relative overflow-hidden rounded-full bg-[#2563EB] px-5 py-2.5 text-xs font-bold text-white hover:bg-[#1d4ed8] hover:shadow-[0_0_15px_rgba(37,99,235,0.35)] transition-all duration-300 cursor-pointer hover:scale-[1.02] before:absolute before:inset-0 before:-translate-x-full hover:before:translate-x-full before:bg-gradient-to-r before:from-transparent before:via-white/25 before:to-transparent before:transition-transform before:duration-700 before:ease-out"
                     >
                       Inquire
                     </button>
@@ -238,13 +240,13 @@ export default function ProductsPage() {
             <div className="flex flex-col sm:flex-row gap-3 shrink-0 w-full md:w-auto px-4 md:px-0">
               <button
                 onClick={() => setIsInquiryOpen(true)}
-                className="flex items-center justify-center gap-1.5 rounded-full bg-[#2563EB] px-5 py-3 text-xs font-bold text-white hover:bg-[#1d4ed8] hover:shadow-[0_4px_10px_rgba(37,99,235,0.15)] transition-all cursor-pointer hover:scale-[1.02] w-full sm:w-auto"
+                className="relative overflow-hidden flex items-center justify-center gap-1.5 rounded-full bg-[#2563EB] px-5 py-3 text-xs font-bold text-white shadow-md hover:bg-[#1d4ed8] hover:shadow-[0_0_20px_rgba(37,99,235,0.4)] transition-all duration-300 cursor-pointer hover:scale-[1.02] w-full sm:w-auto before:absolute before:inset-0 before:-translate-x-full hover:before:translate-x-full before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent before:transition-transform before:duration-700 before:ease-out"
               >
                 Request Custom Quotation
               </button>
               <a
                 href="tel:+919443868706"
-                className="flex items-center justify-center gap-1.5 rounded-full border border-zinc-300 bg-white px-5 py-3 text-xs font-bold text-zinc-700 hover:border-[#2563EB] hover:bg-[#2563EB]/5 hover:text-[#2563EB] transition-all cursor-pointer w-full sm:w-auto hover:scale-[1.02]"
+                className="relative overflow-hidden flex items-center justify-center gap-1.5 rounded-full border border-zinc-300 bg-white px-5 py-3 text-xs font-bold text-zinc-700 hover:border-[#2563EB] hover:bg-[#2563EB]/5 hover:text-[#2563EB] transition-all duration-300 cursor-pointer w-full sm:w-auto hover:scale-[1.02] before:absolute before:inset-0 before:-translate-x-full hover:before:translate-x-full before:bg-gradient-to-r before:from-transparent before:via-[#2563EB]/10 before:to-transparent before:transition-transform before:duration-700 before:ease-out"
               >
                 <Phone className="h-3.5 w-3.5 text-[#2563EB]" /> <span>Call Sales</span>
               </a>
