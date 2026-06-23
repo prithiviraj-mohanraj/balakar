@@ -21,7 +21,7 @@ export const DEFAULT_SEO = {
     description: "Buy premium sparklers direct from the Sivakasi factory. High quality, green certified, wholesale, and bulk orders available.",
     images: [
       {
-        url: `${SITE_URL}/images/branding/Screenshot 2026-06-19 112211.png`,
+        url: `${SITE_URL}/branding/phoenix-trademark.png`,
         width: 1200,
         height: 630,
         alt: "Balakar Sparklers Banner",
@@ -43,7 +43,7 @@ export const getOrganizationSchema = () => {
     "name": COMPANY_NAME,
     "alternateName": BRAND_NAME,
     "url": SITE_URL,
-    "logo": `${SITE_URL}/images/branding/balakar-logo.png`,
+    "logo": `${SITE_URL}/branding/balakar-logo.png`,
     "contactPoint": [
       {
         "@type": "ContactPoint",
@@ -75,7 +75,7 @@ export const getLocalBusinessSchema = () => {
     "@type": "LocalBusiness",
     "@id": `${SITE_URL}/#localbusiness`,
     "name": COMPANY_NAME,
-    "image": `${SITE_URL}/images/branding/Screenshot 2026-06-19 112211.png`,
+    "image": `${SITE_URL}/branding/phoenix-trademark.png`,
     "telephone": "+91-9443868706",
     "email": EMAIL,
     "url": SITE_URL,

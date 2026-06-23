@@ -36,7 +36,7 @@ export default function Footer() {
             <div className="flex flex-col gap-5">
               <Link href="/" className="flex items-center">
                 <Image
-                  src="/images/branding/balakar-logo.png"
+                  src="/branding/balakar-logo.png"
                   alt="Balakar Sparklers Logo"
                   width={180}
                   height={54}

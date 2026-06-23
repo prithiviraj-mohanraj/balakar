@@ -124,7 +124,7 @@ export default function Home() {
     {
       size: "7 CM",
       title: "7 CM Sparklers",
-      image: "/images/products/7cm-products.jpg",
+      image: "/products/7cm-products.jpg",
       variants: ["Electric", "Colour", "Green", "Red"],
       slug: "7cm-sparklers",
       keyword: "7 CM Sparklers Manufacturer Sivakasi",
@@ -133,7 +133,7 @@ export default function Home() {
     {
       size: "10 CM",
       title: "10 CM Sparklers",
-      image: "/images/products/10cm-products.jpg",
+      image: "/products/10cm-products.jpg",
       variants: ["Electric", "Colour", "Green", "Red", "Silver"],
       slug: "10cm-sparklers",
       keyword: "10 CM Sparklers Wholesale",
@@ -142,7 +142,7 @@ export default function Home() {
     {
       size: "12 CM",
       title: "12 CM Sparklers",
-      image: "/images/products/12cm-products.jpg",
+      image: "/products/12cm-products.jpg",
       variants: ["Electric", "Colour", "Green", "Red"],
       slug: "12cm-sparklers",
       keyword: "12 CM Sparklers Factory Direct",
@@ -151,7 +151,7 @@ export default function Home() {
     {
       size: "15 CM",
       title: "15 CM Sparklers",
-      image: "/images/products/15cm-products.jpg",
+      image: "/products/15cm-products.jpg",
       variants: ["Electric", "Colour", "Green", "Red"],
       slug: "15cm-sparklers",
       keyword: "15 CM Sparklers Supplier India",
@@ -160,7 +160,7 @@ export default function Home() {
     {
       size: "30 CM",
       title: "30 CM Sparklers",
-      image: "/images/products/30cm-products.jpg",
+      image: "/products/30cm-products.jpg",
       variants: ["Electric", "Colour", "Green", "Red"],
       slug: "30cm-sparklers",
       keyword: "30 CM Sparklers Manufacturer",
@@ -169,7 +169,7 @@ export default function Home() {
     {
       size: "50 CM",
       title: "50 CM Sparklers",
-      image: "/images/products/50cm-products.jpg",
+      image: "/products/50cm-products.jpg",
       variants: ["Electric", "Colour"],
       slug: "50cm-sparklers",
       keyword: "50 CM Sparklers Wholesale Sivakasi",
@@ -343,7 +343,7 @@ export default function Home() {
               <div className="relative overflow-hidden rounded-3xl border border-zinc-150 bg-white p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] max-w-sm w-full transition-all duration-300 hover:scale-[1.01] hover:border-emerald-500/30 hover:shadow-[0_20px_50px_rgba(16,185,129,0.08)]">
                 <div className="relative aspect-square w-48 mx-auto flex items-center justify-center rounded-full bg-zinc-50/50 p-3 border border-zinc-100">
                   <Image
-                    src="/images/certifications/green-fireworks-license.png.jpg"
+                    src="/certifications/green-fireworks-license.png"
                     alt="Green Fireworks Certification CSIR-NEERI"
                     fill
                     sizes="(max-w-768px) 100vw, 200px"
@@ -372,7 +372,7 @@ export default function Home() {
             <div className="relative">
               <div className="aspect-video relative rounded-2xl overflow-hidden border border-zinc-100 shadow-lg bg-white p-4">
                 <Image
-                  src="/images/branding/Screenshot 2026-06-19 112211.png"
+                  src="/branding/phoenix-trademark.png"
                   alt="Balakar Sparklers Factory and Logo Branding"
                   fill
                   sizes="(max-w-768px) 100vw, 600px"

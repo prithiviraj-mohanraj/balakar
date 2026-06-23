@@ -18,35 +18,35 @@ import {
   getBreadcrumbSchema
 } from "../../lib/seo.config";
 
-export default function FifteenCmPage() {
+export default function ThirtyCmPage() {
   const [isInquiryOpen, setIsInquiryOpen] = useState(false);
 
-  const targetKeyword = "15 CM Sparklers Supplier India";
-  const slug = "15cm-sparklers";
-  const title = "15 CM Sparklers | Premium Sivakasi Supplier India";
-  const description = "Order 15 CM green certified sparklers from Balakar Sparklers, a leading supplier in India. High brightness, low smoke, safe transport dispatch.";
+  const targetKeyword = "30 CM Sparklers Manufacturer";
+  const slug = "30cm-sparklers";
+  const title = "30 CM Sparklers | Premium Sivakasi Manufacturer";
+  const description = "Order 30 CM giant sparklers directly from the Sivakasi manufacturer. Premium Phoenix Brand, low smoke, green certified formulas, fast nationwide dispatch.";
 
   // Internal Links
   const internalLinks = [
     { name: "7 CM Sparklers", href: "/7cm-sparklers" },
     { name: "10 CM Sparklers", href: "/10cm-sparklers" },
     { name: "12 CM Sparklers", href: "/12cm-sparklers" },
-    { name: "30 CM Sparklers", href: "/30cm-sparklers" },
+    { name: "15 CM Sparklers", href: "/15cm-sparklers" },
     { name: "50 CM Sparklers", href: "/50cm-sparklers" }
   ];
 
   const faqs = [
     {
-      question: "Why choose Balakar Sparklers as your 15 CM sparkler supplier in India?",
-      answer: "We supply direct from our Sivakasi manufacturing plant, ensuring competitive wholesale rates, high supply capacity, and secure transport to all major states."
+      question: "Why buy 30 CM sparklers from a direct manufacturer?",
+      answer: "Purchasing 30 CM sparklers directly from our Sivakasi manufacturing plant ensures factory pricing, genuine Phoenix Brand stock, and reliable logistics."
     },
     {
-      question: "What colors are available in 15 CM sparklers?",
-      answer: "We manufacture 15 CM sparklers in four major color varieties: Electric (golden crackles), Colour (brilliant rainbow colors), Green (rich emerald green sparks), and Red (crimson red sparks)."
+      question: "What colors are available in the 30 CM variety?",
+      answer: "We offer four distinct color variants for the 30 CM range: Electric (classic gold crackle), Colour (assorted colors), Green (vibrant emerald green), and Red (crimson red)."
     },
     {
       question: "Are these sparklers compliant with national safety standards?",
-      answer: "Yes, all our products, including the 15 CM line, are CSIR-NEERI certified (License No: NE/TN/201-01/2019), meeting eco-friendly standards."
+      answer: "Yes, all our products, including the 30 CM line, are CSIR-NEERI certified (License No: NE/TN/201-01/2019), meeting eco-friendly standards."
     }
   ];
 
@@ -54,16 +54,16 @@ export default function FifteenCmPage() {
   const orgSchema = getOrganizationSchema();
   const bizSchema = getLocalBusinessSchema();
   const prodSchema = getProductSchema(
-    "15 CM Sparklers",
-    "/images/products/15cm-products.jpg",
+    "30 CM Sparklers",
+    "/products/30cm-products.jpg",
     description,
-    "BALAKAR-15CM"
+    "BALAKAR-30CM"
   );
   const faqSchema = getFAQSchema(faqs);
   const breadcrumbSchema = getBreadcrumbSchema([
     { name: "Home", item: "/" },
     { name: "Products", item: "/products" },
-    { name: "15 CM Sparklers", item: `/${slug}` }
+    { name: "30 CM Sparklers", item: `/${slug}` }
   ]);
 
   return (
@@ -83,13 +83,13 @@ export default function FifteenCmPage() {
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:items-center">
             <div className="lg:col-span-7 flex flex-col gap-5">
               <span className="text-xs font-bold text-amber-700 uppercase tracking-widest block">
-                Pan-India Supply Network
+                Official Sivakasi Factory
               </span>
               <h1 className="text-3xl font-extrabold tracking-tight text-zinc-950 sm:text-5xl">
-                15 CM Sparklers Supplier India
+                30 CM Sparklers Manufacturer
               </h1>
               <p className="text-base text-zinc-600 leading-relaxed">
-                Order 15 CM premium sparklers in bulk directly from our Sivakasi manufacturing plant. Designed under the Phoenix Brand, these sparklers offer four variant options and long-lasting sparkles, making them a top choice for distributors.
+                Order 30 CM premium giant sparklers in bulk directly from our Sivakasi manufacturing plant. Designed under the Phoenix Brand, these sparklers offer four variant options and long-lasting sparkles, making them a top choice for distributors.
               </p>
               
               <div className="flex flex-wrap gap-3 mt-2">
@@ -113,8 +113,8 @@ export default function FifteenCmPage() {
             <div className="lg:col-span-5 flex justify-center w-full">
               <div className="relative aspect-[1599/1132] w-full max-w-lg rounded-2xl overflow-hidden border-2 border-zinc-150 shadow-md bg-zinc-50 p-1 transition-transform duration-300 hover:scale-[1.01]">
                 <Image
-                  src="/images/products/15cm-products.jpg"
-                  alt="15 CM Sparklers Pack Mockups Catalog Sheet"
+                  src="/products/30cm-products.jpg"
+                  alt="30 CM Sparklers Pack Mockups Catalog Sheet"
                   fill
                   sizes="(max-w-768px) 100vw, 500px"
                   className="object-contain p-1 rounded-xl"
@@ -134,7 +134,7 @@ export default function FifteenCmPage() {
           <div className="mb-10">
             <h2 className="text-xl font-bold text-zinc-900 border-b border-zinc-100 pb-3">Introduction</h2>
             <p className="text-sm text-zinc-600 leading-relaxed mt-4">
-              Welcome to the premium catalog overview of Balakar Sparklers, your trusted source for **15 CM Sparklers Supplier India**. Established in Alamarathupatti, Sivakasi, our factory specializes in producing top-tier, long-burning sparklers that are highly sought after by commercial retailers, seasonal store owners, and bulk festival buyers. The 15 CM sparkler size is universally recognized as the premium festive length. It offers an extended burn profile and a comfortable size, making it a reliable choice for families celebrating key traditional and cultural festivals.
+              Welcome to the premium catalog overview of Balakar Sparklers, your trusted source for **30 CM Sparklers Manufacturer**. Established in Alamarathupatti, Sivakasi, our factory specializes in producing top-tier, long-burning sparklers that are highly sought after by commercial retailers, seasonal store owners, and bulk festival buyers. The 30 CM sparkler size is universally recognized as the premium giant festive length. It offers an extended burn profile and a comfortable size, making it a reliable choice for families celebrating key traditional and cultural festivals.
             </p>
           </div>
 
@@ -142,10 +142,10 @@ export default function FifteenCmPage() {
           <div className="mb-10">
             <h2 className="text-xl font-bold text-zinc-900 border-b border-zinc-100 pb-3">Product Overview & Key Features</h2>
             <p className="text-sm text-zinc-600 leading-relaxed mt-4">
-              Our 15 CM sparkler range features a thick chemical coating applied uniformly on a straight, rigid iron core. This ensures that the ignition is quick, the burn is smooth, and the spark emission remains stable throughout the duration. In line with the Supreme Court directives, we have implemented environmental formulations developed by CSIR-NEERI under certificate NE/TN/201-01/2019. These formulations reduce the presence of particulate matter and toxic chemical vapors by up to 30%, making them eco-friendly green fireworks.
+              Our 30 CM sparkler range features a thick chemical coating applied uniformly on a straight, rigid iron core. This ensures that the ignition is quick, the burn is smooth, and the spark emission remains stable throughout the duration. In line with the Supreme Court directives, we have implemented environmental formulations developed by CSIR-NEERI under certificate NE/TN/201-01/2019. These formulations reduce the presence of particulate matter and toxic chemical vapors by up to 30%, making them eco-friendly green fireworks.
             </p>
             <p className="text-sm text-zinc-600 leading-relaxed mt-4">
-              We offer the 15 CM sparklers in four color options to fit diverse market preferences:
+              We offer the 30 CM sparklers in four color options to fit diverse market preferences:
             </p>
             <ul className="list-disc list-inside mt-3 space-y-2 text-sm text-zinc-600 pl-4">
               <li><strong>Electric:</strong> Golden sparkles with classic crackling sounds, a holiday tradition.</li>
@@ -159,7 +159,7 @@ export default function FifteenCmPage() {
           <div className="mb-10">
             <h2 className="text-xl font-bold text-zinc-900 border-b border-zinc-100 pb-3">Applications & Usage Scenarios</h2>
             <p className="text-sm text-zinc-600 leading-relaxed mt-4">
-              The 15 CM sparklers are highly popular across various events. Their medium-length size is perfect for creating sparkler tunnels at weddings, lighting up backyards during Diwali celebrations, celebrating Christmas, and decorating birthday events. They are easy to hold and light, providing an excellent background for evening photography.
+              The 30 CM sparklers are highly popular across various events. Their medium-length size is perfect for creating sparkler tunnels at weddings, lighting up backyards during Diwali celebrations, celebrating Christmas, and decorating birthday events. They are easy to hold and light, providing an excellent background for evening photography.
             </p>
           </div>
 
@@ -167,7 +167,7 @@ export default function FifteenCmPage() {
           <div className="mb-10">
             <h2 className="text-xl font-bold text-zinc-900 border-b border-zinc-100 pb-3">Wholesale & Factory Direct Supply</h2>
             <p className="text-sm text-zinc-600 leading-relaxed mt-4">
-              As a direct manufacturer, Balakar Sparklers Factory supplies 15 CM sparklers in bulk at wholesale rates. Buying directly from our Alamarathupatti factory in Sivakasi helps you secure better profit margins by bypassing intermediaries. We use high-quality packaging boxes featuring the Phoenix Brand trademark. We provide transport coordination to deliver bulk consignments safely to dealers throughout India.
+              As a direct manufacturer, Balakar Sparklers Factory supplies 30 CM sparklers in bulk at wholesale rates. Buying directly from our Alamarathupatti factory in Sivakasi helps you secure better profit margins by bypassing intermediaries. We use high-quality packaging boxes featuring the Phoenix Brand trademark. We provide transport coordination to deliver bulk consignments safely to dealers throughout India.
             </p>
           </div>
 
@@ -207,7 +207,7 @@ export default function FifteenCmPage() {
       <Footer />
       <MobileStickyBar />
       <FloatingInquiry />
-      <InquiryModal isOpen={isInquiryOpen} onClose={() => setIsInquiryOpen(false)} defaultCategory="15 CM Sparklers" />
+      <InquiryModal isOpen={isInquiryOpen} onClose={() => setIsInquiryOpen(false)} defaultCategory="30 CM Sparklers" />
     </div>
   );
 }

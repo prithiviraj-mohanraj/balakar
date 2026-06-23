@@ -1,12 +1,9 @@
 # Dependencies
 node_modules/
-website/node_modules/
 
 # Next.js Build Output
 .next/
-website/.next/
 out/
-website/out/
 
 # Production/Distribution Builds
 build/
@@ -30,3 +27,4 @@ Thumbs.db
 *.njsproj
 *.sln
 *.sw?
+

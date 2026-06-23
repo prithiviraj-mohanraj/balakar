@@ -92,7 +92,7 @@ export default function AboutPage() {
             <div className="lg:col-span-5 flex flex-col gap-6">
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-zinc-150 shadow-md bg-white flex items-center justify-center p-4">
                 <Image
-                  src="/images/branding/Screenshot 2026-06-19 112211.png"
+                  src="/branding/phoenix-trademark.png"
                   alt="Balakar Sparklers Brand Header"
                   fill
                   sizes="(max-w-768px) 100vw, 400px"
@@ -107,7 +107,7 @@ export default function AboutPage() {
                 </div>
                 <div className="h-8 w-28 relative shrink-0">
                   <Image
-                    src="/images/branding/balakar-logo.png"
+                    src="/branding/balakar-logo.png"
                     alt="Phoenix Brand Trademark"
                     fill
                     className="object-contain"
@@ -129,7 +129,7 @@ export default function AboutPage() {
               <div className="relative overflow-hidden rounded-3xl border border-zinc-150 bg-white p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] max-w-sm w-full transition-all duration-300 hover:scale-[1.01] hover:border-emerald-500/30 hover:shadow-[0_20px_50px_rgba(16,185,129,0.08)]">
                 <div className="relative aspect-square w-48 mx-auto flex items-center justify-center rounded-full bg-zinc-50/50 p-3 border border-zinc-100">
                   <Image
-                    src="/images/certifications/green-fireworks-license.png.jpg"
+                    src="/certifications/green-fireworks-license.png"
                     alt="Green Fireworks License Copy CSIR NEERI"
                     fill
                     sizes="(max-w-768px) 100vw, 200px"

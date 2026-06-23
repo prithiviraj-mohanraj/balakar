@@ -18,35 +18,35 @@ import {
   getBreadcrumbSchema
 } from "../../lib/seo.config";
 
-export default function FiftyCmPage() {
+export default function TenCmPage() {
   const [isInquiryOpen, setIsInquiryOpen] = useState(false);
 
-  const targetKeyword = "50 CM Sparklers Wholesale Sivakasi";
-  const slug = "50cm-sparklers";
-  const title = "50 CM Sparklers | Premium Sivakasi Wholesale Supply";
-  const description = "Order 50 CM mega sparklers in bulk direct from Balakar Sparklers factory in Sivakasi. Ideal for weddings and events. Green certified, low smoke.";
+  const targetKeyword = "10 CM Sparklers Wholesale";
+  const slug = "10cm-sparklers";
+  const title = "10 CM Sparklers | Premium Sivakasi Wholesale Supply";
+  const description = "Buy 10 CM green certified sparklers wholesale from Balakar Sparklers factory in Sivakasi. High brightness, five color variants, secure nationwide delivery.";
 
   // Internal Links
   const internalLinks = [
     { name: "7 CM Sparklers", href: "/7cm-sparklers" },
-    { name: "10 CM Sparklers", href: "/10cm-sparklers" },
     { name: "12 CM Sparklers", href: "/12cm-sparklers" },
     { name: "15 CM Sparklers", href: "/15cm-sparklers" },
-    { name: "30 CM Sparklers", href: "/30cm-sparklers" }
+    { name: "30 CM Sparklers", href: "/30cm-sparklers" },
+    { name: "50 CM Sparklers", href: "/50cm-sparklers" }
   ];
 
   const faqs = [
     {
-      question: "What is the burn duration of 50 CM sparklers?",
-      answer: "As an official manufacturer, we focus on safety and brightness. The 50 CM sparklers are our longest variety, engineered with a thick chemical coat to provide an extended display time ideal for wedding photography."
+      question: "What is the key benefit of ordering 10 CM sparklers wholesale?",
+      answer: "The 10 CM length is one of our highest-selling items nationwide, representing a major staple for festive retail shops. By ordering wholesale, you secure direct-from-factory pricing with high profit margins."
     },
     {
-      question: "What variants are available in the 50 CM size?",
-      answer: "We manufacture 50 CM sparklers in two premium varieties: Electric (golden crackle sparks) and Colour (vibrant color sparks)."
+      question: "What colors are available in the 10 CM category?",
+      answer: "We manufacture 10 CM sparklers in five color options: Electric (classic gold crackle), Colour (assorted color sparks), Green (vivid eco green), Red (crimson red), and Silver (brilliant white flash)."
     },
     {
-      question: "How are 50 CM sparklers packed for shipping?",
-      answer: "To prevent wire bending or coating damage during shipping from Sivakasi, they are packed in extra-rigid, heavy-duty cardboard sleeves under the Phoenix Brand trademark."
+      question: "Are these sparklers compliant with CSIR-NEERI green rules?",
+      answer: "Yes, our entire production line, including the 10 CM sparkler range, is certified by CSIR-NEERI under license NE/TN/201-01/2019, ensuring they are low-smoke eco-friendly fireworks."
     }
   ];
 
@@ -54,16 +54,16 @@ export default function FiftyCmPage() {
   const orgSchema = getOrganizationSchema();
   const bizSchema = getLocalBusinessSchema();
   const prodSchema = getProductSchema(
-    "50 CM Sparklers",
-    "/images/products/50cm-products.jpg",
+    "10 CM Sparklers",
+    "/products/10cm-products.jpg",
     description,
-    "BALAKAR-50CM"
+    "BALAKAR-10CM"
   );
   const faqSchema = getFAQSchema(faqs);
   const breadcrumbSchema = getBreadcrumbSchema([
     { name: "Home", item: "/" },
     { name: "Products", item: "/products" },
-    { name: "50 CM Sparklers", item: `/${slug}` }
+    { name: "10 CM Sparklers", item: `/${slug}` }
   ]);
 
   return (
@@ -83,13 +83,13 @@ export default function FiftyCmPage() {
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:items-center">
             <div className="lg:col-span-7 flex flex-col gap-5">
               <span className="text-xs font-bold text-amber-700 uppercase tracking-widest block">
-                Mega Wedding & Event Sizes
+                Wholesale Distribution Center
               </span>
               <h1 className="text-3xl font-extrabold tracking-tight text-zinc-950 sm:text-5xl">
-                50 CM Sparklers Wholesale Sivakasi
+                10 CM Sparklers Wholesale Sivakasi
               </h1>
               <p className="text-base text-zinc-600 leading-relaxed">
-                Purchase our largest 50 CM mega sparklers in bulk directly from our Alamarathupatti factory in Sivakasi. Ideal for grand weddings, stage events, and luxury parties. CSIR-NEERI green certified formulas ensure low smoke and high safety.
+                Order 10 CM premium sparklers in bulk directly from our Sivakasi manufacturing plant. Designed under the Phoenix Brand, these sparklers offer five variant options and long-lasting sparkles, making them a top choice for distributors.
               </p>
               
               <div className="flex flex-wrap gap-3 mt-2">
@@ -98,14 +98,14 @@ export default function FiftyCmPage() {
                   className="flex items-center gap-1.5 rounded-full bg-gradient-to-r from-[#2563EB] to-[#7C3AED] px-6 py-3 text-xs font-bold text-white shadow-md hover:shadow-[0_0_15px_rgba(37,99,235,0.35)] transition-all cursor-pointer hover:scale-[1.02]"
                 >
                   <Sparkles className="h-4 w-4 text-white fill-white" />
-                  <span>Get Wholesale Quotation</span>
+                  <span>Request Wholesale Pricing</span>
                 </button>
                 <a
                   href="tel:+919443868706"
                   className="flex items-center gap-1.5 rounded-full border border-zinc-200 bg-white px-6 py-3 text-xs font-bold text-zinc-700 hover:bg-zinc-50 hover:scale-[1.02] hover:border-zinc-350 transition-all"
                 >
                   <Phone className="h-4 w-4 text-[#2563EB]" />
-                  <span>Call Direct Sales</span>
+                  <span>Call Sales Office</span>
                 </a>
               </div>
             </div>
@@ -113,8 +113,8 @@ export default function FiftyCmPage() {
             <div className="lg:col-span-5 flex justify-center w-full">
               <div className="relative aspect-[1599/1132] w-full max-w-lg rounded-2xl overflow-hidden border-2 border-zinc-150 shadow-md bg-zinc-50 p-1 transition-transform duration-300 hover:scale-[1.01]">
                 <Image
-                  src="/images/products/50cm-products.jpg"
-                  alt="50 CM Sparklers Pack Mockups Catalog Sheet"
+                  src="/products/10cm-products.jpg"
+                  alt="10 CM Sparklers Pack Mockups Catalog Sheet"
                   fill
                   sizes="(max-w-768px) 100vw, 500px"
                   className="object-contain p-1 rounded-xl"
@@ -134,7 +134,7 @@ export default function FiftyCmPage() {
           <div className="mb-10">
             <h2 className="text-xl font-bold text-zinc-900 border-b border-zinc-100 pb-3">Introduction</h2>
             <p className="text-sm text-zinc-600 leading-relaxed mt-4">
-              Welcome to the premium catalog overview of Balakar Sparklers, your trusted source for **50 CM Sparklers Wholesale Sivakasi**. Established in Alamarathupatti, Sivakasi, our factory specializes in producing top-tier, long-burning sparklers that are highly sought after by commercial retailers, seasonal store owners, and bulk festival buyers. The 50 CM sparkler size is universally recognized as the mega giant festive length. It offers an extended burn profile and a comfortable size, making it a reliable choice for families celebrating weddings and high-end events.
+              Welcome to the premium catalog overview of Balakar Sparklers, your trusted source for **10 CM Sparklers Wholesale**. Established in Alamarathupatti, Sivakasi, our factory specializes in producing top-tier, long-burning sparklers that are highly sought after by commercial retailers, seasonal store owners, and bulk festival buyers. The 10 CM sparkler size is universally recognized as the standard festive length. It offers an extended burn profile and a comfortable size, making it a reliable choice for families celebrating key traditional and cultural festivals.
             </p>
           </div>
 
@@ -142,14 +142,17 @@ export default function FiftyCmPage() {
           <div className="mb-10">
             <h2 className="text-xl font-bold text-zinc-900 border-b border-zinc-100 pb-3">Product Overview & Key Features</h2>
             <p className="text-sm text-zinc-600 leading-relaxed mt-4">
-              Our 50 CM sparkler range features a thick chemical coating applied uniformly on a straight, rigid iron core. This ensures that the ignition is quick, the burn is smooth, and the spark emission remains stable throughout the duration. In line with the Supreme Court directives, we have implemented environmental formulations developed by CSIR-NEERI under certificate NE/TN/201-01/2019. These formulations reduce the presence of particulate matter and toxic chemical vapors by up to 30%, making them eco-friendly green fireworks.
+              Our 10 CM sparkler range features a thick chemical coating applied uniformly on a straight, rigid iron core. This ensures that the ignition is quick, the burn is smooth, and the spark emission remains stable throughout the duration. In line with the Supreme Court directives, we have implemented environmental formulations developed by CSIR-NEERI under certificate NE/TN/201-01/2019. These formulations reduce the presence of particulate matter and toxic chemical vapors by up to 30%, making them eco-friendly green fireworks.
             </p>
             <p className="text-sm text-zinc-600 leading-relaxed mt-4">
-              We offer the 50 CM sparklers in two premium options to fit diverse market preferences:
+              We offer the 10 CM sparklers in five color options to fit diverse market preferences:
             </p>
             <ul className="list-disc list-inside mt-3 space-y-2 text-sm text-zinc-600 pl-4">
               <li><strong>Electric:</strong> Golden sparkles with classic crackling sounds, a holiday tradition.</li>
               <li><strong>Colour:</strong> Vibrant multi-colored sparkles that light up the night in rainbow hues.</li>
+              <li><strong>Green:</strong> Rich, brilliant green light trails with a high spark density.</li>
+              <li><strong>Red:</strong> Intense crimson flame trails, providing a beautiful backdrop.</li>
+              <li><strong>Silver:</strong> Bright metallic white sparks that flash brilliantly, exclusive to our 10 CM range.</li>
             </ul>
           </div>
 
@@ -157,7 +160,7 @@ export default function FiftyCmPage() {
           <div className="mb-10">
             <h2 className="text-xl font-bold text-zinc-900 border-b border-zinc-100 pb-3">Applications & Usage Scenarios</h2>
             <p className="text-sm text-zinc-600 leading-relaxed mt-4">
-              The 50 CM sparklers are highly popular across various events. Their medium-length size is perfect for creating sparkler tunnels at weddings, lighting up backyards during Diwali celebrations, celebrating Christmas, and decorating birthday events. They are easy to hold and light, providing an excellent background for evening photography.
+              The 10 CM sparklers are highly popular across various events. Their medium-length size is perfect for creating sparkler tunnels at weddings, lighting up backyards during Diwali celebrations, celebrating Christmas, and decorating birthday events. They are easy to hold and light, providing an excellent background for evening photography.
             </p>
           </div>
 
@@ -165,7 +168,7 @@ export default function FiftyCmPage() {
           <div className="mb-10">
             <h2 className="text-xl font-bold text-zinc-900 border-b border-zinc-100 pb-3">Wholesale & Factory Direct Supply</h2>
             <p className="text-sm text-zinc-600 leading-relaxed mt-4">
-              As a direct manufacturer, Balakar Sparklers Factory supplies 50 CM sparklers in bulk at wholesale rates. Buying directly from our Alamarathupatti factory in Sivakasi helps you secure better profit margins by bypassing intermediaries. We use high-quality packaging boxes featuring the Phoenix Brand trademark. We provide transport coordination to deliver bulk consignments safely to dealers throughout India.
+              As a direct manufacturer, Balakar Sparklers Factory supplies 10 CM sparklers in bulk at wholesale rates. Buying directly from our Alamarathupatti factory in Sivakasi helps you secure better profit margins by bypassing intermediaries. We use high-quality packaging boxes featuring the Phoenix Brand trademark. We provide transport coordination to deliver bulk consignments safely to dealers throughout India.
             </p>
           </div>
 
@@ -205,7 +208,7 @@ export default function FiftyCmPage() {
       <Footer />
       <MobileStickyBar />
       <FloatingInquiry />
-      <InquiryModal isOpen={isInquiryOpen} onClose={() => setIsInquiryOpen(false)} defaultCategory="50 CM Sparklers" />
+      <InquiryModal isOpen={isInquiryOpen} onClose={() => setIsInquiryOpen(false)} defaultCategory="10 CM Sparklers" />
     </div>
   );
 }

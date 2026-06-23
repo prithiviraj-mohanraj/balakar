@@ -18,18 +18,18 @@ import {
   getBreadcrumbSchema
 } from "../../lib/seo.config";
 
-export default function SevenCmPage() {
+export default function TwelveCmPage() {
   const [isInquiryOpen, setIsInquiryOpen] = useState(false);
 
-  const targetKeyword = "7 CM Sparklers Manufacturer Sivakasi";
-  const slug = "7cm-sparklers";
-  const title = "7 CM Sparklers | Premium Sivakasi Manufacturer";
-  const description = "Discover premium 7 CM Green Certified sparklers manufactured direct from our Sivakasi plant under Phoenix Brand. Low smoke, high brightness, and wholesale deals.";
+  const targetKeyword = "12 CM Sparklers Factory Direct";
+  const slug = "12cm-sparklers";
+  const title = "12 CM Sparklers | Premium Sivakasi Factory Direct Deals";
+  const description = "Purchase 12 CM green sparklers factory direct from Balakar Sparklers in Sivakasi. Low smoke, CSIR-NEERI certified formulas, and direct nationwide dispatch.";
 
   // Internal Links
   const internalLinks = [
+    { name: "7 CM Sparklers", href: "/7cm-sparklers" },
     { name: "10 CM Sparklers", href: "/10cm-sparklers" },
-    { name: "12 CM Sparklers", href: "/12cm-sparklers" },
     { name: "15 CM Sparklers", href: "/15cm-sparklers" },
     { name: "30 CM Sparklers", href: "/30cm-sparklers" },
     { name: "50 CM Sparklers", href: "/50cm-sparklers" }
@@ -37,16 +37,16 @@ export default function SevenCmPage() {
 
   const faqs = [
     {
-      question: "Are 7 CM sparklers safe for family events?",
-      answer: "Yes, our 7 CM sparklers are specially manufactured for high safety. They are designed with a sturdy steel core wire that resists bending, ensuring safe handling for families under adult supervision."
+      question: "Why buy 12 CM sparklers factory direct?",
+      answer: "Buying factory direct from our Alamarathupatti Sivakasi plant ensures you bypass intermediary distributors, securing fresh stock at competitive rates."
     },
     {
-      question: "What colors are available in 7 CM sparklers?",
-      answer: "We manufacture 7 CM sparklers in four major color varieties: Electric (golden crackles), Colour (brilliant rainbow colors), Green (rich emerald green sparks), and Red (crimson red sparks)."
+      question: "What colors are manufactured in the 12 CM category?",
+      answer: "We offer four distinct color variants for the 12 CM range: Electric (classic gold crackle), Colour (assorted colors), Green (vibrant emerald green), and Red (crimson red)."
     },
     {
-      question: "What is the packing quantity in a standard box?",
-      answer: "As an official manufacturer, we supply bulk dealer boxes. A typical commercial box contains multiple small packs. Please inquire with our sales representatives for standard packing quantities and configurations."
+      question: "Are these sparklers compliant with national safety standards?",
+      answer: "Yes, all our products, including the 12 CM line, are CSIR-NEERI certified (License No: NE/TN/201-01/2019), meeting eco-friendly standards."
     }
   ];
 
@@ -54,16 +54,16 @@ export default function SevenCmPage() {
   const orgSchema = getOrganizationSchema();
   const bizSchema = getLocalBusinessSchema();
   const prodSchema = getProductSchema(
-    "7 CM Sparklers",
-    "/images/products/7cm-products.jpg",
+    "12 CM Sparklers",
+    "/products/12cm-products.jpg",
     description,
-    "BALAKAR-7CM"
+    "BALAKAR-12CM"
   );
   const faqSchema = getFAQSchema(faqs);
   const breadcrumbSchema = getBreadcrumbSchema([
     { name: "Home", item: "/" },
     { name: "Products", item: "/products" },
-    { name: "7 CM Sparklers", item: `/${slug}` }
+    { name: "12 CM Sparklers", item: `/${slug}` }
   ]);
 
   return (
@@ -83,13 +83,13 @@ export default function SevenCmPage() {
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:items-center">
             <div className="lg:col-span-7 flex flex-col gap-5">
               <span className="text-xs font-bold text-amber-700 uppercase tracking-widest block">
-                Phoenix Brand Catalog
+                Direct-From-Plant Orders
               </span>
               <h1 className="text-3xl font-extrabold tracking-tight text-zinc-950 sm:text-5xl">
-                7 CM Sparklers Manufacturer Sivakasi
+                12 CM Sparklers Factory Direct Sivakasi
               </h1>
               <p className="text-base text-zinc-600 leading-relaxed">
-                Buy premium-grade 7 CM sparklers direct from the source. Engineered with low-smoke chemistry at our Alamarathupatti factory in Sivakasi, these sparklers offer the ideal entry point for festive dealer orders.
+                Purchase premium-grade 12 CM sparklers directly from our Alamarathupatti plant in Sivakasi. Our eco-friendly formulas offer low smoke and bright embers, ensuring safe celebrations.
               </p>
               
               <div className="flex flex-wrap gap-3 mt-2">
@@ -98,14 +98,14 @@ export default function SevenCmPage() {
                   className="flex items-center gap-1.5 rounded-full bg-gradient-to-r from-[#2563EB] to-[#7C3AED] px-6 py-3 text-xs font-bold text-white shadow-md hover:shadow-[0_0_15px_rgba(37,99,235,0.35)] transition-all cursor-pointer hover:scale-[1.02]"
                 >
                   <Sparkles className="h-4 w-4 text-white fill-white" />
-                  <span>Get Wholesale Quotation</span>
+                  <span>Request Price List</span>
                 </button>
                 <a
                   href="tel:+919443868706"
                   className="flex items-center gap-1.5 rounded-full border border-zinc-200 bg-white px-6 py-3 text-xs font-bold text-zinc-700 hover:bg-zinc-50 hover:scale-[1.02] hover:border-zinc-350 transition-all"
                 >
                   <Phone className="h-4 w-4 text-[#2563EB]" />
-                  <span>Call Factory Sales</span>
+                  <span>Call Direct Sales</span>
                 </a>
               </div>
             </div>
@@ -113,8 +113,8 @@ export default function SevenCmPage() {
             <div className="lg:col-span-5 flex justify-center w-full">
               <div className="relative aspect-[1599/1132] w-full max-w-lg rounded-2xl overflow-hidden border-2 border-zinc-150 shadow-md bg-zinc-50 p-1 transition-transform duration-300 hover:scale-[1.01]">
                 <Image
-                  src="/images/products/7cm-products.jpg"
-                  alt="7 CM Sparklers Catalog Packaging Box Mockups"
+                  src="/products/12cm-products.jpg"
+                  alt="12 CM Sparklers Pack Mockups Catalog Sheet"
                   fill
                   sizes="(max-w-768px) 100vw, 500px"
                   className="object-contain p-1 rounded-xl"
@@ -134,24 +134,24 @@ export default function SevenCmPage() {
           <div className="mb-10">
             <h2 className="text-xl font-bold text-zinc-900 border-b border-zinc-100 pb-3">Introduction</h2>
             <p className="text-sm text-zinc-600 leading-relaxed mt-4">
-              Welcome to the premium product category page of Balakar Sparklers, a leading <strong>7 CM Sparklers Manufacturer Sivakasi</strong>. Sivakasi has long been recognized as the manufacturing hub of fireworks in India, and at our Alamarathupatti production plant, we continue this legacy by offering the highest quality sparklers in the country. Our 7 CM sparklers represent our most popular standard-length option, widely favored by consumers for their excellent handling properties, reliability, and safe flame path. We manufacture sparklers under our registered trademark, the **Phoenix Brand**, using formulas that prioritize a rich display of sparks and safe operations.
+              Welcome to the premium catalog overview of Balakar Sparklers, your trusted source for **12 CM Sparklers Factory Direct**. Established in Alamarathupatti, Sivakasi, our factory specializes in producing top-tier, long-burning sparklers that are highly sought after by commercial retailers, seasonal store owners, and bulk festival buyers. The 12 CM sparkler size is universally recognized as the premium festive length. It offers an extended burn profile and a comfortable size, making it a reliable choice for families celebrating key traditional and cultural festivals.
             </p>
           </div>
 
           {/* Section 2: Product Overview */}
           <div className="mb-10">
-            <h2 className="text-xl font-bold text-zinc-900 border-b border-zinc-100 pb-3">Product Overview & Color Variants</h2>
+            <h2 className="text-xl font-bold text-zinc-900 border-b border-zinc-100 pb-3">Product Overview & Key Features</h2>
             <p className="text-sm text-zinc-600 leading-relaxed mt-4">
-              Our 7 CM sparklers are built using premium-grade raw materials. The foundation of each sparkler is a high-tensile steel wire core that remains rigid during ignition and burning, preventing hot chemical slurry from falling off. The chemical coating consists of precise, tested mixtures that produce vibrant sparks. In our effort to meet modern standards, we produce Green Certified sparklers that comply with eco-friendly manufacturing directives under CSIR-NEERI license NE/TN/201-01/2019. 
+              Our 12 CM sparkler range features a thick chemical coating applied uniformly on a straight, rigid iron core. This ensures that the ignition is quick, the burn is smooth, and the spark emission remains stable throughout the duration. In line with the Supreme Court directives, we have implemented environmental formulations developed by CSIR-NEERI under certificate NE/TN/201-01/2019. These formulations reduce the presence of particulate matter and toxic chemical vapors by up to 30%, making them eco-friendly green fireworks.
             </p>
             <p className="text-sm text-zinc-600 leading-relaxed mt-4">
-              We offer these sparklers in four major color variants to provide diversity in your festive inventory:
+              We offer the 12 CM sparklers in four color options to fit diverse market preferences:
             </p>
             <ul className="list-disc list-inside mt-3 space-y-2 text-sm text-zinc-600 pl-4">
-              <li><strong>Electric Sparklers:</strong> Features the classic bright golden crackling sparks that emit a nostalgic crackling sound.</li>
-              <li><strong>Colour Sparklers:</strong> Emits bright, assorted multi-color sparkles, perfect for children and holiday events.</li>
-              <li><strong>Green Sparklers:</strong> Generates highly vibrant, deep emerald green spark trails with low smoke profiles.</li>
-              <li><strong>Red Sparklers:</strong> Produces a striking crimson red flame effect that creates a spectacular visual display in evening settings.</li>
+              <li><strong>Electric:</strong> Golden sparkles with classic crackling sounds, a holiday tradition.</li>
+              <li><strong>Colour:</strong> Vibrant multi-colored sparkles that light up the night in rainbow hues.</li>
+              <li><strong>Green:</strong> Rich, brilliant green light trails with a high spark density.</li>
+              <li><strong>Red:</strong> Intense crimson flame trails, providing a beautiful backdrop.</li>
             </ul>
           </div>
 
@@ -159,15 +159,15 @@ export default function SevenCmPage() {
           <div className="mb-10">
             <h2 className="text-xl font-bold text-zinc-900 border-b border-zinc-100 pb-3">Applications & Usage Scenarios</h2>
             <p className="text-sm text-zinc-600 leading-relaxed mt-4">
-              Due to their safe, compact length, our 7 CM sparklers are highly versatile and recommended for a wide array of celebratory occasions. They serve as the perfect addition to family gatherings during traditional festivals such as Diwali, Christmas, and New Year. Additionally, they are increasingly popular as cake-cutting decorative items for birthdays and anniversaries, providing a brief, beautiful spark presentation. Their short ignition time and manageable heat dispersion make them comfortable for users of all ages, provided young children are supervised by adults.
+              The 12 CM sparklers are highly popular across various events. Their medium-length size is perfect for creating sparkler tunnels at weddings, lighting up backyards during Diwali celebrations, celebrating Christmas, and decorating birthday events. They are easy to hold and light, providing an excellent background for evening photography.
             </p>
           </div>
 
           {/* Section 4: Wholesale Information */}
           <div className="mb-10">
-            <h2 className="text-xl font-bold text-zinc-900 border-b border-zinc-100 pb-3">Wholesale & Bulk Ordering Information</h2>
+            <h2 className="text-xl font-bold text-zinc-900 border-b border-zinc-100 pb-3">Wholesale & Factory Direct Supply</h2>
             <p className="text-sm text-zinc-600 leading-relaxed mt-4">
-              Balakar Sparklers Factory welcomes inquiries from wholesale dealers, retail distributors, and bulk buying organizations across all states in India. We supply directly from our Sivakasi manufacturing plant, which eliminates middleman commissions and ensures that you get the best competitive pricing. We pack our 7 CM sparklers in high-durability, moisture-resistant packaging boxes featuring the Phoenix Brand trademark. We provide transport coordination from Sivakasi to your location. For custom packaging requests or bulk box inquiries, feel free to contact our sales desk directly.
+              As a direct manufacturer, Balakar Sparklers Factory supplies 12 CM sparklers in bulk at wholesale rates. Buying directly from our Alamarathupatti factory in Sivakasi helps you secure better profit margins by bypassing intermediaries. We use high-quality packaging boxes featuring the Phoenix Brand trademark. We provide transport coordination to deliver bulk consignments safely to dealers throughout India.
             </p>
           </div>
 
@@ -207,7 +207,7 @@ export default function SevenCmPage() {
       <Footer />
       <MobileStickyBar />
       <FloatingInquiry />
-      <InquiryModal isOpen={isInquiryOpen} onClose={() => setIsInquiryOpen(false)} defaultCategory="7 CM Sparklers" />
+      <InquiryModal isOpen={isInquiryOpen} onClose={() => setIsInquiryOpen(false)} defaultCategory="12 CM Sparklers" />
     </div>
   );
 }

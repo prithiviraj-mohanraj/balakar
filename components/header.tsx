@@ -44,7 +44,7 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image
-              src="/images/branding/balakar-logo.png"
+              src="/branding/balakar-logo.png"
               alt="Balakar Sparklers Logo"
               width={220}
               height={66}
