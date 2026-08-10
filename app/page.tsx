@@ -16,8 +16,7 @@ import {
   Flame,
   Star,
   Zap,
-  Leaf,
-  Award
+  Leaf
 } from "lucide-react";
 import Header from "../components/header";
 import Footer from "../components/footer";
@@ -25,8 +24,8 @@ import MobileStickyBar from "../components/mobile-sticky-bar";
 import FloatingInquiry from "../components/floating-inquiry";
 import InquiryModal from "../components/inquiry-modal";
 
-// Cinematic & Realistic Sparkler Components
-import SparklerStickCanvas from "../components/cinematic/sparkler-stick-canvas";
+// Macro Sparkler Light Photography Engine
+import MacroSparklerCanvas from "../components/cinematic/macro-sparkler-canvas";
 import FireworkBackground from "../components/cinematic/firework-background";
 import GlowAtmosphere from "../components/cinematic/glow-atmosphere";
 import SmokeLayer from "../components/cinematic/smoke-layer";
@@ -167,14 +166,14 @@ export default function Home() {
       <Header />
 
       {/* ========================================================================= */}
-      {/* 1. HERO SECTION - Bright Light Theme + Realistic Animated Sparkler Sticks */}
+      {/* 1. HERO SECTION - Bright Light Theme + Macro Sparkler Photography Canvas */}
       {/* ========================================================================= */}
       <section className="relative min-h-[92vh] flex items-center justify-center overflow-hidden pt-10 pb-20 border-b border-amber-100 bg-gradient-to-b from-[#FFFDF7] via-[#FAF9F6] to-[#FFFDF7]">
-        {/* Dedicated Canvas Renderer for Burning Sparkler Sticks Framing the Content */}
-        <SparklerStickCanvas opacity={0.95} />
+        {/* Macro Sparkler Light Photography Engine (No Wires or Black Sticks) */}
+        <MacroSparklerCanvas opacity={0.95} />
 
-        {/* Ambient Soft Canvas Background for Sweeps & Bokeh */}
-        <FireworkBackground type="hero" density={25} speed={0.9} opacity={0.6} colorScheme="gold" />
+        {/* Soft Ambient Canvas Background for Distant Blooms */}
+        <FireworkBackground type="hero" density={22} speed={0.8} opacity={0.5} colorScheme="gold" />
         
         {/* Volumetric Light Glow */}
         <GlowAtmosphere position="hero" color="gold" intensity="medium" />
