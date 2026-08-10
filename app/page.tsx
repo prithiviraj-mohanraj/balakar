@@ -25,7 +25,8 @@ import MobileStickyBar from "../components/mobile-sticky-bar";
 import FloatingInquiry from "../components/floating-inquiry";
 import InquiryModal from "../components/inquiry-modal";
 
-// Cinematic Background Components (Engineered for Light Theme)
+// Cinematic & Realistic Sparkler Components
+import SparklerStickCanvas from "../components/cinematic/sparkler-stick-canvas";
 import FireworkBackground from "../components/cinematic/firework-background";
 import GlowAtmosphere from "../components/cinematic/glow-atmosphere";
 import SmokeLayer from "../components/cinematic/smoke-layer";
@@ -166,25 +167,28 @@ export default function Home() {
       <Header />
 
       {/* ========================================================================= */}
-      {/* 1. HERO SECTION - Bright Warm Ivory & Golden Sparkler Atmosphere */}
+      {/* 1. HERO SECTION - Bright Light Theme + Realistic Animated Sparkler Sticks */}
       {/* ========================================================================= */}
-      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-10 pb-20 border-b border-amber-100 bg-gradient-to-b from-[#FFFDF7] via-[#FAF9F6] to-[#FFFDF7]">
-        {/* Reusable Canvas Background Engine (Adapted for Light Canvas) */}
-        <FireworkBackground type="hero" density={42} speed={1.0} opacity={0.8} colorScheme="gold" />
+      <section className="relative min-h-[92vh] flex items-center justify-center overflow-hidden pt-10 pb-20 border-b border-amber-100 bg-gradient-to-b from-[#FFFDF7] via-[#FAF9F6] to-[#FFFDF7]">
+        {/* Dedicated Canvas Renderer for Burning Sparkler Sticks Framing the Content */}
+        <SparklerStickCanvas opacity={0.95} />
+
+        {/* Ambient Soft Canvas Background for Sweeps & Bokeh */}
+        <FireworkBackground type="hero" density={25} speed={0.9} opacity={0.6} colorScheme="gold" />
         
-        {/* Volumetric Radial Light Glow */}
+        {/* Volumetric Light Glow */}
         <GlowAtmosphere position="hero" color="gold" intensity="medium" />
 
         {/* Soft Ambient Smoke Haze */}
-        <SmokeLayer opacity={0.15} />
+        <SmokeLayer opacity={0.12} />
 
-        <div className="relative z-10 mx-auto max-w-7xl px-6 text-center">
+        <div className="relative z-20 mx-auto max-w-7xl px-6 text-center">
           {/* Above-headline Badge */}
           <motion.div
             initial={{ opacity: 0, y: -15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 rounded-full border border-amber-300/80 bg-amber-50/80 px-4 py-1.5 backdrop-blur-md shadow-sm mb-6"
+            className="inline-flex items-center gap-2 rounded-full border border-amber-300/80 bg-white/90 backdrop-blur-md px-4 py-1.5 shadow-sm mb-6"
           >
             <Flame className="h-4 w-4 text-[#D4AF37] fill-[#D4AF37]" />
             <span className="text-xs font-extrabold uppercase tracking-widest text-[#0F172A]">
@@ -212,7 +216,7 @@ export default function Home() {
             Premium Green Certified Sparklers Manufactured in Sivakasi. Double-Dipped Steel Wire Core for Unmatched Brilliance and Zero Fallout Sparks.
           </motion.p>
 
-          {/* Hero Featured Product Image Stage (Light Card with Golden Sparks Sweeping Around) */}
+          {/* Hero Featured Product Packaging Stage (Illuminated 4-Box Showroom Display) */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -220,20 +224,22 @@ export default function Home() {
             className="relative max-w-4xl mx-auto mb-12"
           >
             <div className="absolute -inset-4 bg-gradient-to-r from-amber-400/20 via-[#D4AF37]/30 to-amber-400/20 rounded-3xl blur-2xl opacity-60 animate-pulse-slow pointer-events-none" />
-            <div className="relative overflow-hidden rounded-3xl border border-amber-200/80 bg-white/90 backdrop-blur-2xl p-4 shadow-xl">
-              <div className="relative aspect-[21/9] sm:aspect-[2.4/1] w-full overflow-hidden rounded-2xl bg-amber-50/30">
+            
+            <div className="relative overflow-hidden rounded-3xl border border-amber-200/80 bg-white/95 backdrop-blur-2xl p-4 sm:p-6 shadow-xl">
+              <div className="relative aspect-[21/9] sm:aspect-[2.4/1] w-full overflow-hidden rounded-2xl bg-gradient-to-b from-amber-50/40 to-white/60 p-2 flex items-center justify-center">
                 <Image
                   src="/products/7cm-products.jpg"
-                  alt="Balakar Sparklers Sivakasi Product Packaging Showcase"
+                  alt="Balakar Sparklers Sivakasi Product Packaging Showcase - 7 CM Electric, Colour, Green, Red"
                   fill
                   className="object-contain transform hover:scale-[1.02] transition-transform duration-700 p-2"
                   priority
                 />
-                {/* Overlay Sparkle Accent */}
-                <div className="absolute bottom-4 left-4 flex items-center gap-2 rounded-xl bg-white/90 backdrop-blur-md px-3.5 py-2 border border-amber-200 shadow-sm">
+                
+                {/* Overlay Badge */}
+                <div className="absolute bottom-4 left-4 flex items-center gap-2 rounded-xl bg-white/95 backdrop-blur-md px-3.5 py-2 border border-amber-200 shadow-sm">
                   <Star className="h-4 w-4 text-[#D4AF37] fill-[#D4AF37]" />
                   <span className="text-xs font-bold text-[#0F172A] uppercase tracking-wider">
-                    7 CM to 50 CM Collections
+                    Official Balakar Packaging Showroom
                   </span>
                 </div>
               </div>
