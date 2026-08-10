@@ -3,103 +3,82 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Sparkles, Phone, MessageSquare, ArrowRight, ShieldCheck, Download, Info } from "lucide-react";
+import { Sparkles, Phone, ArrowRight, ShieldCheck, Download, Flame } from "lucide-react";
 import Header from "../../components/header";
 import Footer from "../../components/footer";
 import MobileStickyBar from "../../components/mobile-sticky-bar";
 import FloatingInquiry from "../../components/floating-inquiry";
 import InquiryModal from "../../components/inquiry-modal";
-import SparkEffect from "../../components/spark-effect";
+
+import FireworkBackground from "../../components/cinematic/firework-background";
+import GlowAtmosphere from "../../components/cinematic/glow-atmosphere";
+import SmokeLayer from "../../components/cinematic/smoke-layer";
 import { getBreadcrumbSchema } from "../../lib/seo.config";
 
 export default function ProductsPage() {
   const [isInquiryOpen, setIsInquiryOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState("");
 
-  const getBadgeStyle = (size: string) => {
-    switch (size) {
-      case "7 CM": return "bg-slate-50 border-slate-200 text-[#0F172A] font-bold";
-      case "10 CM": return "bg-blue-50 border-blue-200 text-[#2563EB] font-bold";
-      case "12 CM": return "bg-purple-50 border-purple-200 text-[#7C3AED] font-bold";
-      case "15 CM": return "bg-teal-50 border-teal-200 text-[#14B8A6] font-bold";
-      case "30 CM": return "bg-amber-50 border-amber-300 text-[#D4AF37] font-bold";
-      case "50 CM": return "bg-slate-50 border-slate-200 text-[#0F172A] font-bold";
-      default: return "bg-zinc-100 text-zinc-850 font-bold";
-    }
-  };
-
-  const getCardStyle = (size: string) => {
-    switch (size) {
-      case "7 CM": return "hover:border-[#0F172A] hover:shadow-[0_0_20px_rgba(15,23,42,0.12)] hover:-translate-y-1.5";
-      case "10 CM": return "hover:border-[#2563EB] hover:shadow-[0_0_20px_rgba(37,99,235,0.15)] hover:-translate-y-1.5";
-      case "12 CM": return "hover:border-[#0F172A] hover:shadow-[0_0_20px_rgba(15,23,42,0.12)] hover:-translate-y-1.5";
-      case "15 CM": return "hover:border-[#2563EB] hover:shadow-[0_0_20px_rgba(37,99,235,0.15)] hover:-translate-y-1.5";
-      case "30 CM": return "hover:border-[#D4AF37] hover:shadow-[0_0_20px_rgba(212,175,55,0.18)] hover:-translate-y-1.5";
-      case "50 CM": return "hover:border-[#0F172A] hover:shadow-[0_0_20px_rgba(15,23,42,0.12)] hover:-translate-y-1.5";
-      default: return "hover:border-zinc-350 hover:shadow-lg hover:-translate-y-1.5";
-    }
-  };
-
   const products = [
     {
       size: "7 CM",
-      title: "7 CM Sparklers",
+      title: "7 CM Sparklers Collection",
       image: "/products/7cm-products.jpg",
       variants: ["Electric", "Colour", "Green", "Red"],
       slug: "7cm-sparklers",
       keyword: "7 CM Sparklers Manufacturer Sivakasi",
-      desc: "Perfect entry-level sparklers for family celebrations. Highly safe, easy to handle, and bright.",
-      app: "Family gatherings, children's celebrations, domestic festivals."
+      desc: "Perfect entry-level sparklers for family cake-cutting and Diwali celebrations. Easy to handle and bright.",
+      app: "Family gatherings, birthday cake-cutting, domestic festivals."
     },
     {
       size: "10 CM",
-      title: "10 CM Sparklers",
+      title: "10 CM Sparklers Collection",
       image: "/products/10cm-products.jpg",
       variants: ["Electric", "Colour", "Green", "Red", "Silver"],
       slug: "10cm-sparklers",
-      keyword: "10 CM Sparklers Wholesale",
-      desc: "An all-time favorite length offering a perfect balance between burning duration and bright embers.",
-      app: "Diwali, wedding pathways, outdoor evening parties."
+      keyword: "10 CM Sparklers Wholesale Sivakasi",
+      desc: "All-time favorite length offering an optimal balance between burning duration and radiant light.",
+      app: "Diwali night, wedding entrance pathways, outdoor receptions."
     },
     {
       size: "12 CM",
-      title: "12 CM Sparklers",
+      title: "12 CM Commercial Pack Sparklers",
       image: "/products/12cm-products.jpg",
-      variants: ["Electric", "Colour", "Green", "Red"],
+      variants: ["Electric", "Colour", "Green", "Red", "Multi-color"],
       slug: "12cm-sparklers",
       keyword: "12 CM Sparklers Factory Direct",
-      desc: "Premium grade sparklers featuring long-lasting sparkle effects in multiple colors.",
-      app: "Grand festivals, corporate stage entrances, private celebrations."
+      desc: "Extended burn time with vibrant multicolor flames for commercial events and large family gatherings.",
+      app: "Grand wedding celebrations, New Year countdowns, corporate galas."
     },
     {
       size: "15 CM",
-      title: "15 CM Sparklers",
+      title: "15 CM Grand Event Sparklers",
       image: "/products/15cm-products.jpg",
-      variants: ["Electric", "Colour", "Green", "Red"],
+      variants: ["Electric", "Colour", "Green", "Red", "Gold Crackling"],
       slug: "15cm-sparklers",
-      keyword: "15 CM Sparklers Supplier India",
-      desc: "Ideal choice for large public gatherings, festivals, and parties. Extra bright and highly reliable.",
-      app: "Large community gatherings, temple festivals, stage decoration."
+      keyword: "15 CM Event Sparklers Manufacturer",
+      desc: "Longer burn duration with dense starburst crackles designed for wedding photography and grand entries.",
+      app: "VIP wedding receptions, stage lightings, festival processions."
     },
     {
       size: "30 CM",
-      title: "30 CM Sparklers",
+      title: "30 CM Giant Sparklers Collection",
       image: "/products/30cm-products.jpg",
-      variants: ["Electric", "Colour", "Green", "Red"],
+      variants: ["Electric Gold", "Colour Stars", "Green Eco"],
       slug: "30cm-sparklers",
-      keyword: "30 CM Sparklers Manufacturer",
-      desc: "Long metal sparklers that provide massive golden crackling sparkles and extended display time.",
-      app: "New Year countdowns, wedding exit tunnels, premium parties."
+      keyword: "30 CM Giant Sparklers Sivakasi",
+      desc: "Extra long 30 CM giant sparklers producing over 3+ minutes of continuous golden starbursts.",
+      app: "Photographer bride & groom exits, mega Diwali shows, stage fireworks."
     },
     {
       size: "50 CM",
-      title: "50 CM Sparklers",
+      title: "50 CM Mega Celebration Sparklers",
       image: "/products/50cm-products.jpg",
-      variants: ["Electric", "Colour"],
+      variants: ["Electric Super Gold", "Multi Stars", "Emerald Green"],
       slug: "50cm-sparklers",
-      keyword: "50 CM Sparklers Wholesale Sivakasi",
-      desc: "Our giant sparkler variety, designed for premium weddings, New Year events, and corporate celebrations.",
-      app: "Luxury wedding receptions, large commercial displays, photography shoots."
+      keyword: "50 CM Mega Sparklers Wholesale Factory",
+      desc: "Our flagship extra-long 50 CM sparklers delivering majestic 5-minute continuous burn time.",
+      app: "Stadium celebrations, resort galas, flagship wedding exits."
     }
   ];
 
@@ -109,7 +88,7 @@ export default function ProductsPage() {
   ]);
 
   return (
-    <div className="flex-1 bg-white font-sans text-zinc-900 overflow-x-hidden pb-16 md:pb-0">
+    <div className="relative min-h-screen bg-[#05050A] text-slate-100 selection:bg-[#D4AF37] selection:text-black">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }}
@@ -118,28 +97,33 @@ export default function ProductsPage() {
       <Header />
 
       {/* Header Info */}
-      <section className="bg-[#FAF9F6] py-16 sm:py-20 border-b border-zinc-200/60">
-        <div className="mx-auto max-w-7xl px-6 text-center">
-          <span className="text-xs font-bold text-[#D4AF37] uppercase tracking-widest block">Sivakasi Sparklers Plant</span>
-          <h1 className="text-2.5xl font-extrabold tracking-tight text-[#0F172A] sm:text-4xl mt-2">
-            Our Premium Product Collections
+      <section className="relative overflow-hidden py-20 border-b border-white/10">
+        <FireworkBackground type="hero" density={40} opacity={0.6} colorScheme="gold" />
+        <GlowAtmosphere position="center" color="gold" intensity="medium" />
+        <SmokeLayer opacity={0.2} />
+
+        <div className="relative z-10 mx-auto max-w-7xl px-6 text-center">
+          <span className="text-xs font-extrabold text-[#D4AF37] uppercase tracking-widest block">SIVAKASI SPARKLERS PLANT</span>
+          <h1 className="text-3xl font-black tracking-tight text-white sm:text-5xl uppercase mt-2">
+            Our Premium <span className="text-[#D4AF37] gold-glow-text">Product Collections</span>
           </h1>
-          <p className="mt-4 text-xs sm:text-sm md:text-base text-slate-650 max-w-2xl mx-auto leading-relaxed">
-            Discover certified eco-friendly green sparklers manufactured under the Phoenix Brand. Available in multiple lengths and vibrant color variants for wholesale and bulk purchase direct from our Sivakasi factory.
+          <p className="mt-4 text-xs sm:text-sm md:text-base text-slate-300 max-w-2xl mx-auto leading-relaxed">
+            Discover certified eco-friendly green sparklers manufactured under Phoenix Brand. Available in 7 CM to 50 CM lengths and vibrant color variants for wholesale consignments.
           </p>
-          <div className="mt-8 flex flex-col sm:flex-row justify-center gap-3 w-full max-w-md sm:max-w-none mx-auto px-4">
+
+          <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4 max-w-md mx-auto sm:max-w-none">
             <button
               onClick={() => setIsInquiryOpen(true)}
-              className="relative overflow-hidden flex items-center justify-center gap-1.5 rounded-full bg-[#2563EB] px-6 py-3 text-sm font-bold text-white shadow-md hover:bg-[#1d4ed8] hover:shadow-[0_0_20px_rgba(37,99,235,0.4)] transition-all duration-300 cursor-pointer hover:scale-[1.01] w-full sm:w-auto before:absolute before:inset-0 before:-translate-x-full hover:before:translate-x-full before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent before:transition-transform before:duration-700 before:ease-out"
+              className="flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#D4AF37] to-[#F59E0B] px-8 py-3.5 text-xs font-extrabold uppercase tracking-widest text-black shadow-[0_0_20px_rgba(212,175,55,0.4)]"
             >
-              <Sparkles className="h-4 w-4 text-white fill-white" />
+              <Flame className="h-4 w-4 fill-black" />
               <span>Get Wholesale Price List</span>
             </button>
             <Link
               href="/catalog"
-              className="relative overflow-hidden flex items-center justify-center gap-1.5 rounded-full bg-[#0F172A] px-6 py-3 text-sm font-bold text-white shadow-md hover:bg-slate-800 hover:shadow-[0_0_20px_rgba(15,23,42,0.25)] transition-all hover:scale-[1.01] w-full sm:w-auto before:absolute before:inset-0 before:-translate-x-full hover:before:translate-x-full before:bg-gradient-to-r before:from-transparent before:via-white/15 before:to-transparent before:transition-transform before:duration-700 before:ease-out"
+              className="flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/5 backdrop-blur-md px-8 py-3.5 text-xs font-bold uppercase tracking-widest text-white hover:bg-white/10 transition-colors"
             >
-              <Download className="h-4 w-4 text-white" />
+              <Download className="h-4 w-4 text-[#D4AF37]" />
               <span>Download PDF Catalog</span>
             </Link>
           </div>
@@ -147,44 +131,42 @@ export default function ProductsPage() {
       </section>
 
       {/* Products Grid */}
-      <section className="relative overflow-hidden py-20 bg-white border-t border-zinc-200/60">
-        <SparkEffect type="drift" density={15} opacity={0.18} colorScheme="gold" />
+      <section className="relative overflow-hidden py-20 border-b border-white/10 bg-[#08080C]">
+        <FireworkBackground type="trails" density={30} opacity={0.4} colorScheme="gold" />
+        
         <div className="mx-auto max-w-7xl px-6 relative z-10">
-          <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
             {products.map((p) => (
               <div
                 key={p.slug}
-                className={`group flex flex-col rounded-3xl border border-zinc-200/80 bg-white overflow-hidden transition-all duration-300 ${getCardStyle(p.size)}`}
+                className="group flex flex-col rounded-3xl border border-white/15 bg-[#0A0B12] overflow-hidden transition-all duration-300 hover:border-[#D4AF37]/50 hover:shadow-[0_0_35px_rgba(212,175,55,0.2)]"
               >
-                {/* Image Showcase (A4 Landscape aspect ratio, contain fit) */}
-                <div className="aspect-[1599/1132] relative bg-zinc-50 overflow-hidden border-b border-zinc-200/60 p-2">
+                {/* Image Showcase */}
+                <div className="aspect-[4/3] relative bg-black/60 overflow-hidden border-b border-white/10 p-3">
                   <Image
                     src={p.image}
                     alt={`${p.title} Catalog Page`}
                     fill
-                    sizes="(max-w-768px) 100vw, 380px"
-                    className="object-contain p-1 rounded-xl transition-transform duration-300 group-hover:scale-[1.02]"
-                    quality={95}
+                    className="object-contain p-2 rounded-2xl transition-transform duration-500 group-hover:scale-[1.03]"
+                    priority
                   />
+                  <div className="absolute top-4 left-4 rounded-xl bg-black/80 backdrop-blur-md px-3 py-1 border border-[#D4AF37]/40 text-xs font-bold text-[#D4AF37]">
+                    {p.size} Category
+                  </div>
                 </div>
 
                 {/* Content */}
                 <div className="flex-1 p-6 flex flex-col justify-between gap-5">
                   <div>
-                    <div className="flex items-center justify-between">
-                      <h3 className="text-lg font-bold text-[#0F172A]">{p.title}</h3>
-                      <span className={`rounded-lg border px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider ${getBadgeStyle(p.size)}`}>
-                        {p.size} Size
-                      </span>
-                    </div>
+                    <h3 className="text-xl font-extrabold text-white uppercase tracking-wider">{p.title}</h3>
+                    <p className="text-xs font-bold text-amber-400 mt-1 uppercase tracking-widest">{p.keyword}</p>
                     
-                    <p className="text-xs text-slate-500 mt-2 leading-relaxed line-clamp-3">
+                    <p className="text-xs text-slate-300 mt-3 leading-relaxed">
                       {p.desc}
                     </p>
 
-                    {/* Applications info */}
-                    <p className="text-[11px] text-slate-455 mt-3 italic leading-normal">
-                      <strong>Applications:</strong> {p.app}
+                    <p className="text-[11px] text-slate-400 mt-3 italic">
+                      <strong className="text-slate-200">Use cases:</strong> {p.app}
                     </p>
 
                     {/* Variants list */}
@@ -192,7 +174,7 @@ export default function ProductsPage() {
                       {p.variants.map((v) => (
                         <span
                           key={v}
-                          className="rounded-md bg-zinc-50 border border-zinc-200/60 px-2 py-0.5 text-[10px] font-semibold text-slate-600"
+                          className="rounded-lg border border-white/10 bg-white/5 px-2.5 py-1 text-[10px] font-bold text-slate-300"
                         >
                           {v}
                         </span>
@@ -201,13 +183,13 @@ export default function ProductsPage() {
                   </div>
 
                   {/* Links & CTA */}
-                  <div className="border-t border-zinc-100 pt-4 flex items-center justify-between gap-2">
+                  <div className="border-t border-white/10 pt-4 flex items-center justify-between gap-2">
                     <Link
                       href={`/${p.slug}`}
-                      className="inline-flex items-center gap-1 text-xs font-bold text-[#0F172A] hover:text-[#2563EB] transition-colors"
+                      className="inline-flex items-center gap-1.5 text-xs font-extrabold text-[#D4AF37] hover:text-amber-300 uppercase tracking-wider transition-colors"
                     >
                       <span>Explore details</span>
-                      <ArrowRight className="h-3 w-3" />
+                      <ArrowRight className="h-3.5 w-3.5" />
                     </Link>
                     
                     <button
@@ -215,7 +197,7 @@ export default function ProductsPage() {
                         setSelectedProduct(p.title);
                         setIsInquiryOpen(true);
                       }}
-                      className="relative overflow-hidden rounded-full bg-[#2563EB] px-5 py-2.5 text-xs font-bold text-white hover:bg-[#1d4ed8] hover:shadow-[0_0_15px_rgba(37,99,235,0.35)] transition-all duration-300 cursor-pointer hover:scale-[1.02] before:absolute before:inset-0 before:-translate-x-full hover:before:translate-x-full before:bg-gradient-to-r before:from-transparent before:via-white/25 before:to-transparent before:transition-transform before:duration-700 before:ease-out"
+                      className="rounded-full bg-[#D4AF37] px-5 py-2 text-xs font-extrabold uppercase tracking-wider text-black hover:bg-amber-400 transition-all cursor-pointer"
                     >
                       Inquire
                     </button>
@@ -226,29 +208,29 @@ export default function ProductsPage() {
           </div>
 
           {/* Marketing strip */}
-          <div className="mt-20 rounded-3xl border border-zinc-200/60 p-8 sm:p-10 bg-[#FAF9F6] flex flex-col gap-6 md:flex-row md:items-center md:justify-between shadow-sm">
-             <div className="flex-1">
-              <div className="flex items-center gap-2 text-[#D4AF37] text-xs font-bold uppercase tracking-wider">
-                <ShieldCheck className="h-4.5 w-4.5 text-[#2563EB]" />
-                <span>CSIR-NEERI Certified Partner</span>
+          <div className="mt-16 rounded-3xl border border-white/15 p-8 bg-gradient-to-r from-[#0A0B12] via-[#0E0F19] to-[#0A0B12] flex flex-col gap-6 md:flex-row md:items-center md:justify-between shadow-2xl">
+            <div className="flex-1">
+              <div className="flex items-center gap-2 text-[#D4AF37] text-xs font-extrabold uppercase tracking-widest">
+                <ShieldCheck className="h-4.5 w-4.5 text-[#D4AF37]" />
+                <span>CSIR-NEERI Certified Manufacturer</span>
               </div>
-              <h3 className="text-xl font-bold text-[#0F172A] mt-2">Interested in Custom Packaging or Logo Printing?</h3>
-              <p className="text-xs text-slate-500 mt-2 leading-relaxed">
-                As a direct Sivakasi manufacturer, we support custom packaging boxes and co-branded dealer options for qualifying bulk orders. Get in touch with our factory managers to discuss your requirements.
+              <h3 className="text-xl font-bold text-white mt-2">Custom Packaging & Branding Available</h3>
+              <p className="text-xs text-slate-400 mt-2 leading-relaxed">
+                As a direct Sivakasi sparkler factory, we support custom dealer branding and wholesale transport packaging for major stockists across India.
               </p>
             </div>
-            <div className="flex flex-col sm:flex-row gap-3 shrink-0 w-full md:w-auto px-4 md:px-0">
+            <div className="flex flex-col sm:flex-row gap-3 shrink-0">
               <button
                 onClick={() => setIsInquiryOpen(true)}
-                className="relative overflow-hidden flex items-center justify-center gap-1.5 rounded-full bg-[#2563EB] px-5 py-3 text-xs font-bold text-white shadow-md hover:bg-[#1d4ed8] hover:shadow-[0_0_20px_rgba(37,99,235,0.4)] transition-all duration-300 cursor-pointer hover:scale-[1.02] w-full sm:w-auto before:absolute before:inset-0 before:-translate-x-full hover:before:translate-x-full before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent before:transition-transform before:duration-700 before:ease-out"
+                className="rounded-full bg-gradient-to-r from-[#D4AF37] to-[#F59E0B] px-6 py-3 text-xs font-extrabold uppercase tracking-widest text-black shadow-[0_0_20px_rgba(212,175,55,0.4)]"
               >
-                Request Custom Quotation
+                Inquire Custom Order
               </button>
               <a
                 href="tel:+919443868706"
-                className="relative overflow-hidden flex items-center justify-center gap-1.5 rounded-full border border-zinc-300 bg-white px-5 py-3 text-xs font-bold text-zinc-700 hover:border-[#2563EB] hover:bg-[#2563EB]/5 hover:text-[#2563EB] transition-all duration-300 cursor-pointer w-full sm:w-auto hover:scale-[1.02] before:absolute before:inset-0 before:-translate-x-full hover:before:translate-x-full before:bg-gradient-to-r before:from-transparent before:via-[#2563EB]/10 before:to-transparent before:transition-transform before:duration-700 before:ease-out"
+                className="flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/5 px-6 py-3 text-xs font-bold uppercase tracking-widest text-white hover:bg-white/10 transition-colors"
               >
-                <Phone className="h-3.5 w-3.5 text-[#2563EB]" /> <span>Call Sales</span>
+                <Phone className="h-4 w-4 text-[#D4AF37]" /> <span>Call Direct</span>
               </a>
             </div>
           </div>

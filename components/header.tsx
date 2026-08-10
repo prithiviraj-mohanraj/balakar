@@ -1,10 +1,10 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Menu, X, Sparkles, ChevronDown, Phone } from "lucide-react";
+import { Menu, X, Sparkles, ChevronDown, Phone, Flame } from "lucide-react";
 import InquiryModal from "./inquiry-modal";
 
 export default function Header() {
@@ -12,13 +12,26 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isInquiryOpen, setIsInquiryOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 20) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navigation = [
     { name: "Home", href: "/" },
-    { name: "About Factory", href: "/about" },
     { name: "Products", href: "/products" },
+    { name: "About Us", href: "/about" },
     { name: "Catalog", href: "/catalog" },
-    { name: "Contact Us", href: "/contact" },
+    { name: "Contact", href: "/contact" },
   ];
 
   const categories = [
@@ -39,22 +52,29 @@ export default function Header() {
 
   return (
     <>
-      <header className="sticky top-0 z-40 w-full border-b border-zinc-100 bg-white/80 backdrop-blur-md">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+      <header
+        className={`sticky top-0 z-50 w-full transition-all duration-300 ${
+          scrolled
+            ? "bg-[#05050A]/90 backdrop-blur-xl border-b border-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.8)]"
+            : "bg-gradient-to-b from-[#05050A]/95 via-[#05050A]/70 to-transparent border-b border-white/5"
+        }`}
+      >
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3.5">
           {/* Logo */}
-          <Link href="/" className="flex items-center">
+          <Link href="/" className="flex items-center group relative">
+            <div className="absolute -inset-2 bg-gradient-to-r from-[#D4AF37]/20 to-amber-500/0 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             <Image
               src="/branding/balakar-logo.png"
               alt="Balakar Sparklers Logo"
               width={220}
               height={66}
-              className="h-14 w-auto object-contain sm:h-20"
+              className="h-12 sm:h-16 w-auto object-contain relative z-10 transition-transform duration-300 group-hover:scale-[1.02]"
               priority
             />
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-7">
             {navigation.map((item) => {
               if (item.name === "Products") {
                 return (
@@ -66,33 +86,33 @@ export default function Header() {
                   >
                     <Link
                       href="/products"
-                      className={`flex items-center gap-1 text-sm font-semibold transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:scale-x-0 after:origin-left after:bg-[#D4AF37] after:transition-transform after:duration-300 hover:after:scale-x-100 ${
+                      className={`flex items-center gap-1 text-xs uppercase tracking-widest font-bold transition-all py-1 relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:scale-x-0 after:origin-left after:bg-[#D4AF37] after:transition-transform after:duration-300 hover:after:scale-x-100 ${
                         isActive("/products") || categories.some((c) => pathname === c.href)
-                          ? "text-[#2563EB] after:scale-x-100"
-                          : "text-zinc-600 hover:text-[#2563EB]"
+                          ? "text-[#D4AF37] after:scale-x-100 gold-glow-text"
+                          : "text-slate-300 hover:text-[#D4AF37]"
                       }`}
                     >
                       Products
-                      <ChevronDown className="h-4 w-4" />
+                      <ChevronDown className="h-3.5 w-3.5 text-[#D4AF37]" />
                     </Link>
                     
                     {dropdownOpen && (
-                      <div className="absolute top-full left-1/2 -translate-x-1/2 w-52 rounded-xl border border-zinc-100 bg-white p-2 shadow-lg ring-1 ring-black/5 animate-in fade-in slide-in-from-top-2 duration-200">
+                      <div className="absolute top-full left-1/2 -translate-x-1/2 w-56 rounded-2xl border border-white/10 bg-[#0A0B12]/95 backdrop-blur-xl p-2.5 shadow-2xl ring-1 ring-white/10 animate-in fade-in slide-in-from-top-2 duration-200">
                         <Link
                           href="/products"
-                          className="block rounded-lg px-4 py-2 text-xs font-bold text-zinc-400 uppercase tracking-wider hover:bg-zinc-50 transition-colors"
+                          className="block rounded-xl px-4 py-2 text-[10px] font-bold text-amber-400/80 uppercase tracking-widest hover:bg-white/5 transition-colors"
                         >
-                          All Categories
+                          All Sparklers
                         </Link>
-                        <div className="h-px bg-zinc-100 my-1" />
+                        <div className="h-px bg-white/10 my-1.5" />
                         {categories.map((cat) => (
                           <Link
                             key={cat.name}
                             href={cat.href}
-                            className={`block rounded-lg px-4 py-2 text-sm font-medium transition-colors ${
+                            className={`block rounded-xl px-4 py-2 text-xs font-semibold transition-all ${
                               pathname === cat.href
-                                ? "bg-blue-50/50 text-[#2563EB] font-semibold"
-                                : "text-zinc-600 hover:bg-zinc-50/70 hover:text-[#2563EB]"
+                                ? "bg-[#D4AF37]/15 text-[#D4AF37] font-bold border border-[#D4AF37]/30"
+                                : "text-slate-300 hover:bg-white/5 hover:text-[#D4AF37]"
                             }`}
                           >
                             {cat.name}
@@ -107,10 +127,10 @@ export default function Header() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className={`text-sm font-semibold transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:scale-x-0 after:origin-left after:bg-[#D4AF37] after:transition-transform after:duration-300 hover:after:scale-x-100 ${
+                  className={`text-xs uppercase tracking-widest font-bold transition-all py-1 relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:scale-x-0 after:origin-left after:bg-[#D4AF37] after:transition-transform after:duration-300 hover:after:scale-x-100 ${
                     isActive(item.href)
-                      ? "text-[#2563EB] after:scale-x-100"
-                      : "text-zinc-600 hover:text-[#2563EB]"
+                      ? "text-[#D4AF37] after:scale-x-100 gold-glow-text"
+                      : "text-slate-300 hover:text-[#D4AF37]"
                   }`}
                 >
                   {item.name}
@@ -123,16 +143,16 @@ export default function Header() {
           <div className="hidden md:flex items-center gap-5">
             <a
               href="tel:+919443868706"
-              className="flex items-center gap-1.5 text-sm font-semibold text-zinc-600 hover:text-[#2563EB] transition-colors"
+              className="flex items-center gap-1.5 text-xs uppercase tracking-wider font-bold text-slate-300 hover:text-[#D4AF37] transition-colors"
             >
-              <Phone className="h-4 w-4 text-[#2563EB]" />
-              <span>Call Us</span>
+              <Phone className="h-3.5 w-3.5 text-[#D4AF37]" />
+              <span>Direct Sales</span>
             </a>
             <button
               onClick={() => setIsInquiryOpen(true)}
-              className="relative overflow-hidden flex items-center gap-1.5 rounded-full bg-[#2563EB] px-5 py-2.5 text-sm font-bold text-white shadow-md hover:bg-[#1d4ed8] hover:shadow-[0_0_20px_rgba(37,99,235,0.45)] transition-all duration-300 cursor-pointer hover:scale-[1.02] before:absolute before:inset-0 before:-translate-x-full hover:before:translate-x-full before:bg-gradient-to-r before:from-transparent before:via-white/25 before:to-transparent before:transition-transform before:duration-700 before:ease-out"
+              className="relative overflow-hidden flex items-center gap-2 rounded-full bg-gradient-to-r from-[#D4AF37] via-[#F59E0B] to-[#D4AF37] px-5 py-2.5 text-xs uppercase tracking-wider font-extrabold text-black shadow-[0_0_25px_rgba(212,175,55,0.4)] hover:shadow-[0_0_35px_rgba(245,158,11,0.6)] transition-all duration-300 cursor-pointer hover:scale-[1.03] active:scale-[0.98] before:absolute before:inset-0 before:-translate-x-full hover:before:translate-x-full before:bg-gradient-to-r before:from-transparent before:via-white/40 before:to-transparent before:transition-transform before:duration-700"
             >
-              <Sparkles className="h-4 w-4 text-white fill-white" />
+              <Flame className="h-4 w-4 fill-black text-black" />
               <span>Get Wholesale Pricing</span>
             </button>
           </div>
@@ -140,15 +160,15 @@ export default function Header() {
           {/* Mobile Menu Trigger */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="rounded-lg p-2 text-zinc-600 hover:bg-zinc-50 hover:text-zinc-950 md:hidden transition-colors"
+            className="rounded-xl p-2 text-slate-300 hover:bg-white/10 hover:text-white md:hidden transition-colors"
           >
-            {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {mobileMenuOpen ? <X className="h-6 w-6 text-[#D4AF37]" /> : <Menu className="h-6 w-6 text-[#D4AF37]" />}
           </button>
         </div>
 
-        {/* Mobile Dropdown Menu */}
+        {/* Mobile Dropdown Drawer */}
         {mobileMenuOpen && (
-          <div className="border-t border-zinc-100 bg-white px-6 py-4 md:hidden animate-in fade-in slide-in-from-top-4 duration-200">
+          <div className="border-t border-white/10 bg-[#08080C]/95 backdrop-blur-2xl px-6 py-5 md:hidden animate-in fade-in slide-in-from-top-4 duration-200">
             <nav className="flex flex-col gap-4">
               {navigation.map((item) => {
                 if (item.name === "Products") {
@@ -157,20 +177,20 @@ export default function Header() {
                       <Link
                         href="/products"
                         onClick={() => setMobileMenuOpen(false)}
-                        className={`text-base font-semibold ${
-                          isActive("/products") ? "text-[#2563EB]" : "text-zinc-600"
+                        className={`text-sm font-bold uppercase tracking-wider ${
+                          isActive("/products") ? "text-[#D4AF37]" : "text-slate-300"
                         }`}
                       >
-                        Products
+                        Products Showroom
                       </Link>
-                      <div className="grid grid-cols-2 gap-2 pl-4 border-l border-zinc-100">
+                      <div className="grid grid-cols-2 gap-2 pl-4 border-l border-white/10">
                         {categories.map((cat) => (
                           <Link
                             key={cat.name}
                             href={cat.href}
                             onClick={() => setMobileMenuOpen(false)}
-                            className={`text-sm py-1 font-medium ${
-                              pathname === cat.href ? "text-[#2563EB] font-semibold" : "text-zinc-500"
+                            className={`text-xs py-1 font-semibold ${
+                              pathname === cat.href ? "text-[#D4AF37]" : "text-slate-400 hover:text-slate-200"
                             }`}
                           >
                             {cat.name}
@@ -185,30 +205,30 @@ export default function Header() {
                     key={item.name}
                     href={item.href}
                     onClick={() => setMobileMenuOpen(false)}
-                    className={`text-base font-semibold transition-colors ${
-                      isActive(item.href) ? "text-[#2563EB]" : "text-zinc-600"
+                    className={`text-sm font-bold uppercase tracking-wider transition-colors ${
+                      isActive(item.href) ? "text-[#D4AF37]" : "text-slate-300 hover:text-[#D4AF37]"
                     }`}
                   >
                     {item.name}
                   </Link>
                 );
               })}
-              <div className="h-px bg-zinc-100 my-2" />
+              <div className="h-px bg-white/10 my-2" />
               <div className="flex flex-col gap-3">
                 <a
                   href="tel:+919443868706"
-                  className="flex items-center justify-center gap-2 rounded-xl border border-zinc-200 py-3 text-sm font-semibold text-zinc-700 hover:bg-zinc-50 transition-colors"
+                  className="flex items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/5 py-3 text-xs font-bold uppercase tracking-wider text-slate-200 hover:bg-white/10 transition-colors"
                 >
-                  <Phone className="h-4 w-4 text-[#2563EB]" /> Call Factory
+                  <Phone className="h-4 w-4 text-[#D4AF37]" /> Call Direct Factory
                 </a>
                 <button
                   onClick={() => {
                     setMobileMenuOpen(false);
                     setIsInquiryOpen(true);
                   }}
-                  className="flex items-center justify-center gap-2 rounded-xl bg-[#2563EB] py-3 text-sm font-bold text-white shadow-md hover:bg-[#1d4ed8] hover:shadow-[0_4px_12px_rgba(37,99,235,0.2)] transition-all duration-200 cursor-pointer"
+                  className="flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#D4AF37] to-[#F59E0B] py-3 text-xs font-extrabold uppercase tracking-wider text-black shadow-[0_0_20px_rgba(212,175,55,0.4)]"
                 >
-                  <Sparkles className="h-4 w-4 text-white fill-white" />
+                  <Sparkles className="h-4 w-4 fill-black" />
                   <span>Get Wholesale Pricing</span>
                 </button>
               </div>

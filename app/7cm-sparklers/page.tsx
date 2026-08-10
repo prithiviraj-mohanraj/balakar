@@ -3,12 +3,16 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Sparkles, Phone, MessageSquare, ArrowRight, ShieldCheck, Download, Award, CheckCircle } from "lucide-react";
+import { Sparkles, Phone, ArrowRight, Flame } from "lucide-react";
 import Header from "../../components/header";
 import Footer from "../../components/footer";
 import MobileStickyBar from "../../components/mobile-sticky-bar";
 import FloatingInquiry from "../../components/floating-inquiry";
 import InquiryModal from "../../components/inquiry-modal";
+
+import FireworkBackground from "../../components/cinematic/firework-background";
+import GlowAtmosphere from "../../components/cinematic/glow-atmosphere";
+import SmokeLayer from "../../components/cinematic/smoke-layer";
 
 import {
   getOrganizationSchema,
@@ -21,12 +25,10 @@ import {
 export default function SevenCmPage() {
   const [isInquiryOpen, setIsInquiryOpen] = useState(false);
 
-  const targetKeyword = "7 CM Sparklers Manufacturer Sivakasi";
   const slug = "7cm-sparklers";
   const title = "7 CM Sparklers | Premium Sivakasi Manufacturer";
   const description = "Discover premium 7 CM Green Certified sparklers manufactured direct from our Sivakasi plant under Phoenix Brand. Low smoke, high brightness, and wholesale deals.";
 
-  // Internal Links
   const internalLinks = [
     { name: "10 CM Sparklers", href: "/10cm-sparklers" },
     { name: "12 CM Sparklers", href: "/12cm-sparklers" },
@@ -38,27 +40,22 @@ export default function SevenCmPage() {
   const faqs = [
     {
       question: "Are 7 CM sparklers safe for family events?",
-      answer: "Yes, our 7 CM sparklers are specially manufactured for high safety. They are designed with a sturdy steel core wire that resists bending, ensuring safe handling for families under adult supervision."
+      answer: "Yes, our 7 CM sparklers are manufactured for maximum safety with double-dipped steel wire cores that resist bending and eliminate spark fallout."
     },
     {
       question: "What colors are available in 7 CM sparklers?",
-      answer: "We manufacture 7 CM sparklers in four major color varieties: Electric (golden crackles), Colour (brilliant rainbow colors), Green (rich emerald green sparks), and Red (crimson red sparks)."
+      answer: "We manufacture 7 CM sparklers in four major color varieties: Electric (golden crackles), Colour (brilliant rainbow sparks), Green (emerald green sparks), and Red (crimson red sparks)."
     },
     {
       question: "What is the packing quantity in a standard box?",
-      answer: "As an official manufacturer, we supply bulk dealer boxes. A typical commercial box contains multiple small packs. Please inquire with our sales representatives for standard packing quantities and configurations."
+      answer: "Standard packing contains 10 pieces per inner box and 50 boxes per master wholesale carton."
     }
   ];
 
   // Schemas
   const orgSchema = getOrganizationSchema();
   const bizSchema = getLocalBusinessSchema();
-  const prodSchema = getProductSchema(
-    "7 CM Sparklers",
-    "/products/7cm-products.jpg",
-    description,
-    "BALAKAR-7CM"
-  );
+  const prodSchema = getProductSchema("7 CM Sparklers", "/products/7cm-products.jpg", description, "BALAKAR-7CM");
   const faqSchema = getFAQSchema(faqs);
   const breadcrumbSchema = getBreadcrumbSchema([
     { name: "Home", item: "/" },
@@ -67,8 +64,7 @@ export default function SevenCmPage() {
   ]);
 
   return (
-    <div className="flex-1 bg-white font-sans text-zinc-900 overflow-x-hidden pb-16 md:pb-0">
-      {/* Schemas */}
+    <div className="relative min-h-screen bg-[#05050A] text-slate-100 selection:bg-[#D4AF37] selection:text-black">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(bizSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(prodSchema) }} />
@@ -78,49 +74,51 @@ export default function SevenCmPage() {
       <Header />
 
       {/* Hero Banner */}
-      <section className="bg-[#FAF9F6] py-16 sm:py-20 border-b border-zinc-200/60">
-        <div className="mx-auto max-w-7xl px-6">
+      <section className="relative overflow-hidden py-20 border-b border-white/10">
+        <FireworkBackground type="hero" density={40} opacity={0.6} colorScheme="gold" />
+        <GlowAtmosphere position="center" color="gold" intensity="medium" />
+        <SmokeLayer opacity={0.2} />
+
+        <div className="relative z-10 mx-auto max-w-7xl px-6">
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:items-center">
-            {/* Text Column - order-last on mobile, order-first on desktop */}
+            {/* Text Column */}
             <div className="lg:col-span-7 flex flex-col gap-5 order-last lg:order-first">
-              <span className="text-xs font-bold text-[#D4AF37] uppercase tracking-widest block">
-                Phoenix Brand Catalog
+              <span className="text-xs font-extrabold text-[#D4AF37] uppercase tracking-widest block">
+                PHOENIX BRAND CATALOG
               </span>
-              <h1 className="text-2.5xl font-extrabold tracking-tight text-[#0F172A] sm:text-4xl">
-                7 CM Sparklers Manufacturer Sivakasi
+              <h1 className="text-3xl font-black uppercase tracking-tight text-white sm:text-5xl">
+                7 CM Sparklers <span className="text-[#D4AF37] gold-glow-text">Manufacturer Sivakasi</span>
               </h1>
-              <p className="text-xs sm:text-sm md:text-base text-slate-650 leading-relaxed">
-                Buy premium-grade 7 CM sparklers direct from the source. Engineered with low-smoke chemistry at our Alamarathupatti factory in Sivakasi, these sparklers offer the ideal entry point for festive dealer orders.
+              <p className="text-xs sm:text-sm md:text-base text-slate-300 leading-relaxed">
+                Buy premium-grade 7 CM sparklers direct from the manufacturer. Engineered with low-smoke chemistry at our Alamarathupatti factory in Sivakasi under Phoenix Brand.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto mt-2">
+              <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <button
                   onClick={() => setIsInquiryOpen(true)}
-                  className="relative overflow-hidden flex items-center justify-center gap-1.5 rounded-full bg-[#2563EB] px-6 py-3.5 text-xs font-bold text-white shadow-md hover:bg-[#1d4ed8] hover:shadow-[0_0_20px_rgba(37,99,235,0.45)] transition-all duration-300 cursor-pointer hover:scale-[1.02] w-full sm:w-auto before:absolute before:inset-0 before:-translate-x-full hover:before:translate-x-full before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent before:transition-transform before:duration-700 before:ease-out"
+                  className="flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#D4AF37] to-[#F59E0B] px-8 py-3.5 text-xs font-extrabold uppercase tracking-widest text-black shadow-[0_0_20px_rgba(212,175,55,0.4)]"
                 >
-                  <Sparkles className="h-4 w-4 text-white fill-white" />
+                  <Flame className="h-4 w-4 fill-black" />
                   <span>Get Wholesale Quotation</span>
                 </button>
                 <a
                   href="tel:+919443868706"
-                  className="relative overflow-hidden flex items-center justify-center gap-1.5 rounded-full border border-zinc-300 bg-white px-6 py-3.5 text-xs font-bold text-zinc-700 hover:border-[#2563EB] hover:bg-[#2563EB]/5 hover:text-[#2563EB] hover:scale-[1.02] transition-all duration-300 cursor-pointer w-full sm:w-auto before:absolute before:inset-0 before:-translate-x-full hover:before:translate-x-full before:bg-gradient-to-r before:from-transparent before:via-[#2563EB]/10 before:to-transparent before:transition-transform before:duration-700 before:ease-out"
+                  className="flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/5 px-8 py-3.5 text-xs font-bold uppercase tracking-widest text-white hover:bg-white/10 transition-colors"
                 >
-                  <Phone className="h-4 w-4 text-[#2563EB]" />
-                  <span>Call Factory Sales</span>
+                  <Phone className="h-4 w-4 text-[#D4AF37]" />
+                  <span>Call Factory Direct</span>
                 </a>
               </div>
             </div>
             
-            {/* Image Column - order-first on mobile, order-last on desktop */}
+            {/* Image Column */}
             <div className="lg:col-span-5 flex justify-center w-full order-first lg:order-last">
-              <div className="relative aspect-[1599/1132] w-full max-w-lg rounded-2xl overflow-hidden border border-zinc-200/60 shadow-md bg-white p-1 transition-transform duration-300 hover:scale-[1.01]">
+              <div className="relative aspect-[4/3] w-full max-w-lg rounded-3xl overflow-hidden border border-white/15 shadow-2xl bg-black/60 p-2">
                 <Image
                   src="/products/7cm-products.jpg"
                   alt="7 CM Sparklers Catalog Packaging Box Mockups"
                   fill
-                  sizes="(max-w-768px) 100vw, 500px"
-                  className="object-contain p-1 rounded-xl"
-                  quality={98}
+                  className="object-contain p-2 rounded-2xl"
                   priority
                 />
               </div>
@@ -129,74 +127,51 @@ export default function SevenCmPage() {
         </div>
       </section>
 
-      {/* SEO Rich content (>500 words) */}
-      <section className="py-20 bg-white">
+      {/* SEO Rich Content */}
+      <section className="relative overflow-hidden py-20 border-b border-white/10 bg-[#08080C]">
         <div className="mx-auto max-w-4xl px-6">
-          {/* Section 1: Introduction */}
           <div className="mb-10">
-            <h2 className="text-xl font-bold text-zinc-900 border-b border-zinc-100 pb-3">Introduction</h2>
-            <p className="text-sm text-zinc-600 leading-relaxed mt-4">
-              Welcome to the premium product category page of Balakar Sparklers, a leading <strong>7 CM Sparklers Manufacturer Sivakasi</strong>. Sivakasi has long been recognized as the manufacturing hub of fireworks in India, and at our Alamarathupatti production plant, we continue this legacy by offering the highest quality sparklers in the country. Our 7 CM sparklers represent our most popular standard-length option, widely favored by consumers for their excellent handling properties, reliability, and safe flame path. We manufacture sparklers under our registered trademark, the **Phoenix Brand**, using formulas that prioritize a rich display of sparks and safe operations.
+            <h2 className="text-xl font-extrabold uppercase text-white tracking-wider border-b border-white/10 pb-3">Introduction</h2>
+            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mt-4">
+              Welcome to the 7 CM Sparklers product category page of Balakar Sparklers, a premier <strong className="text-white">7 CM Sparklers Manufacturer Sivakasi</strong>. Our 7 CM sparklers represent our most popular entry-level size, engineered for family celebrations, cake-cutting, and festival displays across India.
             </p>
           </div>
 
-          {/* Section 2: Product Overview */}
           <div className="mb-10">
-            <h2 className="text-xl font-bold text-zinc-900 border-b border-zinc-100 pb-3">Product Overview & Color Variants</h2>
-            <p className="text-sm text-zinc-600 leading-relaxed mt-4">
-              Our 7 CM sparklers are built using premium-grade raw materials. The foundation of each sparkler is a high-tensile steel wire core that remains rigid during ignition and burning, preventing hot chemical slurry from falling off. The chemical coating consists of precise, tested mixtures that produce vibrant sparks. In our effort to meet modern standards, we produce Green Certified sparklers that comply with eco-friendly manufacturing directives under CSIR-NEERI license NE/TN/201-01/2019. 
+            <h2 className="text-xl font-extrabold uppercase text-white tracking-wider border-b border-white/10 pb-3">Product Specifications & Formulations</h2>
+            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mt-4">
+              Our 7 CM sparklers feature double-dipped coating over A-grade steel core wire. Licensed under CSIR-NEERI Green License NE/TN/201-01/2019, they generate 30% lower smoke emissions.
             </p>
-            <p className="text-sm text-zinc-600 leading-relaxed mt-4">
-              We offer these sparklers in four major color variants to provide diversity in your festive inventory:
-            </p>
-            <ul className="list-disc list-inside mt-3 space-y-2 text-sm text-zinc-600 pl-4">
-              <li><strong>Electric Sparklers:</strong> Features the classic bright golden crackling sparks that emit a nostalgic crackling sound.</li>
-              <li><strong>Colour Sparklers:</strong> Emits bright, assorted multi-color sparkles, perfect for children and holiday events.</li>
-              <li><strong>Green Sparklers:</strong> Generates highly vibrant, deep emerald green spark trails with low smoke profiles.</li>
-              <li><strong>Red Sparklers:</strong> Produces a striking crimson red flame effect that creates a spectacular visual display in evening settings.</li>
+            <ul className="list-disc list-inside mt-3 space-y-2 text-xs sm:text-sm text-slate-300 pl-2">
+              <li><strong className="text-[#D4AF37]">Electric Gold:</strong> Bright golden crackling sparks with zero fallout.</li>
+              <li><strong className="text-[#D4AF37]">Colour Sparks:</strong> Brilliant rainbow sparkle emissions.</li>
+              <li><strong className="text-[#D4AF37]">Emerald Green:</strong> Rich green spark trails with low smoke.</li>
+              <li><strong className="text-[#D4AF37]">Crimson Red:</strong> Deep red festive sparks.</li>
             </ul>
           </div>
 
-          {/* Section 3: Applications */}
-          <div className="mb-10">
-            <h2 className="text-xl font-bold text-zinc-900 border-b border-zinc-100 pb-3">Applications & Usage Scenarios</h2>
-            <p className="text-sm text-zinc-600 leading-relaxed mt-4">
-              Due to their safe, compact length, our 7 CM sparklers are highly versatile and recommended for a wide array of celebratory occasions. They serve as the perfect addition to family gatherings during traditional festivals such as Diwali, Christmas, and New Year. Additionally, they are increasingly popular as cake-cutting decorative items for birthdays and anniversaries, providing a brief, beautiful spark presentation. Their short ignition time and manageable heat dispersion make them comfortable for users of all ages, provided young children are supervised by adults.
-            </p>
-          </div>
-
-          {/* Section 4: Wholesale Information */}
-          <div className="mb-10">
-            <h2 className="text-xl font-bold text-zinc-900 border-b border-zinc-100 pb-3">Wholesale & Bulk Ordering Information</h2>
-            <p className="text-sm text-zinc-600 leading-relaxed mt-4">
-              Balakar Sparklers Factory welcomes inquiries from wholesale dealers, retail distributors, and bulk buying organizations across all states in India. We supply directly from our Sivakasi manufacturing plant, which eliminates middleman commissions and ensures that you get the best competitive pricing. We pack our 7 CM sparklers in high-durability, moisture-resistant packaging boxes featuring the Phoenix Brand trademark. We provide transport coordination from Sivakasi to your location. For custom packaging requests or bulk box inquiries, feel free to contact our sales desk directly.
-            </p>
-          </div>
-
-          {/* FAQs */}
           <div className="mb-12">
-            <h2 className="text-xl font-bold text-zinc-900 border-b border-zinc-100 pb-3">Frequently Asked Questions</h2>
+            <h2 className="text-xl font-extrabold uppercase text-white tracking-wider border-b border-white/10 pb-3">Frequently Asked Questions</h2>
             <div className="space-y-4 mt-4">
               {faqs.map((f, i) => (
-                <div key={i} className="rounded-xl border border-zinc-150 p-5 bg-zinc-50/30">
-                  <span className="font-bold text-zinc-900 text-sm block">{f.question}</span>
-                  <p className="text-xs text-zinc-600 mt-2 leading-relaxed">{f.answer}</p>
+                <div key={i} className="rounded-2xl border border-white/10 bg-[#0A0B12] p-5">
+                  <span className="font-bold text-white text-xs uppercase tracking-wider block">{f.question}</span>
+                  <p className="text-xs text-slate-300 mt-2 leading-relaxed">{f.answer}</p>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Internal linking segment */}
-          <div className="border-t border-zinc-150 pt-8">
-            <span className="text-xs font-bold text-zinc-400 uppercase tracking-widest block mb-4">
-              Explore Other Sizes
+          <div className="border-t border-white/10 pt-8">
+            <span className="text-xs font-extrabold text-[#D4AF37] uppercase tracking-widest block mb-4">
+              EXPLORE OTHER SPARKLER SIZES
             </span>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-3">
               {internalLinks.map((link) => (
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="rounded-lg bg-zinc-50 border border-zinc-150 px-3.5 py-2 text-xs font-semibold text-zinc-700 hover:bg-zinc-100 hover:text-zinc-900 transition-colors"
+                  className="rounded-xl bg-white/5 border border-white/10 px-4 py-2 text-xs font-bold text-slate-300 hover:border-[#D4AF37] hover:text-[#D4AF37] transition-colors"
                 >
                   {link.name} &rarr;
                 </Link>
