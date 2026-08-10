@@ -26,7 +26,6 @@ export default function FiftyCmPage() {
   const [isInquiryOpen, setIsInquiryOpen] = useState(false);
 
   const slug = "50cm-sparklers";
-  const title = "50 CM Mega Sparklers | Sivakasi Manufacturer";
   const description = "Buy flagship 50 CM Mega Sparklers direct from Sivakasi manufacturer. 5 minutes continuous burn time for grand weddings and stadium celebrations.";
 
   const internalLinks = [
@@ -55,7 +54,7 @@ export default function FiftyCmPage() {
   ]);
 
   return (
-    <div className="relative min-h-screen bg-[#05050A] text-slate-100 selection:bg-[#D4AF37] selection:text-black">
+    <div className="relative min-h-screen bg-[#FFFDF7] text-slate-900 selection:bg-[#D4AF37] selection:text-[#0F172A]">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(bizSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(prodSchema) }} />
@@ -64,10 +63,10 @@ export default function FiftyCmPage() {
 
       <Header />
 
-      <section className="relative overflow-hidden py-20 border-b border-white/10">
-        <FireworkBackground type="hero" density={45} opacity={0.7} colorScheme="emerald" />
-        <GlowAtmosphere position="center" color="emerald" intensity="strong" />
-        <SmokeLayer opacity={0.25} />
+      <section className="relative overflow-hidden py-20 border-b border-amber-100 bg-gradient-to-b from-[#FFFDF7] via-[#FAF9F6] to-[#FFFDF7]">
+        <FireworkBackground type="hero" density={40} opacity={0.7} colorScheme="emerald" />
+        <GlowAtmosphere position="center" color="emerald" intensity="medium" />
+        <SmokeLayer opacity={0.15} />
 
         <div className="relative z-10 mx-auto max-w-7xl px-6">
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:items-center">
@@ -75,24 +74,24 @@ export default function FiftyCmPage() {
               <span className="text-xs font-extrabold text-[#D4AF37] uppercase tracking-widest block">
                 PHOENIX BRAND MEGA COLLECTION
               </span>
-              <h1 className="text-3xl font-black uppercase tracking-tight text-white sm:text-5xl">
-                50 CM Mega Sparklers <span className="text-emerald-400 gold-glow-text">Sivakasi Direct</span>
+              <h1 className="text-3xl font-black uppercase tracking-tight text-[#0F172A] sm:text-5xl">
+                50 CM Mega Sparklers <span className="text-emerald-700 gold-glow-text">Sivakasi Direct</span>
               </h1>
-              <p className="text-xs sm:text-sm md:text-base text-slate-300 leading-relaxed">
+              <p className="text-xs sm:text-sm md:text-base text-slate-700 leading-relaxed">
                 Buy flagship 50 CM mega sparklers direct from Balakar Sparklers Factory. Majestic 5-minute continuous burn time per sparkler.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <button
                   onClick={() => setIsInquiryOpen(true)}
-                  className="flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#D4AF37] to-[#F59E0B] px-8 py-3.5 text-xs font-extrabold uppercase tracking-widest text-black shadow-[0_0_20px_rgba(212,175,55,0.4)]"
+                  className="flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#D4AF37] to-[#F59E0B] px-8 py-3.5 text-xs font-extrabold uppercase tracking-widest text-[#0F172A] shadow-md"
                 >
-                  <Flame className="h-4 w-4 fill-black" />
+                  <Flame className="h-4 w-4 fill-[#0F172A]" />
                   <span>Get Wholesale Quotation</span>
                 </button>
                 <a
                   href="tel:+919443868706"
-                  className="flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/5 px-8 py-3.5 text-xs font-bold uppercase tracking-widest text-white hover:bg-white/10 transition-colors"
+                  className="flex items-center justify-center gap-2 rounded-full border border-slate-300 bg-white px-8 py-3.5 text-xs font-bold uppercase tracking-widest text-slate-800 hover:bg-slate-50 transition-colors shadow-sm"
                 >
                   <Phone className="h-4 w-4 text-[#D4AF37]" />
                   <span>Call Factory Direct</span>
@@ -101,7 +100,7 @@ export default function FiftyCmPage() {
             </div>
             
             <div className="lg:col-span-5 flex justify-center w-full order-first lg:order-last">
-              <div className="relative aspect-[4/3] w-full max-w-lg rounded-3xl overflow-hidden border border-white/15 shadow-2xl bg-black/60 p-2">
+              <div className="relative aspect-[4/3] w-full max-w-lg rounded-3xl overflow-hidden border border-amber-200/80 shadow-md bg-white p-2">
                 <Image
                   src="/products/50cm-products.jpg"
                   alt="50 CM Sparklers Catalog Packaging Box"
@@ -115,28 +114,28 @@ export default function FiftyCmPage() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden py-20 border-b border-white/10 bg-[#08080C]">
+      <section className="relative overflow-hidden py-20 border-b border-amber-100 bg-[#FAF9F6]">
         <div className="mx-auto max-w-4xl px-6">
           <div className="mb-10">
-            <h2 className="text-xl font-extrabold uppercase text-white tracking-wider border-b border-white/10 pb-3">Introduction & Details</h2>
-            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mt-4">
+            <h2 className="text-xl font-extrabold uppercase text-[#0F172A] tracking-wider border-b border-amber-100 pb-3">Introduction & Details</h2>
+            <p className="text-xs sm:text-sm text-slate-700 leading-relaxed mt-4">
               Our 50 CM mega sparklers are certified eco-friendly under CSIR-NEERI License NE/TN/201-01/2019, providing ultimate grandeur for resort galas and stadium celebrations.
             </p>
           </div>
 
           <div className="mb-12">
-            <h2 className="text-xl font-extrabold uppercase text-white tracking-wider border-b border-white/10 pb-3">Frequently Asked Questions</h2>
+            <h2 className="text-xl font-extrabold uppercase text-[#0F172A] tracking-wider border-b border-amber-100 pb-3">Frequently Asked Questions</h2>
             <div className="space-y-4 mt-4">
               {faqs.map((f, i) => (
-                <div key={i} className="rounded-2xl border border-white/10 bg-[#0A0B12] p-5">
-                  <span className="font-bold text-white text-xs uppercase tracking-wider block">{f.question}</span>
-                  <p className="text-xs text-slate-300 mt-2 leading-relaxed">{f.answer}</p>
+                <div key={i} className="rounded-2xl border border-amber-100 bg-white p-5 shadow-sm">
+                  <span className="font-bold text-[#0F172A] text-xs uppercase tracking-wider block">{f.question}</span>
+                  <p className="text-xs text-slate-600 mt-2 leading-relaxed">{f.answer}</p>
                 </div>
               ))}
             </div>
           </div>
 
-          <div className="border-t border-white/10 pt-8">
+          <div className="border-t border-amber-100 pt-8">
             <span className="text-xs font-extrabold text-[#D4AF37] uppercase tracking-widest block mb-4">
               EXPLORE OTHER SPARKLER SIZES
             </span>
@@ -145,7 +144,7 @@ export default function FiftyCmPage() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="rounded-xl bg-white/5 border border-white/10 px-4 py-2 text-xs font-bold text-slate-300 hover:border-[#D4AF37] hover:text-[#D4AF37] transition-colors"
+                  className="rounded-xl bg-white border border-amber-200/80 px-4 py-2 text-xs font-bold text-slate-800 hover:border-[#D4AF37] hover:text-[#D4AF37] transition-colors shadow-sm"
                 >
                   {link.name} &rarr;
                 </Link>

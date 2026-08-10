@@ -18,20 +18,20 @@ export default function GlowAtmosphere({
   const getColorGradient = (c: string) => {
     switch (c) {
       case "emerald":
-        return "from-emerald-500/20 via-emerald-600/10 to-transparent";
+        return "from-emerald-500/15 via-emerald-400/5 to-transparent";
       case "crimson":
-        return "from-red-600/20 via-amber-600/10 to-transparent";
+        return "from-red-500/15 via-amber-400/5 to-transparent";
       case "blue":
-        return "from-blue-600/20 via-indigo-600/10 to-transparent";
+        return "from-blue-500/15 via-indigo-400/5 to-transparent";
       case "silver":
-        return "from-slate-300/20 via-amber-100/10 to-transparent";
+        return "from-slate-400/15 via-amber-200/5 to-transparent";
       case "amber":
-        return "from-amber-500/25 via-amber-600/10 to-transparent";
+        return "from-amber-400/20 via-amber-300/10 to-transparent";
       case "multicolor":
-        return "from-purple-600/20 via-pink-600/10 to-transparent";
+        return "from-purple-500/15 via-pink-400/5 to-transparent";
       case "gold":
       default:
-        return "from-[#D4AF37]/25 via-amber-500/15 to-transparent";
+        return "from-[#D4AF37]/20 via-amber-300/10 to-transparent";
     }
   };
 
@@ -54,7 +54,7 @@ export default function GlowAtmosphere({
   const getOpacityClass = (inst: string) => {
     switch (inst) {
       case "soft":
-        return "opacity-40";
+        return "opacity-50";
       case "strong":
         return "opacity-90";
       case "medium":
@@ -65,7 +65,7 @@ export default function GlowAtmosphere({
 
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
-      {/* Primary Radial Glow Orb */}
+      {/* Primary Radial Glow Orb for Light Backgrounds */}
       <div
         className={`absolute rounded-full bg-radial ${getColorGradient(
           color
@@ -74,12 +74,12 @@ export default function GlowAtmosphere({
         )} filter blur-3xl ${animate ? "animate-pulse-slow" : ""}`}
       />
 
-      {/* Rotating Conic Rays (for Hero & Special Sections) */}
+      {/* Subtle Rotating Light Rays */}
       {position === "hero" && (
         <div
-          className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[950px] h-[950px] pointer-events-none -z-10 opacity-15 ${
+          className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[950px] h-[950px] pointer-events-none -z-10 opacity-20 ${
             animate ? "animate-rotate-slow" : ""
-          } bg-[conic-gradient(from_0deg,transparent_0deg,rgba(212,175,55,0.3)_20deg,transparent_40deg,rgba(212,175,55,0.3)_60deg,transparent_80deg,rgba(212,175,55,0.3)_100deg,transparent_120deg,rgba(212,175,55,0.3)_140deg,transparent_160deg,rgba(212,175,55,0.3)_180deg,transparent_200deg,rgba(212,175,55,0.3)_220deg,transparent_240deg,rgba(212,175,55,0.3)_260deg,transparent_280deg,rgba(212,175,55,0.3)_300deg,transparent_320deg,rgba(212,175,55,0.3)_340deg,transparent_360deg)]`}
+          } bg-[conic-gradient(from_0deg,transparent_0deg,rgba(212,175,55,0.2)_20deg,transparent_40deg,rgba(212,175,55,0.2)_60deg,transparent_80deg,rgba(212,175,55,0.2)_100deg,transparent_120deg,rgba(212,175,55,0.2)_140deg,transparent_160deg,rgba(212,175,55,0.2)_180deg,transparent_200deg,rgba(212,175,55,0.2)_220deg,transparent_240deg,rgba(212,175,55,0.2)_260deg,transparent_280deg,rgba(212,175,55,0.2)_300deg,transparent_320deg,rgba(212,175,55,0.2)_340deg,transparent_360deg)]`}
         />
       )}
     </div>

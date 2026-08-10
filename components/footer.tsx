@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Phone, Mail, MapPin, Shield, CheckCircle, Sparkles, Award } from "lucide-react";
+import { Phone, Mail, MapPin, CheckCircle, Sparkles, Award } from "lucide-react";
 import InquiryModal from "./inquiry-modal";
 
 export default function Footer() {
@@ -28,9 +28,9 @@ export default function Footer() {
 
   return (
     <>
-      <footer className="relative overflow-hidden w-full border-t border-white/10 bg-[#030306] py-16 text-slate-300 sm:py-20 z-10">
+      <footer className="relative overflow-hidden w-full border-t border-amber-200/40 bg-[#0B0C10] py-16 text-slate-300 sm:py-20 z-10">
         {/* Soft Ambient Gold Radial Background */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] bg-[radial-gradient(circle,rgba(212,175,55,0.06)_0%,transparent_75%)] pointer-events-none -z-10" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] bg-[radial-gradient(circle,rgba(212,175,55,0.08)_0%,transparent_75%)] pointer-events-none -z-10" />
 
         <div className="mx-auto max-w-7xl px-6 relative z-10">
           {/* Top Section */}
@@ -52,11 +52,11 @@ export default function Footer() {
               
               {/* Trust Badges */}
               <div className="flex flex-wrap gap-2.5 mt-1">
-                <div className="flex items-center gap-1.5 rounded-xl border border-[#D4AF37]/30 bg-[#D4AF37]/10 px-3 py-1.5 text-xs font-bold text-[#D4AF37]">
+                <div className="flex items-center gap-1.5 rounded-xl border border-[#D4AF37]/40 bg-[#D4AF37]/10 px-3 py-1.5 text-xs font-bold text-[#D4AF37]">
                   <Award className="h-3.5 w-3.5 text-[#D4AF37]" />
                   <span>Phoenix Trademark</span>
                 </div>
-                <div className="flex items-center gap-1.5 rounded-xl border border-emerald-500/30 bg-emerald-500/10 px-3 py-1.5 text-xs font-bold text-emerald-400">
+                <div className="flex items-center gap-1.5 rounded-xl border border-emerald-500/40 bg-emerald-500/10 px-3 py-1.5 text-xs font-bold text-emerald-400">
                   <CheckCircle className="h-3.5 w-3.5 text-emerald-400" />
                   <span>CSIR-NEERI Green License</span>
                 </div>

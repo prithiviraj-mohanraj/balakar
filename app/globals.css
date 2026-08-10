@@ -92,23 +92,23 @@
 }
 
 :root {
-  --background: #05050A;
-  --foreground: #F8FAFC;
-  --card: #0A0B12;
-  --card-foreground: #F8FAFC;
-  --popover: #0A0B12;
-  --popover-foreground: #F8FAFC;
+  --background: #FFFDF7;
+  --foreground: #0F172A;
+  --card: #FFFFFF;
+  --card-foreground: #0F172A;
+  --popover: #FFFFFF;
+  --popover-foreground: #0F172A;
   --primary: #D4AF37;
-  --primary-foreground: #05050A;
-  --secondary: #1E293B;
-  --secondary-foreground: #F8FAFC;
-  --muted: #0F172A;
-  --muted-foreground: #94A3B8;
+  --primary-foreground: #0F172A;
+  --secondary: #FAF9F6;
+  --secondary-foreground: #0F172A;
+  --muted: #F1F5F9;
+  --muted-foreground: #64748B;
   --accent: #D4AF37;
-  --accent-foreground: #05050A;
+  --accent-foreground: #0F172A;
   --destructive: oklch(0.577 0.245 27.325);
-  --border: rgba(255, 255, 255, 0.1);
-  --input: rgba(255, 255, 255, 0.15);
+  --border: rgba(15, 23, 42, 0.1);
+  --input: rgba(15, 23, 42, 0.15);
   --ring: #D4AF37;
   --radius: 0.75rem;
 }
@@ -118,28 +118,28 @@
     @apply border-border outline-ring/50;
   }
   body {
-    background-color: #05050A;
-    color: #F8FAFC;
+    background-color: #FFFDF7;
+    color: #0F172A;
     overflow-x: hidden;
     font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
   }
   html {
-    color-scheme: dark;
+    color-scheme: light;
     scroll-behavior: smooth;
   }
 
-  /* Custom dark scrollbar */
+  /* Custom scrollbar */
   ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
   }
   ::-webkit-scrollbar-track {
-    background: #05050A;
+    background: #FAF9F6;
   }
   ::-webkit-scrollbar-thumb {
-    background: #1E293B;
+    background: #CBD5E1;
     border-radius: 4px;
-    border: 2px solid #05050A;
+    border: 2px solid #FAF9F6;
   }
   ::-webkit-scrollbar-thumb:hover {
     background: #D4AF37;
@@ -154,13 +154,13 @@
   scrollbar-width: none;
 }
 
-/* Custom cinematic light utilities */
+/* Custom light cinematic spark & gold utilities */
 .gold-glow-text {
-  text-shadow: 0 0 25px rgba(212, 175, 55, 0.45), 0 0 10px rgba(245, 158, 11, 0.3);
+  text-shadow: 0 0 20px rgba(212, 175, 55, 0.4), 0 0 8px rgba(245, 158, 11, 0.3);
 }
 
 .gold-glow-box {
-  box-shadow: 0 0 35px rgba(212, 175, 55, 0.2), 0 0 15px rgba(245, 158, 11, 0.15);
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.18), 0 4px 12px rgba(245, 158, 11, 0.12);
 }
 
 .cinematic-dark {
