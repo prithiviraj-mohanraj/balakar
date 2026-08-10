@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { MessageSquare, FileText, ChevronRight, X, Flame } from "lucide-react";
+import { ChevronRight, X, Flame } from "lucide-react";
 import InquiryModal from "./inquiry-modal";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -15,7 +15,7 @@ export default function FloatingInquiry() {
       if (!isDismissed) {
         setIsVisible(true);
       }
-    }, 3500);
+    }, 4500);
 
     return () => clearTimeout(timer);
   }, [isDismissed]);
@@ -31,66 +31,34 @@ export default function FloatingInquiry() {
       <AnimatePresence>
         {isVisible && (
           <motion.div
-            initial={{ opacity: 0, y: 50, scale: 0.9 }}
+            initial={{ opacity: 0, y: 30, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 30, scale: 0.95 }}
-            className="fixed bottom-6 right-6 z-40 hidden md:block w-80 rounded-3xl border border-amber-200/80 bg-white/95 backdrop-blur-xl p-5 shadow-xl text-slate-900"
+            exit={{ opacity: 0, y: 20, scale: 0.95 }}
+            className="fixed bottom-6 right-6 z-30 hidden lg:flex items-center gap-3 rounded-full border border-amber-200/80 bg-white/95 backdrop-blur-xl px-4 py-2.5 shadow-xl text-slate-900"
           >
-            {/* Close */}
+            <div className="flex items-center gap-2">
+              <span className="flex h-7 w-7 items-center justify-center rounded-full bg-amber-50 border border-amber-200 text-[#D4AF37]">
+                <Flame className="h-3.5 w-3.5 fill-[#D4AF37]" />
+              </span>
+              <span className="text-xs font-bold text-slate-800">
+                Sivakasi Plant Wholesale Quotes
+              </span>
+            </div>
+
             <button
-              onClick={handleDismiss}
-              className="absolute top-3 right-3 rounded-full p-1 text-slate-400 hover:bg-amber-50 hover:text-slate-700 transition-colors"
+              onClick={() => setIsOpen(true)}
+              className="flex items-center gap-1 rounded-full bg-gradient-to-r from-[#D4AF37] to-[#F59E0B] px-3.5 py-1.5 text-[11px] font-extrabold uppercase tracking-wider text-[#0F172A] shadow-sm hover:scale-[1.03] transition-transform cursor-pointer"
             >
-              <X className="h-4 w-4" />
+              <span>Get Price</span>
+              <ChevronRight className="h-3 w-3 text-[#0F172A]" />
             </button>
 
-            {/* Content */}
-            <div className="flex flex-col gap-4">
-              <div className="flex items-center gap-2.5">
-                <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-amber-50 border border-amber-200 text-[#D4AF37]">
-                  <Flame className="h-4 w-4 fill-[#D4AF37]" />
-                </span>
-                <div>
-                  <h4 className="text-xs font-extrabold uppercase tracking-widest text-[#D4AF37]">Wholesale Desk</h4>
-                  <p className="text-[11px] text-slate-600 font-semibold">Sivakasi Sparklers Plant</p>
-                </div>
-              </div>
-
-              <p className="text-xs text-slate-600 leading-relaxed">
-                Planning bulk consignments for festive season? Request direct wholesale price list & dispatch schedule.
-              </p>
-
-              {/* CTAs */}
-              <div className="flex flex-col gap-2 pt-1">
-                <button
-                  onClick={() => setIsOpen(true)}
-                  className="flex w-full items-center justify-between rounded-full bg-gradient-to-r from-[#D4AF37] via-[#F59E0B] to-[#D4AF37] px-4 py-2.5 text-xs font-extrabold uppercase tracking-wider text-[#0F172A] shadow-md hover:shadow-lg transition-all cursor-pointer hover:scale-[1.01]"
-                >
-                  <span>Request Factory Price List</span>
-                  <ChevronRight className="h-4 w-4 text-[#0F172A]" />
-                </button>
-
-                <div className="grid grid-cols-2 gap-2">
-                  <a
-                    href="https://wa.me/919443868706?text=Hi%2C%20I%20am%20interested%20in%20ordering%20wholesale%20sparklers%20from%20Balakar%20Sparklers%20Factory.%20Please%20send%20me%20your%20price%20list."
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-1.5 rounded-xl border border-emerald-200 bg-emerald-50 py-2 text-xs font-bold text-emerald-700 hover:bg-emerald-100 transition-colors"
-                  >
-                    <MessageSquare className="h-3.5 w-3.5 text-emerald-600" />
-                    <span>WhatsApp</span>
-                  </a>
-
-                  <a
-                    href="/catalog"
-                    className="flex items-center justify-center gap-1.5 rounded-xl border border-slate-200 bg-slate-50 py-2 text-xs font-bold text-slate-700 hover:bg-slate-100 transition-colors"
-                  >
-                    <FileText className="h-3.5 w-3.5 text-[#D4AF37]" />
-                    <span>Catalog</span>
-                  </a>
-                </div>
-              </div>
-            </div>
+            <button
+              onClick={handleDismiss}
+              className="rounded-full p-1 text-slate-400 hover:bg-amber-50 hover:text-slate-700 transition-colors"
+            >
+              <X className="h-3.5 w-3.5" />
+            </button>
           </motion.div>
         )}
       </AnimatePresence>

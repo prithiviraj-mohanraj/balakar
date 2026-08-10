@@ -24,8 +24,8 @@ import MobileStickyBar from "../components/mobile-sticky-bar";
 import FloatingInquiry from "../components/floating-inquiry";
 import InquiryModal from "../components/inquiry-modal";
 
-// Macro Sparkler Light Photography Engine
-import MacroSparklerCanvas from "../components/cinematic/macro-sparkler-canvas";
+// Photorealistic Burning Sparkler & Ambient Components
+import PhotorealisticSparkler from "../components/cinematic/photorealistic-sparkler";
 import FireworkBackground from "../components/cinematic/firework-background";
 import GlowAtmosphere from "../components/cinematic/glow-atmosphere";
 import SmokeLayer from "../components/cinematic/smoke-layer";
@@ -45,6 +45,7 @@ export default function Home() {
     setFaqOpen((prev) => ({ ...prev, [index]: !prev[index] }));
   };
 
+  // Official verified Balakar product categories (7 CM to 50 CM)
   const productCategories = [
     {
       size: "7 CM",
@@ -54,10 +55,8 @@ export default function Home() {
       colorScheme: "gold" as const,
       slug: "7cm-sparklers",
       keyword: "7 CM Sparklers Manufacturer Sivakasi",
-      desc: "Perfect entry-level sparklers for family cake-cutting and Diwali celebrations. Easy to handle, zero sparks fallout, and bright golden embers.",
-      useCase: "Birthday cakes, family Diwali evening, wedding entrance pathways.",
+      desc: "Standard 7 CM sparklers manufactured under Phoenix Brand with double-dipped steel wire core and CSIR-NEERI green certification.",
       boxPackaging: "10 Pieces per Box | 50 Boxes per Wholesale Carton",
-      marginHighlight: "Factory Direct: Save up to 40% over wholesale brokers."
     },
     {
       size: "10 CM",
@@ -67,62 +66,52 @@ export default function Home() {
       colorScheme: "amber" as const,
       slug: "10cm-sparklers",
       keyword: "10 CM Sparklers Wholesale Sivakasi",
-      desc: "All-time favorite length offering an optimal balance between burning duration and radiant light.",
-      useCase: "Traditional Diwali night, festive gatherings, outdoor celebration corridors.",
+      desc: "Popular 10 CM sparklers manufactured direct from Sivakasi factory with radiant spark emission and low smoke chemistry.",
       boxPackaging: "10 Pieces per Box | 40 Boxes per Wholesale Carton",
-      marginHighlight: "High Retail Margin: 35%+ direct shop profitability."
     },
     {
       size: "12 CM",
-      title: "12 CM Commercial Pack Sparklers",
+      title: "12 CM Sparklers Collection",
       image: "/products/12cm-products.jpg",
       variants: ["Electric", "Colour", "Green", "Red", "Multi-color"],
       colorScheme: "multicolor" as const,
       slug: "12cm-sparklers",
-      keyword: "12 CM Sparklers Bulk Supply",
-      desc: "Extended burn time with vibrant multicolor flames for commercial events and large family gatherings.",
-      useCase: "Grand wedding celebrations, New Year countdowns, corporate galas.",
+      keyword: "12 CM Sparklers Factory Direct",
+      desc: "12 CM sparklers available in multiple color formulations, produced under strict Sivakasi safety standards.",
       boxPackaging: "10 Pieces per Box | 30 Boxes per Wholesale Carton",
-      marginHighlight: "Bulk Transport Discount: Direct Sivakasi freight booking."
     },
     {
       size: "15 CM",
-      title: "15 CM Grand Event Sparklers",
+      title: "15 CM Sparklers Collection",
       image: "/products/15cm-products.jpg",
       variants: ["Electric", "Colour", "Green", "Red", "Gold Crackling"],
       colorScheme: "gold" as const,
       slug: "15cm-sparklers",
-      keyword: "15 CM Event Sparklers Manufacturer",
-      desc: "Longer burn duration with dense starburst crackles designed for wedding photography and grand entries.",
-      useCase: "VIP wedding receptions, stage lightings, festival processions.",
+      keyword: "15 CM Sparklers Sivakasi Supplier",
+      desc: "15 CM sparklers featuring dense starburst crackles, double-dipped wire coating, and green fireworks certification.",
       boxPackaging: "10 Pieces per Box | 25 Boxes per Wholesale Carton",
-      marginHighlight: "Export Quality Coating: Double-dipped steel wire core."
     },
     {
       size: "30 CM",
-      title: "30 CM Giant Sparklers Collection",
+      title: "30 CM Sparklers Collection",
       image: "/products/30cm-products.jpg",
       variants: ["Electric Gold", "Colour Stars", "Green Eco"],
       colorScheme: "gold" as const,
       slug: "30cm-sparklers",
-      keyword: "30 CM Giant Sparklers Sivakasi",
-      desc: "Extra long 30 CM giant sparklers producing over 3+ minutes of continuous golden starbursts.",
-      useCase: "Photographer bride & groom exits, mega Diwali shows, stage fireworks.",
+      keyword: "30 CM Sparklers Sivakasi Factory",
+      desc: "Extra long 30 CM sparklers manufactured for festive displays and major public celebrations.",
       boxPackaging: "5 Pieces per Box | 20 Boxes per Wholesale Carton",
-      marginHighlight: "High Value SKU: Top seller during peak Diwali season."
     },
     {
       size: "50 CM",
-      title: "50 CM Mega Celebration Sparklers",
+      title: "50 CM Sparklers Collection",
       image: "/products/50cm-products.jpg",
       variants: ["Electric Super Gold", "Multi Stars", "Emerald Green"],
       colorScheme: "emerald" as const,
       slug: "50cm-sparklers",
-      keyword: "50 CM Mega Sparklers Wholesale Factory",
-      desc: "Our flagship extra-long 50 CM sparklers delivering majestic 5-minute continuous burn time.",
-      useCase: "Stadium celebrations, resort galas, flagship wedding exits.",
+      keyword: "50 CM Sparklers Direct Manufacturer",
+      desc: "Flagship extra-long 50 CM mega sparklers delivering extended radiant golden spark illumination.",
       boxPackaging: "5 Pieces per Box | 15 Boxes per Wholesale Carton",
-      marginHighlight: "Flagship Product: Highest revenue generator per carton."
     }
   ];
 
@@ -166,20 +155,20 @@ export default function Home() {
       <Header />
 
       {/* ========================================================================= */}
-      {/* 1. HERO SECTION - Bright Light Theme + Macro Sparkler Photography Canvas */}
+      {/* 1. HERO SECTION - Photorealistic Burning Sparkler Asset & Light Theme */}
       {/* ========================================================================= */}
       <section className="relative min-h-[92vh] flex items-center justify-center overflow-hidden pt-10 pb-20 border-b border-amber-100 bg-gradient-to-b from-[#FFFDF7] via-[#FAF9F6] to-[#FFFDF7]">
-        {/* Macro Sparkler Light Photography Engine (No Wires or Black Sticks) */}
-        <MacroSparklerCanvas opacity={0.95} />
+        {/* Photorealistic Burning Sparkler Visual Asset + Layered Combustion Physics */}
+        <PhotorealisticSparkler opacity={1} />
 
-        {/* Soft Ambient Canvas Background for Distant Blooms */}
-        <FireworkBackground type="hero" density={22} speed={0.8} opacity={0.5} colorScheme="gold" />
+        {/* Soft Ambient Canvas Background for Subtle Distant Blooms */}
+        <FireworkBackground type="hero" density={18} speed={0.7} opacity={0.45} colorScheme="gold" />
         
-        {/* Volumetric Light Glow */}
+        {/* Volumetric Radial Light Glow */}
         <GlowAtmosphere position="hero" color="gold" intensity="medium" />
 
         {/* Soft Ambient Smoke Haze */}
-        <SmokeLayer opacity={0.12} />
+        <SmokeLayer opacity={0.1} />
 
         <div className="relative z-20 mx-auto max-w-7xl px-6 text-center">
           {/* Above-headline Badge */}
@@ -309,15 +298,15 @@ export default function Home() {
       </section>
 
       {/* ========================================================================= */}
-      {/* 3. ATMOSPHERIC PRODUCT SHOWROOM & CATEGORY PORTALS */}
+      {/* 3. COMPLETE SPARKLER COLLECTION SHOWCASE (7 CM TO 50 CM) */}
       {/* ========================================================================= */}
       <section className="relative py-24 border-b border-amber-100 overflow-hidden bg-[#FAF9F6]">
         {/* Dynamic Category Fireworks Particle Engine */}
         <FireworkBackground
           key={selectedCategory}
           type="category"
-          density={35}
-          opacity={0.65}
+          density={30}
+          opacity={0.55}
           colorScheme={currentProduct.colorScheme}
         />
         
@@ -327,17 +316,17 @@ export default function Home() {
           {/* Section Header */}
           <div className="text-center max-w-3xl mx-auto mb-12">
             <span className="text-xs font-extrabold uppercase tracking-widest text-[#D4AF37]">
-              PRODUCT SHOWROOM & SIZES
+              OUR COMPLETE SPARKLER COLLECTION
             </span>
             <h2 className="text-3xl sm:text-5xl font-black uppercase text-[#0F172A] tracking-tight mt-2">
-              Explore Our <span className="text-[#D4AF37] gold-glow-text">Sparkler Collections</span>
+              7 CM to 50 CM <span className="text-[#D4AF37] gold-glow-text">Sparklers Range</span>
             </h2>
             <p className="text-sm text-slate-600 mt-3">
-              Select a size category below to view illuminated catalog sheets, specifications, and wholesale margin highlights.
+              Explore our full range of manufactured sparklers in 7 CM, 10 CM, 12 CM, 15 CM, 30 CM, and 50 CM sizes with official catalog page graphics.
             </p>
           </div>
 
-          {/* Category Tabs */}
+          {/* Size Category Tabs */}
           <div className="flex items-center justify-start sm:justify-center gap-2 overflow-x-auto pb-4 mb-10 scrollbar-none">
             {productCategories.map((cat) => {
               const isSelected = selectedCategory === cat.size;
@@ -357,9 +346,9 @@ export default function Home() {
             })}
           </div>
 
-          {/* Active Product Card Stage */}
+          {/* Active Category Display Stage */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center rounded-3xl border border-amber-200/80 bg-white p-6 sm:p-10 shadow-xl">
-            {/* Catalog Sheet Image Stage */}
+            {/* Catalog Page Image */}
             <div className="lg:col-span-6 relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-amber-100 bg-amber-50/20 p-3 shadow-inner">
               <Image
                 src={currentProduct.image}
@@ -369,7 +358,7 @@ export default function Home() {
                 priority
               />
               <div className="absolute top-4 left-4 rounded-xl bg-white/90 backdrop-blur-md px-3.5 py-1.5 border border-amber-200 text-xs font-bold text-[#D4AF37] shadow-sm">
-                {currentProduct.size} Category
+                {currentProduct.size} Collection
               </div>
             </div>
 
@@ -390,7 +379,7 @@ export default function Home() {
               {/* Variants Badges */}
               <div>
                 <span className="block text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">
-                  Available Color Formulations
+                  Catalog Variants
                 </span>
                 <div className="flex flex-wrap gap-2">
                   {currentProduct.variants.map((v) => (
@@ -404,31 +393,14 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Specification Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 border-t border-slate-100">
-                <div className="rounded-2xl border border-slate-200 bg-slate-50/50 p-3.5">
-                  <span className="block text-[10px] font-bold text-slate-500 uppercase tracking-widest">
-                    Festival & Event Use
-                  </span>
-                  <span className="text-xs font-semibold text-slate-900 mt-1 block">
-                    {currentProduct.useCase}
-                  </span>
-                </div>
-
-                <div className="rounded-2xl border border-slate-200 bg-slate-50/50 p-3.5">
-                  <span className="block text-[10px] font-bold text-slate-500 uppercase tracking-widest">
-                    Standard Box Packaging
-                  </span>
-                  <span className="text-xs font-semibold text-slate-900 mt-1 block">
-                    {currentProduct.boxPackaging}
-                  </span>
-                </div>
-              </div>
-
-              {/* Margin highlight */}
-              <div className="rounded-2xl border border-amber-200 bg-amber-50 p-3.5 text-xs font-bold text-amber-900 flex items-center gap-2">
-                <Zap className="h-4 w-4 shrink-0 text-[#D4AF37]" />
-                <span>{currentProduct.marginHighlight}</span>
+              {/* Packaging Specification */}
+              <div className="rounded-2xl border border-slate-200 bg-slate-50/50 p-4 pt-3 border-t border-slate-100">
+                <span className="block text-[10px] font-bold text-slate-500 uppercase tracking-widest">
+                  Standard Factory Packaging
+                </span>
+                <span className="text-xs font-semibold text-slate-900 mt-1 block">
+                  {currentProduct.boxPackaging}
+                </span>
               </div>
 
               {/* Action Buttons */}
@@ -455,7 +427,105 @@ export default function Home() {
       </section>
 
       {/* ========================================================================= */}
-      {/* 4. BRAND STORY & MANUFACTURING ("From Sivakasi to Celebrations") */}
+      {/* 4. DEDICATED 30 CM & 50 CM FEATURED SPOTLIGHT */}
+      {/* ========================================================================= */}
+      <section className="relative py-24 border-b border-amber-100 overflow-hidden bg-gradient-to-b from-[#FFFDF7] via-[#FFFDF0] to-[#FFFDF7]">
+        <FireworkBackground type="trails" density={25} opacity={0.6} colorScheme="gold" />
+        <GlowAtmosphere position="top-right" color="gold" intensity="medium" />
+
+        <div className="relative z-10 mx-auto max-w-7xl px-6">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-xs font-extrabold uppercase tracking-widest text-[#D4AF37]">
+              FEATURED EXTRA-LONG COLLECTION
+            </span>
+            <h2 className="text-3xl sm:text-5xl font-black uppercase text-[#0F172A] tracking-tight mt-2">
+              Balakar <span className="text-[#D4AF37] gold-glow-text">30 CM & 50 CM</span> Sparklers
+            </h2>
+            <p className="text-sm text-slate-600 mt-3">
+              Explore our flagship extra-long 30 CM and 50 CM sparklers manufactured direct from Sivakasi plant for major celebrations.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            {/* 30 CM Card */}
+            <div className="rounded-3xl border border-amber-200/80 bg-white p-6 sm:p-8 shadow-xl flex flex-col justify-between gap-6">
+              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-amber-100 bg-amber-50/20 p-2">
+                <Image
+                  src="/products/30cm-products.jpg"
+                  alt="Balakar 30 CM Giant Sparklers Catalog"
+                  fill
+                  className="object-contain p-2"
+                />
+              </div>
+
+              <div>
+                <span className="text-xs font-bold text-[#D4AF37] uppercase tracking-widest block">30 CM Category</span>
+                <h3 className="text-2xl font-extrabold text-[#0F172A] uppercase tracking-tight mt-1">
+                  30 CM Giant Sparklers
+                </h3>
+                <p className="text-xs text-slate-600 mt-2 leading-relaxed">
+                  Manufactured with double-dipped steel wire core and CSIR-NEERI green certified formulas. Packed 5 pieces per box, 20 boxes per wholesale carton.
+                </p>
+              </div>
+
+              <div className="flex items-center justify-between pt-2 border-t border-slate-100">
+                <Link
+                  href="/30cm-sparklers"
+                  className="text-xs font-bold text-[#D4AF37] uppercase tracking-wider hover:underline"
+                >
+                  View 30 CM Specs &rarr;
+                </Link>
+                <button
+                  onClick={() => setIsInquiryOpen(true)}
+                  className="rounded-full bg-gradient-to-r from-[#D4AF37] to-[#F59E0B] px-5 py-2.5 text-xs font-extrabold uppercase tracking-widest text-[#0F172A] shadow-sm"
+                >
+                  Inquire 30 CM
+                </button>
+              </div>
+            </div>
+
+            {/* 50 CM Card */}
+            <div className="rounded-3xl border border-amber-200/80 bg-white p-6 sm:p-8 shadow-xl flex flex-col justify-between gap-6">
+              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-amber-100 bg-amber-50/20 p-2">
+                <Image
+                  src="/products/50cm-products.jpg"
+                  alt="Balakar 50 CM Mega Sparklers Catalog"
+                  fill
+                  className="object-contain p-2"
+                />
+              </div>
+
+              <div>
+                <span className="text-xs font-bold text-emerald-700 uppercase tracking-widest block">50 CM Category</span>
+                <h3 className="text-2xl font-extrabold text-[#0F172A] uppercase tracking-tight mt-1">
+                  50 CM Mega Sparklers
+                </h3>
+                <p className="text-xs text-slate-600 mt-2 leading-relaxed">
+                  Our flagship extra-long 50 CM sparklers manufactured direct from Sivakasi factory. Packed 5 pieces per box, 15 boxes per wholesale carton.
+                </p>
+              </div>
+
+              <div className="flex items-center justify-between pt-2 border-t border-slate-100">
+                <Link
+                  href="/50cm-sparklers"
+                  className="text-xs font-bold text-emerald-700 uppercase tracking-wider hover:underline"
+                >
+                  View 50 CM Specs &rarr;
+                </Link>
+                <button
+                  onClick={() => setIsInquiryOpen(true)}
+                  className="rounded-full bg-gradient-to-r from-[#D4AF37] to-[#F59E0B] px-5 py-2.5 text-xs font-extrabold uppercase tracking-widest text-[#0F172A] shadow-sm"
+                >
+                  Inquire 50 CM
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ========================================================================= */}
+      {/* 5. BRAND STORY & MANUFACTURING ("From Sivakasi to Celebrations") */}
       {/* ========================================================================= */}
       <section className="relative py-24 border-b border-amber-100 overflow-hidden bg-[#FFFDF7]">
         <FireworkBackground type="embers" density={28} opacity={0.5} colorScheme="gold" />
@@ -510,7 +580,7 @@ export default function Home() {
                 Phoenix Brand Seal
               </h3>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Double-dipped steel wire core technology guaranteeing zero coating flaking and smooth 60s to 300s burn time per sparkler.
+                Double-dipped steel wire core technology guaranteeing zero coating flaking and smooth burning characteristics.
               </p>
             </div>
 
@@ -568,7 +638,7 @@ export default function Home() {
       </section>
 
       {/* ========================================================================= */}
-      {/* 5. FREQUENTLY ASKED QUESTIONS */}
+      {/* 6. FREQUENTLY ASKED QUESTIONS */}
       {/* ========================================================================= */}
       <section className="relative py-24 border-b border-amber-100 bg-[#FAF9F6]">
         <div className="relative z-10 mx-auto max-w-4xl px-6">
@@ -610,7 +680,7 @@ export default function Home() {
       </section>
 
       {/* ========================================================================= */}
-      {/* 6. CONTACT & WHOLESALE INQUIRY BANNER */}
+      {/* 7. CONTACT & WHOLESALE INQUIRY BANNER */}
       {/* ========================================================================= */}
       <section className="relative py-20 overflow-hidden bg-gradient-to-b from-[#FFFDF7] via-[#FFFDF0] to-[#FFFDF7]">
         <FireworkBackground type="bursts" density={25} opacity={0.6} colorScheme="gold" />
