@@ -24,8 +24,8 @@ import MobileStickyBar from "../components/mobile-sticky-bar";
 import FloatingInquiry from "../components/floating-inquiry";
 import InquiryModal from "../components/inquiry-modal";
 
-// Seamless Photorealistic Sparkler & Ambient Components
-import PhotorealisticSparkler from "../components/cinematic/photorealistic-sparkler";
+// Active Animated Moving Sparkler Engine & Ambient Components
+import DynamicMovingSparkler from "../components/cinematic/dynamic-moving-sparkler";
 import FireworkBackground from "../components/cinematic/firework-background";
 import GlowAtmosphere from "../components/cinematic/glow-atmosphere";
 import SmokeLayer from "../components/cinematic/smoke-layer";
@@ -155,13 +155,13 @@ export default function Home() {
       <Header />
 
       {/* ========================================================================= */}
-      {/* 1. HERO SECTION - Bright Warm Light Theme + Seamless Photorealistic Sparkler */}
+      {/* 1. HERO SECTION - Bright Warm Light Theme + Active Moving Sparkler Engine */}
       {/* ========================================================================= */}
       <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-8 pb-16 border-b border-amber-100 bg-gradient-to-b from-[#FFFDF7] via-[#FAF9F6] to-[#FFFDF7]">
-        {/* Seamless Photorealistic Sparkler Asset + Layered Combustion Physics */}
-        <PhotorealisticSparkler opacity={1} />
+        {/* Active Moving Burning Sparkler Tip Engine with Long-Exposure Light Trails */}
+        <DynamicMovingSparkler opacity={1} />
 
-        {/* Soft Ambient Background Glow */}
+        {/* Soft Ambient Canvas Background for Subtle Distant Blooms */}
         <FireworkBackground type="hero" density={15} speed={0.6} opacity={0.35} colorScheme="gold" />
         
         {/* Studio Lighting Radial Glow */}
