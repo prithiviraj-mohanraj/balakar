@@ -24,7 +24,7 @@ import MobileStickyBar from "../components/mobile-sticky-bar";
 import FloatingInquiry from "../components/floating-inquiry";
 import InquiryModal from "../components/inquiry-modal";
 
-// Photorealistic Burning Sparkler & Ambient Components
+// Seamless Photorealistic Sparkler & Ambient Components
 import PhotorealisticSparkler from "../components/cinematic/photorealistic-sparkler";
 import FireworkBackground from "../components/cinematic/firework-background";
 import GlowAtmosphere from "../components/cinematic/glow-atmosphere";
@@ -155,20 +155,20 @@ export default function Home() {
       <Header />
 
       {/* ========================================================================= */}
-      {/* 1. HERO SECTION - Photorealistic Burning Sparkler Asset & Light Theme */}
+      {/* 1. HERO SECTION - Bright Warm Light Theme + Seamless Photorealistic Sparkler */}
       {/* ========================================================================= */}
-      <section className="relative min-h-[92vh] flex items-center justify-center overflow-hidden pt-10 pb-20 border-b border-amber-100 bg-gradient-to-b from-[#FFFDF7] via-[#FAF9F6] to-[#FFFDF7]">
-        {/* Photorealistic Burning Sparkler Visual Asset + Layered Combustion Physics */}
+      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-8 pb-16 border-b border-amber-100 bg-gradient-to-b from-[#FFFDF7] via-[#FAF9F6] to-[#FFFDF7]">
+        {/* Seamless Photorealistic Sparkler Asset + Layered Combustion Physics */}
         <PhotorealisticSparkler opacity={1} />
 
-        {/* Soft Ambient Canvas Background for Subtle Distant Blooms */}
-        <FireworkBackground type="hero" density={18} speed={0.7} opacity={0.45} colorScheme="gold" />
+        {/* Soft Ambient Background Glow */}
+        <FireworkBackground type="hero" density={15} speed={0.6} opacity={0.35} colorScheme="gold" />
         
-        {/* Volumetric Radial Light Glow */}
+        {/* Studio Lighting Radial Glow */}
         <GlowAtmosphere position="hero" color="gold" intensity="medium" />
 
-        {/* Soft Ambient Smoke Haze */}
-        <SmokeLayer opacity={0.1} />
+        {/* Subtle Ambient Smoke */}
+        <SmokeLayer opacity={0.08} />
 
         <div className="relative z-20 mx-auto max-w-7xl px-6 text-center">
           {/* Above-headline Badge */}
@@ -176,7 +176,7 @@ export default function Home() {
             initial={{ opacity: 0, y: -15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 rounded-full border border-amber-300/80 bg-white/90 backdrop-blur-md px-4 py-1.5 shadow-sm mb-6"
+            className="inline-flex items-center gap-2 rounded-full border border-amber-300/80 bg-white/90 backdrop-blur-md px-4 py-1.5 shadow-sm mb-5"
           >
             <Flame className="h-4 w-4 text-[#D4AF37] fill-[#D4AF37]" />
             <span className="text-xs font-extrabold uppercase tracking-widest text-[#0F172A]">
@@ -199,17 +199,17 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="max-w-2xl mx-auto text-base sm:text-xl font-medium text-slate-700 leading-relaxed mb-10"
+            className="max-w-2xl mx-auto text-base sm:text-xl font-medium text-slate-700 leading-relaxed mb-8"
           >
             Premium Green Certified Sparklers Manufactured in Sivakasi. Double-Dipped Steel Wire Core for Unmatched Brilliance and Zero Fallout Sparks.
           </motion.p>
 
-          {/* Hero Featured Product Packaging Stage (Illuminated 4-Box Showroom Display) */}
+          {/* Hero Featured Product Packaging Stage (Elevated 4-Box Showroom Display) */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
+            initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="relative max-w-4xl mx-auto mb-12"
+            className="relative max-w-4xl mx-auto mb-10"
           >
             <div className="absolute -inset-4 bg-gradient-to-r from-amber-400/20 via-[#D4AF37]/30 to-amber-400/20 rounded-3xl blur-2xl opacity-60 animate-pulse-slow pointer-events-none" />
             
@@ -306,7 +306,7 @@ export default function Home() {
           key={selectedCategory}
           type="category"
           density={30}
-          opacity={0.55}
+          opacity={0.5}
           colorScheme={currentProduct.colorScheme}
         />
         
@@ -430,7 +430,7 @@ export default function Home() {
       {/* 4. DEDICATED 30 CM & 50 CM FEATURED SPOTLIGHT */}
       {/* ========================================================================= */}
       <section className="relative py-24 border-b border-amber-100 overflow-hidden bg-gradient-to-b from-[#FFFDF7] via-[#FFFDF0] to-[#FFFDF7]">
-        <FireworkBackground type="trails" density={25} opacity={0.6} colorScheme="gold" />
+        <FireworkBackground type="trails" density={25} opacity={0.5} colorScheme="gold" />
         <GlowAtmosphere position="top-right" color="gold" intensity="medium" />
 
         <div className="relative z-10 mx-auto max-w-7xl px-6">

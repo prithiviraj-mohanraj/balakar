@@ -57,33 +57,33 @@ export default function PhotorealisticSparkler({ opacity = 1 }: PhotorealisticSp
 
     let sparks: DynamicSpark[] = [];
 
-    // Tip location relative to hero container
+    // Precise tip position at far left edge matching the transparent asset
     const getTipCoords = () => {
       const w = canvas.width;
       const h = canvas.height;
       return {
-        x: isMobile ? w * 0.28 : w * 0.22,
-        y: isMobile ? h * 0.16 : h * 0.22,
+        x: isMobile ? w * 0.12 : w * 0.11,
+        y: isMobile ? h * 0.14 : h * 0.18,
       };
     };
 
     const createTipSpark = (tX: number, tY: number): DynamicSpark => {
-      const angle = Math.random() * Math.PI * 2;
-      const speed = Math.random() * 4.0 + 1.0;
+      const angle = (Math.random() - 0.2) * Math.PI; // Angled inward towards right
+      const speed = Math.random() * 3.5 + 0.8;
       const isWhiteHot = Math.random() < 0.25;
 
       return {
         x: tX,
         y: tY,
         vx: Math.cos(angle) * speed,
-        vy: Math.sin(angle) * speed - (Math.random() * 0.4),
-        size: isWhiteHot ? Math.random() * 2.5 + 1.5 : Math.random() * 1.8 + 0.8,
-        alpha: Math.random() * 0.8 + 0.2,
-        decay: Math.random() * 0.02 + 0.008,
+        vy: Math.sin(angle) * speed + (Math.random() * 0.2),
+        size: isWhiteHot ? Math.random() * 2.2 + 1.2 : Math.random() * 1.5 + 0.6,
+        alpha: Math.random() * 0.75 + 0.25,
+        decay: Math.random() * 0.02 + 0.009,
         color: isWhiteHot ? colors[0] : colors[Math.floor(Math.random() * (colors.length - 1)) + 1],
-        gravity: Math.random() * 0.08 + 0.03,
+        gravity: Math.random() * 0.06 + 0.02,
         life: 0,
-        maxLife: Math.random() * 45 + 20,
+        maxLife: Math.random() * 40 + 18,
         trail: [],
       };
     };
@@ -95,18 +95,18 @@ export default function PhotorealisticSparkler({ opacity = 1 }: PhotorealisticSp
       const tip = getTipCoords();
 
       // Emit new micro-sparks from burning tip
-      const spawnRate = isMobile ? 2 : 4;
+      const spawnRate = isMobile ? 1 : 3;
       for (let i = 0; i < spawnRate; i++) {
         sparks.push(createTipSpark(tip.x, tip.y));
       }
 
       // Draw tip white-hot heat bloom
       ctx.save();
-      const flicker = Math.random() * 8 - 4;
-      const radius = 32 + flicker;
+      const flicker = Math.random() * 4 - 2;
+      const radius = 22 + flicker;
       const radialGlow = ctx.createRadialGradient(tip.x, tip.y, 0, tip.x, tip.y, radius);
       radialGlow.addColorStop(0, "rgba(255, 255, 255, 0.95)");
-      radialGlow.addColorStop(0.35, "rgba(251, 191, 36, 0.6)");
+      radialGlow.addColorStop(0.4, "rgba(251, 191, 36, 0.5)");
       radialGlow.addColorStop(1, "rgba(217, 119, 6, 0)");
 
       ctx.beginPath();
@@ -138,8 +138,8 @@ export default function PhotorealisticSparkler({ opacity = 1 }: PhotorealisticSp
             for (let t = 1; t < p.trail.length; t++) {
               ctx.lineTo(p.trail[t].x, p.trail[t].y);
             }
-            ctx.strokeStyle = `${p.color}${Math.max(0, p.alpha * 0.7)})`;
-            ctx.lineWidth = p.size * 0.85;
+            ctx.strokeStyle = `${p.color}${Math.max(0, p.alpha * 0.65)})`;
+            ctx.lineWidth = p.size * 0.8;
             ctx.lineCap = "round";
             ctx.stroke();
           }
@@ -169,11 +169,11 @@ export default function PhotorealisticSparkler({ opacity = 1 }: PhotorealisticSp
       className="absolute inset-0 pointer-events-none z-10 overflow-hidden"
       style={{ opacity }}
     >
-      {/* Real Photorealistic Burning Sparkler Asset Image */}
-      <div className="absolute top-[-3%] left-[-4%] sm:left-[2%] w-[260px] sm:w-[380px] aspect-[3/4] opacity-90 transform -rotate-12 drop-shadow-[0_0_30px_rgba(245,158,11,0.4)] pointer-events-none">
+      {/* Seamless 100% Transparent PNG Burning Sparkler Asset (No Card, No Black Rectangle) */}
+      <div className="absolute top-[2%] left-[-2%] sm:left-[1%] w-[130px] sm:w-[190px] aspect-[3/4] opacity-95 transform -rotate-15 drop-shadow-[0_0_20px_rgba(245,158,11,0.35)] pointer-events-none">
         <Image
-          src="/branding/real-sparkler-burn.jpg"
-          alt="Real Photorealistic Burning Sparkler Asset"
+          src="/branding/transparent-sparkler.png"
+          alt="Transparent Burning Sparkler Visual Asset"
           fill
           className="object-contain"
           priority
