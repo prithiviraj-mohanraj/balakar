@@ -16,7 +16,10 @@ import {
   Flame,
   Star,
   Zap,
-  Leaf
+  Leaf,
+  CheckCircle2,
+  PackageCheck,
+  Truck
 } from "lucide-react";
 import Header from "../components/header";
 import Footer from "../components/footer";
@@ -24,8 +27,9 @@ import MobileStickyBar from "../components/mobile-sticky-bar";
 import FloatingInquiry from "../components/floating-inquiry";
 import InquiryModal from "../components/inquiry-modal";
 
-// Active Animated Moving Sparkler Engine & Ambient Components
-import DynamicMovingSparkler from "../components/cinematic/dynamic-moving-sparkler";
+// Cinematic Diwali & Real Sparkler Components
+import DiwaliHeroCanvas, { SparklerColorTheme } from "../components/cinematic/diwali-hero-canvas";
+import DiwaliDiyaGlow from "../components/cinematic/diwali-diya-glow";
 import FireworkBackground from "../components/cinematic/firework-background";
 import GlowAtmosphere from "../components/cinematic/glow-atmosphere";
 import SmokeLayer from "../components/cinematic/smoke-layer";
@@ -45,14 +49,26 @@ export default function Home() {
     setFaqOpen((prev) => ({ ...prev, [index]: !prev[index] }));
   };
 
-  // Official verified Balakar product categories (7 CM to 50 CM)
-  const productCategories = [
+  // Official verified Balakar product categories (7 CM to 50 CM) from docs/PRODUCTS.md
+  const productCategories: {
+    size: string;
+    title: string;
+    image: string;
+    variants: string[];
+    colorScheme: "gold" | "amber" | "emerald" | "crimson" | "silver" | "multicolor";
+    sparklerTheme: SparklerColorTheme;
+    slug: string;
+    keyword: string;
+    desc: string;
+    boxPackaging: string;
+  }[] = [
     {
       size: "7 CM",
       title: "7 CM Sparklers Collection",
       image: "/products/7cm-products.jpg",
       variants: ["Electric", "Colour", "Green", "Red"],
-      colorScheme: "gold" as const,
+      colorScheme: "gold",
+      sparklerTheme: "gold",
       slug: "7cm-sparklers",
       keyword: "7 CM Sparklers Manufacturer Sivakasi",
       desc: "Standard 7 CM sparklers manufactured under Phoenix Brand with double-dipped steel wire core and CSIR-NEERI green certification.",
@@ -63,7 +79,8 @@ export default function Home() {
       title: "10 CM Sparklers Collection",
       image: "/products/10cm-products.jpg",
       variants: ["Electric", "Colour", "Green", "Red", "Silver"],
-      colorScheme: "amber" as const,
+      colorScheme: "amber",
+      sparklerTheme: "gold",
       slug: "10cm-sparklers",
       keyword: "10 CM Sparklers Wholesale Sivakasi",
       desc: "Popular 10 CM sparklers manufactured direct from Sivakasi factory with radiant spark emission and low smoke chemistry.",
@@ -73,32 +90,35 @@ export default function Home() {
       size: "12 CM",
       title: "12 CM Sparklers Collection",
       image: "/products/12cm-products.jpg",
-      variants: ["Electric", "Colour", "Green", "Red", "Multi-color"],
-      colorScheme: "multicolor" as const,
+      variants: ["Electric", "Colour", "Green", "Red"],
+      colorScheme: "multicolor",
+      sparklerTheme: "multicolour",
       slug: "12cm-sparklers",
       keyword: "12 CM Sparklers Factory Direct",
-      desc: "12 CM sparklers available in multiple color formulations, produced under strict Sivakasi safety standards.",
+      desc: "12 CM sparklers available in multiple vibrant formulations, produced under strict Sivakasi safety standards.",
       boxPackaging: "10 Pieces per Box | 30 Boxes per Wholesale Carton",
     },
     {
       size: "15 CM",
       title: "15 CM Sparklers Collection",
       image: "/products/15cm-products.jpg",
-      variants: ["Electric", "Colour", "Green", "Red", "Gold Crackling"],
-      colorScheme: "gold" as const,
+      variants: ["Electric", "Colour", "Green", "Red"],
+      colorScheme: "crimson",
+      sparklerTheme: "red",
       slug: "15cm-sparklers",
       keyword: "15 CM Sparklers Sivakasi Supplier",
-      desc: "15 CM sparklers featuring dense starburst crackles, double-dipped wire coating, and green fireworks certification.",
+      desc: "15 CM sparklers featuring dense crackling sparks, double-dipped wire coating, and green fireworks certification.",
       boxPackaging: "10 Pieces per Box | 25 Boxes per Wholesale Carton",
     },
     {
       size: "30 CM",
       title: "30 CM Sparklers Collection",
       image: "/products/30cm-products.jpg",
-      variants: ["Electric Gold", "Colour Stars", "Green Eco"],
-      colorScheme: "gold" as const,
+      variants: ["Electric", "Colour", "Green", "Red"],
+      colorScheme: "gold",
+      sparklerTheme: "gold",
       slug: "30cm-sparklers",
-      keyword: "30 CM Sparklers Sivakasi Factory",
+      keyword: "30 CM Giant Sparklers Sivakasi",
       desc: "Extra long 30 CM sparklers manufactured for festive displays and major public celebrations.",
       boxPackaging: "5 Pieces per Box | 20 Boxes per Wholesale Carton",
     },
@@ -106,34 +126,40 @@ export default function Home() {
       size: "50 CM",
       title: "50 CM Sparklers Collection",
       image: "/products/50cm-products.jpg",
-      variants: ["Electric Super Gold", "Multi Stars", "Emerald Green"],
-      colorScheme: "emerald" as const,
+      variants: ["Electric", "Colour"],
+      colorScheme: "emerald",
+      sparklerTheme: "green",
       slug: "50cm-sparklers",
-      keyword: "50 CM Sparklers Direct Manufacturer",
+      keyword: "50 CM Mega Sparklers Manufacturer",
       desc: "Flagship extra-long 50 CM mega sparklers delivering extended radiant golden spark illumination.",
       boxPackaging: "5 Pieces per Box | 15 Boxes per Wholesale Carton",
-    }
+    },
   ];
 
-  const currentProduct = productCategories.find(p => p.size === selectedCategory) || productCategories[0];
+  const currentProduct =
+    productCategories.find((p) => p.size === selectedCategory) || productCategories[0];
 
   const faqs = [
     {
       question: "Are Balakar Sparklers certified under CSIR-NEERI Green Fireworks?",
-      answer: "Yes, 100%. Balakar Sparklers operates under official CSIR-NEERI Green Fireworks License NE/TN/201-01/2019. Our formulations produce 30% less smoke and zero harmful barium compounds."
+      answer:
+        "Yes, 100%. Balakar Sparklers operates under official CSIR-NEERI Green Fireworks License NE/TN/201-01/2019. Our formulations produce 30% less smoke and zero harmful barium compounds.",
     },
     {
       question: "What is the minimum wholesale order quantity from Sivakasi factory?",
-      answer: "Our minimum wholesale consignment starts at 1 master carton (mixable across 7 CM, 10 CM, 12 CM, 15 CM, 30 CM, and 50 CM sizes). We ship directly to all major transport hubs across India."
+      answer:
+        "Our minimum wholesale consignment starts at 1 master carton (mixable across 7 CM, 10 CM, 12 CM, 15 CM, 30 CM, and 50 CM sizes). We ship directly to all major transport hubs across India.",
     },
     {
       question: "Why choose double-dipped steel wire core sparklers?",
-      answer: "Double-dipping ensures chemical coating adheres firmly to the A-grade steel core. This guarantees uniform burning, zero sparks fallout on clothes or skin, and longer shelf life."
+      answer:
+        "Double-dipping ensures chemical coating adheres firmly to the A-grade steel core. This guarantees uniform burning, zero sparks fallout on clothes or skin, and longer shelf life.",
     },
     {
       question: "How fast can wholesale consignments be dispatched?",
-      answer: "Orders are dispatched directly from our Alamarathupatti, Sivakasi plant within 24 to 48 hours after payment confirmation via reliable transport logistics."
-    }
+      answer:
+        "Orders are dispatched directly from our Alamarathupatti, Sivakasi plant within 24 to 48 hours after payment confirmation via reliable transport logistics.",
+    },
   ];
 
   return (
@@ -155,32 +181,32 @@ export default function Home() {
       <Header />
 
       {/* ========================================================================= */}
-      {/* 1. HERO SECTION - Bright Warm Light Theme + Active Moving Sparkler Engine */}
+      {/* 1. HERO SECTION: DIWALI FESTIVE EVENING + REAL MOVING SPARKLERS + SHOWROOM */}
       {/* ========================================================================= */}
-      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-8 pb-16 border-b border-amber-100 bg-gradient-to-b from-[#FFFDF7] via-[#FAF9F6] to-[#FFFDF7]">
-        {/* Active Moving Burning Sparkler Tip Engine with Long-Exposure Light Trails */}
-        <DynamicMovingSparkler opacity={1} />
+      <section className="relative min-h-[94vh] flex items-center justify-center overflow-hidden pt-12 pb-24 border-b border-amber-500/20 bg-gradient-to-b from-[#0A0E1A] via-[#12182B] to-[#1A223B] text-white">
+        {/* Dynamic Multi-Colour Real Moving Sparklers + Distant Diwali Fireworks */}
+        <DiwaliHeroCanvas colorTheme="gold" opacity={1} />
 
-        {/* Soft Ambient Canvas Background for Subtle Distant Blooms */}
-        <FireworkBackground type="hero" density={15} speed={0.6} opacity={0.35} colorScheme="gold" />
-        
-        {/* Studio Lighting Radial Glow */}
+        {/* Ambient Golden Diwali Hearth Glow */}
+        <DiwaliDiyaGlow />
+
+        {/* Volumetric Radial Light Glow */}
         <GlowAtmosphere position="hero" color="gold" intensity="medium" />
 
-        {/* Subtle Ambient Smoke */}
-        <SmokeLayer opacity={0.08} />
+        {/* Atmospheric Champagne Smoke Layer */}
+        <SmokeLayer opacity={0.12} />
 
         <div className="relative z-20 mx-auto max-w-7xl px-6 text-center">
-          {/* Above-headline Badge */}
+          {/* Above-headline Badge with Glowing Amber Border */}
           <motion.div
             initial={{ opacity: 0, y: -15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 rounded-full border border-amber-300/80 bg-white/90 backdrop-blur-md px-4 py-1.5 shadow-sm mb-5"
+            className="inline-flex items-center gap-2 rounded-full border border-amber-400/40 bg-[#0F172A]/85 backdrop-blur-md px-4 py-1.5 shadow-[0_0_20px_rgba(251,191,36,0.2)] mb-5"
           >
             <Flame className="h-4 w-4 text-[#D4AF37] fill-[#D4AF37]" />
-            <span className="text-xs font-extrabold uppercase tracking-widest text-[#0F172A]">
-              Sivakasi Direct Sparklers Factory • Phoenix Brand
+            <span className="text-xs font-extrabold uppercase tracking-widest text-amber-200">
+              Sivakasi Direct Factory • Phoenix Brand • Green Fireworks
             </span>
           </motion.div>
 
@@ -189,9 +215,12 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-4xl sm:text-6xl md:text-7xl font-black uppercase tracking-tight text-[#0F172A] leading-none mb-4"
+            className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase tracking-tight text-white leading-none mb-4 drop-shadow-[0_2px_12px_rgba(0,0,0,0.8)]"
           >
-            LIGHT UP THE <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] via-amber-500 to-[#F59E0B] gold-glow-text">MOMENT</span>
+            LIGHT UP THE{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FDE047] via-[#F59E0B] to-[#D4AF37] drop-shadow-[0_0_25px_rgba(251,191,36,0.6)]">
+              MOMENT
+            </span>
           </motion.h1>
 
           {/* Subheading */}
@@ -199,22 +228,23 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="max-w-2xl mx-auto text-base sm:text-xl font-medium text-slate-700 leading-relaxed mb-8"
+            className="max-w-2xl mx-auto text-base sm:text-xl font-medium text-amber-100/90 leading-relaxed mb-10"
           >
-            Premium Green Certified Sparklers Manufactured in Sivakasi. Double-Dipped Steel Wire Core for Unmatched Brilliance and Zero Fallout Sparks.
+            Experience authentic Diwali celebrations with Sivakasi&apos;s finest sparklers. Double-dipped steel wire core for radiant crackling brilliance and zero fallout sparks.
           </motion.p>
 
-          {/* Hero Featured Product Packaging Stage (Elevated 4-Box Showroom Display) */}
+          {/* Hero 3D Product Showroom Stage (Crisp Illuminated Balakar Packaging) */}
           <motion.div
             initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
             className="relative max-w-4xl mx-auto mb-10"
           >
-            <div className="absolute -inset-4 bg-gradient-to-r from-amber-400/20 via-[#D4AF37]/30 to-amber-400/20 rounded-3xl blur-2xl opacity-60 animate-pulse-slow pointer-events-none" />
-            
-            <div className="relative overflow-hidden rounded-3xl border border-amber-200/80 bg-white/95 backdrop-blur-2xl p-4 sm:p-6 shadow-xl">
-              <div className="relative aspect-[21/9] sm:aspect-[2.4/1] w-full overflow-hidden rounded-2xl bg-gradient-to-b from-amber-50/40 to-white/60 p-2 flex items-center justify-center">
+            {/* Soft Warm Halo behind packaging */}
+            <div className="absolute -inset-4 bg-gradient-to-r from-amber-500/25 via-[#D4AF37]/35 to-amber-500/25 rounded-3xl blur-2xl opacity-70 animate-pulse-slow pointer-events-none" />
+
+            <div className="relative overflow-hidden rounded-3xl border border-amber-400/40 bg-white/95 backdrop-blur-2xl p-4 sm:p-6 shadow-[0_20px_50px_rgba(0,0,0,0.4)]">
+              <div className="relative aspect-[21/9] sm:aspect-[2.4/1] w-full overflow-hidden rounded-2xl bg-gradient-to-b from-amber-50/60 via-white to-amber-50/30 p-2 flex items-center justify-center">
                 <Image
                   src="/products/7cm-products.jpg"
                   alt="Balakar Sparklers Sivakasi Product Packaging Showcase - 7 CM Electric, Colour, Green, Red"
@@ -222,11 +252,11 @@ export default function Home() {
                   className="object-contain transform hover:scale-[1.02] transition-transform duration-700 p-2"
                   priority
                 />
-                
-                {/* Overlay Badge */}
-                <div className="absolute bottom-4 left-4 flex items-center gap-2 rounded-xl bg-white/95 backdrop-blur-md px-3.5 py-2 border border-amber-200 shadow-sm">
+
+                {/* Showroom Authenticity Badge */}
+                <div className="absolute bottom-4 left-4 flex items-center gap-2 rounded-xl bg-slate-900/90 backdrop-blur-md px-3.5 py-2 border border-amber-400/50 shadow-md">
                   <Star className="h-4 w-4 text-[#D4AF37] fill-[#D4AF37]" />
-                  <span className="text-xs font-bold text-[#0F172A] uppercase tracking-wider">
+                  <span className="text-xs font-bold text-amber-100 uppercase tracking-wider">
                     Official Balakar Packaging Showroom
                   </span>
                 </div>
@@ -234,7 +264,7 @@ export default function Home() {
             </div>
           </motion.div>
 
-          {/* Call to Actions */}
+          {/* Primary Call to Actions */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -243,7 +273,7 @@ export default function Home() {
           >
             <button
               onClick={() => setIsInquiryOpen(true)}
-              className="relative overflow-hidden w-full sm:w-auto flex items-center justify-center gap-2.5 rounded-full bg-gradient-to-r from-[#D4AF37] via-[#F59E0B] to-[#D4AF37] px-8 py-4 text-sm font-extrabold uppercase tracking-widest text-[#0F172A] shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer hover:scale-[1.03]"
+              className="relative overflow-hidden w-full sm:w-auto flex items-center justify-center gap-2.5 rounded-full bg-gradient-to-r from-[#D4AF37] via-[#F59E0B] to-[#D4AF37] px-8 py-4 text-sm font-black uppercase tracking-widest text-[#0F172A] shadow-[0_0_30px_rgba(251,191,36,0.4)] hover:shadow-[0_0_40px_rgba(251,191,36,0.6)] transition-all duration-300 cursor-pointer hover:scale-[1.03]"
             >
               <Sparkles className="h-5 w-5 fill-[#0F172A]" />
               <span>EXPLORE OUR SPARKLERS</span>
@@ -251,9 +281,9 @@ export default function Home() {
 
             <Link
               href="/catalog"
-              className="w-full sm:w-auto flex items-center justify-center gap-2.5 rounded-full border border-slate-300 bg-white backdrop-blur-md px-8 py-4 text-sm font-bold uppercase tracking-widest text-slate-800 hover:bg-slate-50 hover:border-slate-400 transition-all duration-300 shadow-sm"
+              className="w-full sm:w-auto flex items-center justify-center gap-2.5 rounded-full border border-amber-300/40 bg-white/10 backdrop-blur-md px-8 py-4 text-sm font-bold uppercase tracking-widest text-white hover:bg-white/20 hover:border-amber-300 transition-all duration-300 shadow-md"
             >
-              <FileText className="h-5 w-5 text-[#D4AF37]" />
+              <FileText className="h-5 w-5 text-amber-300" />
               <span>DOWNLOAD CATALOG</span>
             </Link>
           </motion.div>
@@ -261,7 +291,7 @@ export default function Home() {
       </section>
 
       {/* ========================================================================= */}
-      {/* 2. ABOVE-THE-FOLD CREDENTIALS STRIP */}
+      {/* 2. CREDENTIALS STRIP */}
       {/* ========================================================================= */}
       <section className="relative z-20 -mt-8 mx-auto max-w-7xl px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 rounded-3xl border border-amber-200/80 bg-white p-6 shadow-xl">
@@ -270,8 +300,12 @@ export default function Home() {
               <ShieldCheck className="h-6 w-6" />
             </div>
             <div>
-              <h3 className="text-sm font-extrabold text-[#0F172A] uppercase tracking-wider">A-Grade Steel Core Wire</h3>
-              <p className="text-xs text-slate-600 mt-0.5">Double-dipped coating ensuring zero spark fallout on hands or clothing.</p>
+              <h3 className="text-sm font-extrabold text-[#0F172A] uppercase tracking-wider">
+                A-Grade Steel Core Wire
+              </h3>
+              <p className="text-xs text-slate-600 mt-0.5">
+                Double-dipped coating ensuring zero spark fallout on hands or clothing.
+              </p>
             </div>
           </div>
 
@@ -280,8 +314,12 @@ export default function Home() {
               <Leaf className="h-6 w-6" />
             </div>
             <div>
-              <h3 className="text-sm font-extrabold text-[#0F172A] uppercase tracking-wider">CSIR-NEERI Green License</h3>
-              <p className="text-xs text-slate-600 mt-0.5">30% lower smoke eco formulations (License NE/TN/201-01/2019).</p>
+              <h3 className="text-sm font-extrabold text-[#0F172A] uppercase tracking-wider">
+                CSIR-NEERI Green License
+              </h3>
+              <p className="text-xs text-slate-600 mt-0.5">
+                30% lower smoke eco formulations (License NE/TN/201-01/2019).
+              </p>
             </div>
           </div>
 
@@ -290,15 +328,96 @@ export default function Home() {
               <Building className="h-6 w-6" />
             </div>
             <div>
-              <h3 className="text-sm font-extrabold text-[#0F172A] uppercase tracking-wider">Direct Sivakasi Factory</h3>
-              <p className="text-xs text-slate-600 mt-0.5">Direct bulk consignment pricing straight from our Alamarathupatti plant.</p>
+              <h3 className="text-sm font-extrabold text-[#0F172A] uppercase tracking-wider">
+                Direct Sivakasi Factory
+              </h3>
+              <p className="text-xs text-slate-600 mt-0.5">
+                Direct bulk consignment pricing straight from our Alamarathupatti plant.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
       {/* ========================================================================= */}
-      {/* 3. COMPLETE SPARKLER COLLECTION SHOWCASE (7 CM TO 50 CM) */}
+      {/* 3. DEDICATED DIWALI SECTION: "DIWALI BEGINS WITH A SPARK" */}
+      {/* ========================================================================= */}
+      <section className="relative py-24 border-b border-amber-100 overflow-hidden bg-gradient-to-b from-[#FFFDF7] via-[#FFF9EE] to-[#FFFDF7]">
+        {/* Festive Golden Trails & Ambient Bokeh */}
+        <FireworkBackground type="bursts" density={22} opacity={0.4} colorScheme="gold" />
+        <GlowAtmosphere position="top-right" color="gold" intensity="medium" />
+
+        <div className="relative z-10 mx-auto max-w-7xl px-6">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-amber-300 bg-amber-50 px-4 py-1 text-xs font-black uppercase tracking-widest text-[#D4AF37]">
+              <Flame className="h-3.5 w-3.5 fill-[#D4AF37]" />
+              FESTIVAL OF LIGHTS CELEBRATION
+            </span>
+            <h2 className="text-3xl sm:text-5xl font-black uppercase text-[#0F172A] tracking-tight mt-3">
+              Diwali Begins With <span className="text-[#D4AF37] gold-glow-text">A Spark</span>
+            </h2>
+            <p className="text-sm sm:text-base text-slate-600 mt-3 leading-relaxed">
+              For generations, Diwali joy starts with lighting the very first sparkler. Balakar brings you authentic Sivakasi craftsmanship designed for family celebrations, brilliant crackling colors, and safe festival memories.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Card 1: Family Safe */}
+            <div className="rounded-3xl border border-amber-200/80 bg-white p-8 shadow-lg hover:shadow-xl transition-all">
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-amber-50 text-[#D4AF37] border border-amber-200 mb-6">
+                <Sparkles className="h-7 w-7" />
+              </div>
+              <h3 className="text-xl font-extrabold uppercase text-[#0F172A] tracking-tight">
+                Family & Child Safe
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed">
+                Engineered with high-tensile steel wire handles that stay cool to the touch and double-dipped chemical coating to eliminate dangerous spark drop-off.
+              </p>
+              <div className="mt-4 flex items-center gap-2 text-xs font-bold text-amber-700">
+                <CheckCircle2 className="h-4 w-4 text-amber-600" />
+                <span>Zero clothing or skin spark fallout</span>
+              </div>
+            </div>
+
+            {/* Card 2: Vibrant Colors */}
+            <div className="rounded-3xl border border-amber-200/80 bg-white p-8 shadow-lg hover:shadow-xl transition-all">
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-red-50 text-red-600 border border-red-200 mb-6">
+                <Flame className="h-7 w-7" />
+              </div>
+              <h3 className="text-xl font-extrabold uppercase text-[#0F172A] tracking-tight">
+                Brilliant Festive Colors
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed">
+                From intense Electric Gold and Ruby Red to Emerald Green and Multi-Color stars, our Sivakasi formulas produce deep, saturated pyrotechnic illumination.
+              </p>
+              <div className="mt-4 flex items-center gap-2 text-xs font-bold text-red-700">
+                <CheckCircle2 className="h-4 w-4 text-red-600" />
+                <span>Electric, Colour, Green & Red Formulations</span>
+              </div>
+            </div>
+
+            {/* Card 3: Green Certified */}
+            <div className="rounded-3xl border border-emerald-200/80 bg-white p-8 shadow-lg hover:shadow-xl transition-all">
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-emerald-50 text-emerald-600 border border-emerald-200 mb-6">
+                <Leaf className="h-7 w-7" />
+              </div>
+              <h3 className="text-xl font-extrabold uppercase text-[#0F172A] tracking-tight">
+                Certified Green Sparklers
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed">
+                Manufactured under Government of India CSIR-NEERI Green Fireworks guidelines. Produces 30% less smoke with zero toxic heavy metal emissions.
+              </p>
+              <div className="mt-4 flex items-center gap-2 text-xs font-bold text-emerald-700">
+                <CheckCircle2 className="h-4 w-4 text-emerald-600" />
+                <span>License NE/TN/201-01/2019 Verified</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ========================================================================= */}
+      {/* 4. COMPLETE SPARKLER COLLECTION SHOWCASE (7 CM TO 50 CM) */}
       {/* ========================================================================= */}
       <section className="relative py-24 border-b border-amber-100 overflow-hidden bg-[#FAF9F6]">
         {/* Dynamic Category Fireworks Particle Engine */}
@@ -309,7 +428,7 @@ export default function Home() {
           opacity={0.5}
           colorScheme={currentProduct.colorScheme}
         />
-        
+
         <GlowAtmosphere position="center" color={currentProduct.colorScheme} intensity="medium" />
 
         <div className="relative z-10 mx-auto max-w-7xl px-6">
@@ -376,16 +495,16 @@ export default function Home() {
                 </p>
               </div>
 
-              {/* Variants Badges */}
+              {/* Variants Badges from docs/PRODUCTS.md */}
               <div>
                 <span className="block text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">
-                  Catalog Variants
+                  Verified Catalog Variants
                 </span>
                 <div className="flex flex-wrap gap-2">
                   {currentProduct.variants.map((v) => (
                     <span
                       key={v}
-                      className="rounded-xl border border-amber-200 bg-amber-50/50 px-3 py-1.5 text-xs font-semibold text-slate-800"
+                      className="rounded-xl border border-amber-200 bg-amber-50/50 px-3.5 py-1.5 text-xs font-semibold text-slate-800"
                     >
                       {v}
                     </span>
@@ -407,7 +526,7 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row items-center gap-3 pt-2">
                 <button
                   onClick={() => setIsInquiryOpen(true)}
-                  className="w-full sm:w-auto flex-1 flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#D4AF37] to-[#F59E0B] px-6 py-3.5 text-xs font-extrabold uppercase tracking-widest text-[#0F172A] shadow-md transition-all"
+                  className="w-full sm:w-auto flex-1 flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#D4AF37] to-[#F59E0B] px-6 py-3.5 text-xs font-extrabold uppercase tracking-widest text-[#0F172A] shadow-md transition-all cursor-pointer hover:scale-[1.02]"
                 >
                   <Sparkles className="h-4 w-4 fill-[#0F172A]" />
                   <span>Get Wholesale Quotation</span>
@@ -427,7 +546,7 @@ export default function Home() {
       </section>
 
       {/* ========================================================================= */}
-      {/* 4. DEDICATED 30 CM & 50 CM FEATURED SPOTLIGHT */}
+      {/* 5. DEDICATED 30 CM & 50 CM FEATURED SPOTLIGHT */}
       {/* ========================================================================= */}
       <section className="relative py-24 border-b border-amber-100 overflow-hidden bg-gradient-to-b from-[#FFFDF7] via-[#FFFDF0] to-[#FFFDF7]">
         <FireworkBackground type="trails" density={25} opacity={0.5} colorScheme="gold" />
@@ -459,7 +578,9 @@ export default function Home() {
               </div>
 
               <div>
-                <span className="text-xs font-bold text-[#D4AF37] uppercase tracking-widest block">30 CM Category</span>
+                <span className="text-xs font-bold text-[#D4AF37] uppercase tracking-widest block">
+                  30 CM Category
+                </span>
                 <h3 className="text-2xl font-extrabold text-[#0F172A] uppercase tracking-tight mt-1">
                   30 CM Giant Sparklers
                 </h3>
@@ -477,7 +598,7 @@ export default function Home() {
                 </Link>
                 <button
                   onClick={() => setIsInquiryOpen(true)}
-                  className="rounded-full bg-gradient-to-r from-[#D4AF37] to-[#F59E0B] px-5 py-2.5 text-xs font-extrabold uppercase tracking-widest text-[#0F172A] shadow-sm"
+                  className="rounded-full bg-gradient-to-r from-[#D4AF37] to-[#F59E0B] px-5 py-2.5 text-xs font-extrabold uppercase tracking-widest text-[#0F172A] shadow-sm cursor-pointer hover:scale-[1.02]"
                 >
                   Inquire 30 CM
                 </button>
@@ -496,7 +617,9 @@ export default function Home() {
               </div>
 
               <div>
-                <span className="text-xs font-bold text-emerald-700 uppercase tracking-widest block">50 CM Category</span>
+                <span className="text-xs font-bold text-emerald-700 uppercase tracking-widest block">
+                  50 CM Category
+                </span>
                 <h3 className="text-2xl font-extrabold text-[#0F172A] uppercase tracking-tight mt-1">
                   50 CM Mega Sparklers
                 </h3>
@@ -514,7 +637,7 @@ export default function Home() {
                 </Link>
                 <button
                   onClick={() => setIsInquiryOpen(true)}
-                  className="rounded-full bg-gradient-to-r from-[#D4AF37] to-[#F59E0B] px-5 py-2.5 text-xs font-extrabold uppercase tracking-widest text-[#0F172A] shadow-sm"
+                  className="rounded-full bg-gradient-to-r from-[#D4AF37] to-[#F59E0B] px-5 py-2.5 text-xs font-extrabold uppercase tracking-widest text-[#0F172A] shadow-sm cursor-pointer hover:scale-[1.02]"
                 >
                   Inquire 50 CM
                 </button>
@@ -525,7 +648,7 @@ export default function Home() {
       </section>
 
       {/* ========================================================================= */}
-      {/* 5. BRAND STORY & MANUFACTURING ("From Sivakasi to Celebrations") */}
+      {/* 6. BRAND STORY & MANUFACTURING ("From Sivakasi to Celebrations") */}
       {/* ========================================================================= */}
       <section className="relative py-24 border-b border-amber-100 overflow-hidden bg-[#FFFDF7]">
         <FireworkBackground type="embers" density={28} opacity={0.5} colorScheme="gold" />
@@ -610,7 +733,9 @@ export default function Home() {
                 />
               </div>
               <div>
-                <h4 className="text-base font-extrabold text-[#0F172A] uppercase">Phoenix Trademark Brand</h4>
+                <h4 className="text-base font-extrabold text-[#0F172A] uppercase">
+                  Phoenix Trademark Brand
+                </h4>
                 <p className="text-xs text-slate-600 mt-1">
                   Registered trademark seal guaranteeing authentic double-dipped Sivakasi sparkler quality.
                 </p>
@@ -627,7 +752,9 @@ export default function Home() {
                 />
               </div>
               <div>
-                <h4 className="text-base font-extrabold text-emerald-700 uppercase">CSIR-NEERI Green License</h4>
+                <h4 className="text-base font-extrabold text-emerald-700 uppercase">
+                  CSIR-NEERI Green License
+                </h4>
                 <p className="text-xs text-slate-600 mt-1">
                   Official License NE/TN/201-01/2019 issued by Govt of India for eco-friendly green fireworks.
                 </p>
@@ -638,7 +765,7 @@ export default function Home() {
       </section>
 
       {/* ========================================================================= */}
-      {/* 6. FREQUENTLY ASKED QUESTIONS */}
+      {/* 7. FREQUENTLY ASKED QUESTIONS */}
       {/* ========================================================================= */}
       <section className="relative py-24 border-b border-amber-100 bg-[#FAF9F6]">
         <div className="relative z-10 mx-auto max-w-4xl px-6">
@@ -659,7 +786,7 @@ export default function Home() {
               >
                 <button
                   onClick={() => toggleFaq(index)}
-                  className="flex w-full items-center justify-between p-5 text-left text-sm font-bold text-[#0F172A] uppercase tracking-wider"
+                  className="flex w-full items-center justify-between p-5 text-left text-sm font-bold text-[#0F172A] uppercase tracking-wider cursor-pointer"
                 >
                   <span>{faq.question}</span>
                   <ChevronDown
@@ -680,7 +807,7 @@ export default function Home() {
       </section>
 
       {/* ========================================================================= */}
-      {/* 7. CONTACT & WHOLESALE INQUIRY BANNER */}
+      {/* 8. CONTACT & WHOLESALE INQUIRY BANNER */}
       {/* ========================================================================= */}
       <section className="relative py-20 overflow-hidden bg-gradient-to-b from-[#FFFDF7] via-[#FFFDF0] to-[#FFFDF7]">
         <FireworkBackground type="bursts" density={25} opacity={0.6} colorScheme="gold" />
