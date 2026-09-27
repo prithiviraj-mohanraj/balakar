@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Phone, Mail, MapPin, CheckCircle, Sparkles, Award } from "lucide-react";
+import { InstagramIcon, FacebookIcon } from "./social-icons";
 import InquiryModal from "./inquiry-modal";
 
 export default function Footer() {
@@ -120,10 +121,10 @@ export default function Footer() {
                 <div className="flex items-start gap-2.5">
                   <Mail className="h-4.5 w-4.5 shrink-0 text-[#D4AF37] mt-0.5" />
                   <a
-                    href="mailto:balakarsparklersmrsj@gmail.com"
-                    className="hover:text-[#D4AF37] transition-colors break-all text-slate-300"
+                    href="mailto:BalakarSparklers@gmail.com"
+                    className="hover:text-[#D4AF37] transition-colors break-all text-slate-300 font-medium"
                   >
-                    balakarsparklersmrsj@gmail.com
+                    BalakarSparklers@gmail.com
                   </a>
                 </div>
                 <div className="flex items-start gap-2.5">
@@ -137,6 +138,33 @@ export default function Footer() {
                     </a>
                     <a href="tel:+918072431283" className="hover:text-[#D4AF37] transition-colors">
                       +91 80724 31283 (Dispatch Desk)
+                    </a>
+                  </div>
+                </div>
+
+                {/* Social Media Links */}
+                <div className="pt-2 flex flex-col gap-2">
+                  <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">
+                    Follow Balakar Sparklers
+                  </span>
+                  <div className="flex items-center gap-2.5">
+                    <a
+                      href="https://www.instagram.com/balakarsparklersfactory?utm_source=qr&igsh=Z3p6YmMwcnd2OGhu"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Balakar Sparklers on Instagram"
+                      className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/10 border border-white/15 text-slate-300 hover:text-[#D4AF37] hover:border-[#D4AF37]/50 hover:bg-[#D4AF37]/10 transition-all cursor-pointer shadow-sm"
+                    >
+                      <InstagramIcon className="h-4.5 w-4.5" />
+                    </a>
+                    <a
+                      href="https://www.facebook.com/people/Balakar-Sparklers-factory/61593586282602/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Balakar Sparklers on Facebook"
+                      className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/10 border border-white/15 text-slate-300 hover:text-[#D4AF37] hover:border-[#D4AF37]/50 hover:bg-[#D4AF37]/10 transition-all cursor-pointer shadow-sm"
+                    >
+                      <FacebookIcon className="h-4.5 w-4.5" />
                     </a>
                   </div>
                 </div>

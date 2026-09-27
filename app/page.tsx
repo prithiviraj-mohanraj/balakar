@@ -26,6 +26,7 @@ import Footer from "../components/footer";
 import MobileStickyBar from "../components/mobile-sticky-bar";
 import FloatingInquiry from "../components/floating-inquiry";
 import InquiryModal from "../components/inquiry-modal";
+import ProductShowcaseCarousel from "../components/product-showcase-carousel";
 
 // Cinematic Diwali & Real Sparkler Components
 import DiwaliHeroCanvas, { SparklerColorTheme } from "../components/cinematic/diwali-hero-canvas";
@@ -233,35 +234,13 @@ export default function Home() {
             Experience authentic Diwali celebrations with Sivakasi&apos;s finest sparklers. Double-dipped steel wire core for radiant crackling brilliance and zero fallout sparks.
           </motion.p>
 
-          {/* Hero 3D Product Showroom Stage (Crisp Illuminated Balakar Packaging) */}
+          {/* Hero 3D Product Showroom Carousel Stage (All 9 Authentic Balakar Variants) */}
           <motion.div
             initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="relative max-w-4xl mx-auto mb-10"
           >
-            {/* Soft Warm Halo behind packaging */}
-            <div className="absolute -inset-4 bg-gradient-to-r from-amber-500/25 via-[#D4AF37]/35 to-amber-500/25 rounded-3xl blur-2xl opacity-70 animate-pulse-slow pointer-events-none" />
-
-            <div className="relative overflow-hidden rounded-3xl border border-amber-400/40 bg-white/95 backdrop-blur-2xl p-4 sm:p-6 shadow-[0_20px_50px_rgba(0,0,0,0.4)]">
-              <div className="relative aspect-[21/9] sm:aspect-[2.4/1] w-full overflow-hidden rounded-2xl bg-gradient-to-b from-amber-50/60 via-white to-amber-50/30 p-2 flex items-center justify-center">
-                <Image
-                  src="/products/7cm-products.jpg"
-                  alt="Balakar Sparklers Sivakasi Product Packaging Showcase - 7 CM Electric, Colour, Green, Red"
-                  fill
-                  className="object-contain transform hover:scale-[1.02] transition-transform duration-700 p-2"
-                  priority
-                />
-
-                {/* Showroom Authenticity Badge */}
-                <div className="absolute bottom-4 left-4 flex items-center gap-2 rounded-xl bg-slate-900/90 backdrop-blur-md px-3.5 py-2 border border-amber-400/50 shadow-md">
-                  <Star className="h-4 w-4 text-[#D4AF37] fill-[#D4AF37]" />
-                  <span className="text-xs font-bold text-amber-100 uppercase tracking-wider">
-                    Official Balakar Packaging Showroom
-                  </span>
-                </div>
-              </div>
-            </div>
+            <ProductShowcaseCarousel />
           </motion.div>
 
           {/* Primary Call to Actions */}

@@ -8,6 +8,7 @@ import Footer from "../../components/footer";
 import MobileStickyBar from "../../components/mobile-sticky-bar";
 import FloatingInquiry from "../../components/floating-inquiry";
 import InquiryModal from "../../components/inquiry-modal";
+import { InstagramIcon, FacebookIcon } from "../../components/social-icons";
 
 import FireworkBackground from "../../components/cinematic/firework-background";
 import GlowAtmosphere from "../../components/cinematic/glow-atmosphere";
@@ -108,10 +109,10 @@ export default function ContactPage() {
                   <div>
                     <span className="font-bold text-[#0F172A] block uppercase tracking-wider">Email Sales Desk</span>
                     <a
-                      href="mailto:balakarsparklersmrsj@gmail.com"
-                      className="text-slate-600 mt-1 block hover:text-[#D4AF37] transition-colors"
+                      href="mailto:BalakarSparklers@gmail.com"
+                      className="text-slate-600 mt-1 block hover:text-[#D4AF37] transition-colors font-medium"
                     >
-                      balakarsparklersmrsj@gmail.com
+                      BalakarSparklers@gmail.com
                     </a>
                   </div>
                 </div>
@@ -131,21 +132,51 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              {/* Direct Quick Chat */}
-              <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-5 flex gap-4 items-center">
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-emerald-100 text-emerald-600">
-                  <MessageSquare className="h-5 w-5" />
-                </span>
-                <div className="flex-1">
-                  <span className="text-xs font-extrabold text-emerald-800 uppercase tracking-widest block leading-none">Instant WhatsApp</span>
-                  <a
-                    href="https://wa.me/919443868706?text=Hi%2C%20I%20am%20interested%20in%20ordering%20wholesale%20sparklers%20from%20Balakar%20Sparklers%20Factory.%20Please%20send%20me%20your%20price%20list."
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-xs font-bold text-emerald-700 block mt-1 hover:underline"
-                  >
-                    Chat directly with factory desk &rarr;
-                  </a>
+              {/* Direct Quick Chat & Social Reach */}
+              <div className="flex flex-col gap-3">
+                <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-5 flex gap-4 items-center">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-emerald-100 text-emerald-600">
+                    <MessageSquare className="h-5 w-5" />
+                  </span>
+                  <div className="flex-1">
+                    <span className="text-xs font-extrabold text-emerald-800 uppercase tracking-widest block leading-none">Instant WhatsApp</span>
+                    <a
+                      href="https://wa.me/919443868706?text=Hi%2C%20I%20am%20interested%20in%20ordering%20wholesale%20sparklers%20from%20Balakar%20Sparklers%20Factory.%20Please%20send%20me%20your%20price%20list."
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs font-bold text-emerald-700 block mt-1 hover:underline"
+                    >
+                      Chat directly with factory desk &rarr;
+                    </a>
+                  </div>
+                </div>
+
+                {/* Official Social Channels */}
+                <div className="rounded-2xl border border-amber-200 bg-amber-50/60 p-4 flex items-center justify-between gap-3">
+                  <div>
+                    <span className="text-xs font-extrabold text-[#0F172A] uppercase tracking-wider block">Official Social Channels</span>
+                    <span className="text-[11px] text-slate-600">Follow us on Instagram and Facebook</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <a
+                      href="https://www.instagram.com/balakarsparklersfactory?utm_source=qr&igsh=Z3p6YmMwcnd2OGhu"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Balakar Sparklers on Instagram"
+                      className="flex h-9 w-9 items-center justify-center rounded-xl bg-white border border-amber-200 text-slate-700 hover:text-[#D4AF37] hover:border-[#D4AF37] transition-all shadow-sm"
+                    >
+                      <InstagramIcon className="h-4.5 w-4.5" />
+                    </a>
+                    <a
+                      href="https://www.facebook.com/people/Balakar-Sparklers-factory/61593586282602/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Balakar Sparklers on Facebook"
+                      className="flex h-9 w-9 items-center justify-center rounded-xl bg-white border border-amber-200 text-slate-700 hover:text-[#D4AF37] hover:border-[#D4AF37] transition-all shadow-sm"
+                    >
+                      <FacebookIcon className="h-4.5 w-4.5" />
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>

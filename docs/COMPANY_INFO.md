@@ -15,7 +15,7 @@ Phone Numbers:
 8072431283
 
 Email:
-[balakarsparklersmrsj@gmail.com](mailto:balakarsparklersmrsj@gmail.com)
+[BalakarSparklers@gmail.com](mailto:BalakarSparklers@gmail.com)
 
 Brand Name:
 Balakar Sparklers

@@ -5,7 +5,7 @@ export const COMPANY_NAME = "Balakar Sparklers Factory";
 export const BRAND_NAME = "Balakar Sparklers";
 export const TRADEMARK = "Phoenix Brand";
 export const CERTIFICATION = "Green Fireworks Certified (CSIR-NEERI License NE/TN/201-01/2019)";
-export const EMAIL = "balakarsparklersmrsj@gmail.com";
+export const EMAIL = "BalakarSparklers@gmail.com";
 export const PHONES = ["+91 9443868706", "+91 8248268349", "+91 8072431283"];
 
 export const DEFAULT_SEO = {
